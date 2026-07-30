@@ -77,7 +77,7 @@ func PkgVersion() (semver.Version, error) {
 	}
 	type sentinal struct{}
 	pkgPath := reflect.TypeOf(sentinal{}).PkgPath()
-	re := regexp.MustCompile("^github.com/pulumi/pulumi-terraform-provider/sdks/go/qdrant-cloud/qdrant-cloud(/v\\d+)?")
+	re := regexp.MustCompile("^github.com/gvtlabs/pulumi-qdrant-cloud/sdks/go/qdrant-cloud(/v\\d+)?")
 	if match := re.FindStringSubmatch(pkgPath); match != nil {
 		vStr := match[1]
 		if len(vStr) == 0 { // If the version capture group was empty, default to v1.

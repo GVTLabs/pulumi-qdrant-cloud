@@ -17,6 +17,14 @@ UPSTREAM_REPO="qdrant/terraform-provider-qdrant-cloud"
 TF_PROVIDER="qdrant/qdrant-cloud"
 EX_TEMPFAIL=75
 
+# What the bridge stamps into the generated Go SDK, and what it has to become
+# for `go get` to resolve it here. The Go module lives in sdks/go, so its path
+# is this repository's plus that directory, and its version tags carry the same
+# directory prefix (see GO_TAG_PREFIX below).
+GO_MODULE_CANONICAL="github.com/pulumi/pulumi-terraform-provider/sdks/go/qdrant-cloud"
+GO_MODULE_PATH="github.com/gvtlabs/pulumi-qdrant-cloud/sdks/go"
+GO_TAG_PREFIX="sdks/go/"
+
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO_ROOT"
 
@@ -135,6 +143,32 @@ for lang in python nodejs go dotnet java; do
 done
 echo "$version" >UPSTREAM_VERSION
 
+# The bridge stamps every Go SDK it generates with Pulumi's canonical module
+# path, which does not match where this one lives, so `go get` cannot resolve
+# it. Rewriting it to this repository's path is what makes the Go SDK a real,
+# consumable module rather than something a consumer has to vendor behind a
+# `replace`. The substitution is exact and total: GO_MODULE_CANONICAL is the
+# module path, so every self-import below it is rewritten by the same edit.
+log "Rewriting the Go module path to $GO_MODULE_PATH"
+go_files="$(grep -rl "$GO_MODULE_CANONICAL" sdks/go || true)"
+[[ -n "$go_files" ]] || { echo "no files carry $GO_MODULE_CANONICAL; did the bridge change its layout?" >&2; exit 1; }
+printf '%s\n' "$go_files" | while IFS= read -r f; do
+  # A literal, delimiter-safe replacement; the paths contain slashes and dots.
+  python3 - "$f" "$GO_MODULE_CANONICAL" "$GO_MODULE_PATH" <<'PY'
+import sys
+path, old, new = sys.argv[1], sys.argv[2], sys.argv[3]
+with open(path) as fh:
+    text = fh.read()
+with open(path, "w") as fh:
+    fh.write(text.replace(old, new))
+PY
+done
+
+if grep -rq "$GO_MODULE_CANONICAL" sdks/go; then
+  echo "the canonical module path survived the rewrite" >&2
+  exit 1
+fi
+
 if [[ "$do_commit" != true ]]; then
   log "Left the regenerated SDKs uncommitted as requested"
   emit synced true
@@ -152,11 +186,17 @@ Mirrors $UPSTREAM_REPO@$tag via
   log "Committed the regenerated SDKs"
 fi
 
-if tag_exists "$tag"; then
-  log "Leaving the existing $tag in place"
-else
-  git tag -a "$tag" -m "terraform-provider-qdrant-cloud $tag"
-  log "Tagged $tag"
-fi
+# Two tags per release. The plain one names the repository's release, and is
+# what the README and the other four SDKs refer to. The sdks/go/ prefixed one
+# is the only form the Go module proxy accepts for a module in a subdirectory;
+# without it `go get` can see the module but resolve no versions of it.
+for t in "$tag" "${GO_TAG_PREFIX}${tag}"; do
+  if tag_exists "$t"; then
+    log "Leaving the existing $t in place"
+  else
+    git tag -a "$t" -m "terraform-provider-qdrant-cloud $tag"
+    log "Tagged $t"
+  fi
+done
 
 emit synced true

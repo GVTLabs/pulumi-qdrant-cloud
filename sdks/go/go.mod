@@ -1,4 +1,4 @@
-module github.com/pulumi/pulumi-terraform-provider/sdks/go/qdrant-cloud
+module github.com/gvtlabs/pulumi-qdrant-cloud/sdks/go
 
 go 1.25
 

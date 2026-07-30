@@ -25,12 +25,25 @@ Pass a version as a trailing argument to pin to a specific upstream release:
 pulumi package add terraform-provider qdrant/qdrant-cloud 1.28.0
 ```
 
-The SDKs committed here are not published to PyPI, npm, NuGet, or Maven, and the
-generated Go module keeps Pulumi's canonical module path
-(`github.com/pulumi/pulumi-terraform-provider/sdks/go/qdrant-cloud`) rather than
-this repository's, so it cannot be `go get`-ed from here without a `replace`
-directive. Treat this repository as a versioned, reviewable record of what the
-bridge produces: useful for diffing the generated API surface between provider
+The Go SDK is the exception: it is a real module and can be depended on
+directly, which spares a consumer from vendoring it behind a `replace`.
+
+```bash
+go get github.com/gvtlabs/pulumi-qdrant-cloud/sdks/go@v1.28.0
+```
+
+```go
+import qdrantcloud "github.com/gvtlabs/pulumi-qdrant-cloud/sdks/go/qdrant-cloud"
+```
+
+The bridge stamps its own canonical path
+(`github.com/pulumi/pulumi-terraform-provider/sdks/go/qdrant-cloud`) into every
+Go SDK it generates, which matches no repository and so resolves nowhere. The
+sync rewrites it to this one; see below.
+
+The other four SDKs are not published to PyPI, npm, NuGet, or Maven. For those,
+treat this repository as a versioned, reviewable record of what the bridge
+produces: useful for diffing the generated API surface between provider
 releases, auditing what lands in your stack before you upgrade, and vendoring.
 
 ## Configuration
@@ -53,8 +66,16 @@ Terraform names in each language's idiomatic casing, so
 [`.github/workflows/sync.yml`](.github/workflows/sync.yml) runs
 [`scripts/sync.sh`](scripts/sync.sh) hourly. The script reads the latest upstream
 release, exits early if a matching tag already exists, and otherwise regenerates
-all five SDKs, commits them, and creates the mirroring tag. Git tags are the only
-state, so the job is idempotent and needs no external bookkeeping.
+all five SDKs, commits them, and creates the mirroring tags. Git tags are the
+only state, so the job is idempotent and needs no external bookkeeping.
+
+Two steps exist purely to keep the Go SDK consumable. The script rewrites the
+bridge's canonical module path to this repository's and fails loudly if any
+occurrence survives, so a change in the bridge's layout is caught rather than
+silently publishing an unresolvable module. It then writes two tags per release:
+`v<version>`, which names the release, and `sdks/go/v<version>`, which is the
+only form the Go module proxy accepts for a module in a subdirectory. Without
+the second, `go get` can see the module but resolve no versions of it.
 
 GitHub does not allow one repository to subscribe to another repository's release
 events, so polling is the only trigger available to us without cooperation from

@@ -4,7 +4,7 @@
 package config
 
 import (
-	"github.com/pulumi/pulumi-terraform-provider/sdks/go/qdrant-cloud/qdrant-cloud/internal"
+	"github.com/gvtlabs/pulumi-qdrant-cloud/sdks/go/qdrant-cloud/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
 )
