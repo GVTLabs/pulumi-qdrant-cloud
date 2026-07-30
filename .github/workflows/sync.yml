@@ -36,7 +36,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: pulumi/setup-pulumi@v2
+      # Installation-only mode: with no 'command' input the action downloads the
+      # CLI and exits without logging in, so no PULUMI_ACCESS_TOKEN is needed.
+      # Codegen never talks to the Pulumi Cloud backend.
+      - uses: pulumi/actions@v7
 
       - name: Configure git identity
         run: |
