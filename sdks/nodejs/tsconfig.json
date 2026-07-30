@@ -1,0 +1,48 @@
+{
+    "compilerOptions": {
+        // Output
+        "outDir": "bin",
+        "declaration": true,
+        "declarationMap": true,
+        "sourceMap": true,
+        "stripInternal": true,
+        // Environment
+        "target": "ES2022",
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
+        "moduleDetection": "force",
+        "types": ["node"],
+        // Type Checking
+        "strict": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitReturns": true,
+        "skipLibCheck": true
+    },
+    "files": [
+        "accountsAuthKey.ts",
+        "accountsBackupSchedule.ts",
+        "accountsCluster.ts",
+        "accountsDatabaseApiKeyV2.ts",
+        "accountsHybridCloudEnvironment.ts",
+        "accountsManualBackup.ts",
+        "accountsRole.ts",
+        "accountsUserRoles.ts",
+        "config/index.ts",
+        "config/vars.ts",
+        "getAccountsAuthKeys.ts",
+        "getAccountsBackupSchedule.ts",
+        "getAccountsBackupSchedules.ts",
+        "getAccountsCluster.ts",
+        "getAccountsClusters.ts",
+        "getAccountsDatabaseApiKeysV2.ts",
+        "getAccountsMembers.ts",
+        "getAccountsRoles.ts",
+        "getBookingPackages.ts",
+        "index.ts",
+        "provider.ts",
+        "types/index.ts",
+        "types/input.ts",
+        "types/output.ts",
+        "utilities.ts"
+    ]
+}
