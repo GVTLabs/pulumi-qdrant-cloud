@@ -62,9 +62,14 @@ if [[ -z "$version" ]]; then
   log "Looking up the latest $UPSTREAM_REPO release"
   auth=()
   [[ -n "${GH_TOKEN:-}" ]] && auth=(-H "Authorization: Bearer $GH_TOKEN")
-  version="$(curl -fsSL "${auth[@]}" \
+  # bash 3.2 treats "${auth[@]}" as unbound when the array is empty.
+  release="$(curl -fsSL ${auth[@]+"${auth[@]}"} \
     -H 'Accept: application/vnd.github+json' \
-    "https://api.github.com/repos/$UPSTREAM_REPO/releases/latest" |
+    "https://api.github.com/repos/$UPSTREAM_REPO/releases/latest")" || {
+    echo "could not query the GitHub API for $UPSTREAM_REPO releases" >&2
+    exit 1
+  }
+  version="$(printf '%s' "$release" |
     python3 -c 'import json,sys; print(json.load(sys.stdin)["tag_name"])')"
 fi
 
