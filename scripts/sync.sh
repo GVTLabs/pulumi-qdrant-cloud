@@ -1,0 +1,157 @@
+#!/usr/bin/env bash
+#
+# Mirror a terraform-provider-qdrant-cloud release as Pulumi SDKs.
+#
+# Resolves the target upstream version, regenerates every language SDK from the
+# bridged Terraform provider, then commits and tags the result as v<version>.
+#
+# Exit codes:
+#   0  synced, or already up to date (nothing to do)
+#   1  hard failure
+#  75  upstream release exists but is not yet resolvable from the OpenTofu
+#      registry; safe to retry later (EX_TEMPFAIL)
+
+set -euo pipefail
+
+UPSTREAM_REPO="qdrant/terraform-provider-qdrant-cloud"
+TF_PROVIDER="qdrant/qdrant-cloud"
+EX_TEMPFAIL=75
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$REPO_ROOT"
+
+version=""
+force=false
+do_commit=true
+
+usage() {
+  cat <<'EOF'
+Usage: scripts/sync.sh [--version X.Y.Z] [--force] [--no-commit]
+
+  --version X.Y.Z  Sync a specific upstream version instead of the latest
+                   release. Useful for backfilling.
+  --force          Regenerate even if the matching tag already exists. The
+                   existing tag is left alone; only the working tree changes.
+  --no-commit      Regenerate the SDKs but leave the result uncommitted.
+EOF
+}
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --version) version="${2:-}"; shift 2 ;;
+    --force) force=true; shift ;;
+    --no-commit) do_commit=false; shift ;;
+    -h|--help) usage; exit 0 ;;
+    *) echo "unknown argument: $1" >&2; usage >&2; exit 1 ;;
+  esac
+done
+
+log() { echo "==> $*"; }
+
+# Writes a key=value pair to the workflow's step output when running in Actions.
+emit() {
+  [[ -n "${GITHUB_OUTPUT:-}" ]] && echo "$1=$2" >>"$GITHUB_OUTPUT"
+  return 0
+}
+
+for tool in pulumi git curl python3; do
+  command -v "$tool" >/dev/null || { echo "required tool not found: $tool" >&2; exit 1; }
+done
+
+if [[ -z "$version" ]]; then
+  log "Looking up the latest $UPSTREAM_REPO release"
+  auth=()
+  [[ -n "${GH_TOKEN:-}" ]] && auth=(-H "Authorization: Bearer $GH_TOKEN")
+  version="$(curl -fsSL "${auth[@]}" \
+    -H 'Accept: application/vnd.github+json' \
+    "https://api.github.com/repos/$UPSTREAM_REPO/releases/latest" |
+    python3 -c 'import json,sys; print(json.load(sys.stdin)["tag_name"])')"
+fi
+
+version="${version#v}"
+[[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+ ]] || {
+  echo "not a valid upstream version: $version" >&2
+  exit 1
+}
+tag="v$version"
+emit version "$version"
+log "Upstream release is $tag"
+
+tag_exists() {
+  if git remote get-url origin >/dev/null 2>&1 &&
+     git ls-remote --exit-code --tags origin "refs/tags/$1" >/dev/null 2>&1; then
+    return 0
+  fi
+  git rev-parse -q --verify "refs/tags/$1" >/dev/null 2>&1
+}
+
+if tag_exists "$tag" && [[ "$force" != true ]]; then
+  log "$tag already exists, nothing to do"
+  emit synced false
+  exit 0
+fi
+
+# Generate into a scratch directory so a mid-flight failure can never leave a
+# half-written sdks/ behind.
+staging="$(mktemp -d)"
+trap 'rm -rf "$staging"' EXIT
+
+log "Generating SDKs for $TF_PROVIDER $version"
+if ! pulumi package gen-sdk terraform-provider \
+      --language all \
+      --out "$staging" \
+      -- "$TF_PROVIDER" "$version" 2>"$staging/gen.log"; then
+  cat "$staging/gen.log" >&2
+  if grep -q 'Could not resolve a version' "$staging/gen.log"; then
+    log "$version is not on registry.opentofu.org yet; will retry on the next run"
+    emit synced false
+    exit "$EX_TEMPFAIL"
+  fi
+  exit 1
+fi
+grep -v 'deprecated, use' "$staging/gen.log" >&2 || true
+
+# The bridge picks a provider version from the registry; make sure it really
+# gave us the release we asked for rather than silently falling back.
+plugin_json="$staging/python/pulumi_qdrant_cloud/pulumi-plugin.json"
+[[ -f "$plugin_json" ]] || { echo "codegen produced no $plugin_json" >&2; exit 1; }
+generated="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["parameterization"]["version"])' "$plugin_json")"
+if [[ "$generated" != "$version" ]]; then
+  echo "asked for $version but the generated SDK reports $generated" >&2
+  exit 1
+fi
+
+log "Replacing sdks/"
+rm -rf sdks
+mkdir -p sdks
+for lang in python nodejs go dotnet java; do
+  [[ -d "$staging/$lang" ]] || { echo "codegen produced no $lang SDK" >&2; exit 1; }
+  mv "$staging/$lang" "sdks/$lang"
+done
+echo "$version" >UPSTREAM_VERSION
+
+if [[ "$do_commit" != true ]]; then
+  log "Left the regenerated SDKs uncommitted as requested"
+  emit synced true
+  exit 0
+fi
+
+git add -A sdks UPSTREAM_VERSION
+if git diff --cached --quiet; then
+  log "SDKs are byte-identical to the committed ones"
+else
+  git commit -m "Generate SDKs for terraform-provider-qdrant-cloud $tag
+
+Mirrors $UPSTREAM_REPO@$tag via
+'pulumi package add terraform-provider $TF_PROVIDER'."
+  log "Committed the regenerated SDKs"
+fi
+
+if tag_exists "$tag"; then
+  log "Leaving the existing $tag in place"
+else
+  git tag -a "$tag" -m "terraform-provider-qdrant-cloud $tag"
+  log "Tagged $tag"
+fi
+
+emit synced true
