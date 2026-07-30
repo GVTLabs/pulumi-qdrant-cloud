@@ -87,6 +87,7 @@ version="${version#v}"
   exit 1
 }
 tag="v$version"
+go_tag="${GO_TAG_PREFIX}${tag}"
 emit version "$version"
 log "Upstream release is $tag"
 
@@ -98,9 +99,26 @@ tag_exists() {
   git rev-parse -q --verify "refs/tags/$1" >/dev/null 2>&1
 }
 
+# It takes both tags to make a release (see the tagging loop at the bottom), so
+# the guard has to ask about both. A repository carrying only the plain tag
+# looks synced from the outside while the Go module has no resolvable version
+# whatsoever. Regenerating would not repair that: the SDKs are already
+# committed, so the run would find them byte-identical and tag HEAD, leaving
+# the two tags on different commits. Restore the missing tag from the commit
+# the plain one already names instead.
 if tag_exists "$tag" && [[ "$force" != true ]]; then
-  log "$tag already exists, nothing to do"
-  emit synced false
+  if tag_exists "$go_tag"; then
+    log "$tag already exists, nothing to do"
+    emit synced false
+    exit 0
+  fi
+
+  log "$tag exists but $go_tag does not; restoring the Go module tag"
+  git rev-parse -q --verify "refs/tags/$tag" >/dev/null 2>&1 ||
+    git fetch --quiet origin "refs/tags/$tag:refs/tags/$tag"
+  git tag -a "$go_tag" "$tag^{}" -m "terraform-provider-qdrant-cloud $tag"
+  log "Tagged $go_tag at $(git rev-parse --short "$tag^{}")"
+  emit synced true
   exit 0
 fi
 
@@ -190,7 +208,7 @@ fi
 # what the README and the other four SDKs refer to. The sdks/go/ prefixed one
 # is the only form the Go module proxy accepts for a module in a subdirectory;
 # without it `go get` can see the module but resolve no versions of it.
-for t in "$tag" "${GO_TAG_PREFIX}${tag}"; do
+for t in "$tag" "$go_tag"; do
   if tag_exists "$t"; then
     log "Leaving the existing $t in place"
   else
