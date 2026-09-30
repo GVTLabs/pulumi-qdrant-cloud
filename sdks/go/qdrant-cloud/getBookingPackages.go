@@ -41,17 +41,11 @@ type GetBookingPackagesResult struct {
 }
 
 func GetBookingPackagesOutput(ctx *pulumi.Context, args GetBookingPackagesOutputArgs, opts ...pulumi.InvokeOption) GetBookingPackagesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBookingPackagesResultOutput, error) {
-			args := v.(GetBookingPackagesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			ref, err := internal.PkgGetPackageRef(ctx)
-			if err != nil {
-				return GetBookingPackagesResultOutput{}, err
-			}
-			options.PackageRef = ref
-			return ctx.InvokeOutput("qdrant-cloud:index/getBookingPackages:getBookingPackages", args, GetBookingPackagesResultOutput{}, options).(GetBookingPackagesResultOutput), nil
-		}).(GetBookingPackagesResultOutput)
+	options := pulumi.InvokeOutputOptions{
+		InvokeOptions: internal.PkgInvokeDefaultOpts(opts),
+		PackageRefF:   internal.PkgGetPackageRef,
+	}
+	return ctx.InvokeOutput("qdrant-cloud:index/getBookingPackages:getBookingPackages", args, GetBookingPackagesResultOutput{}, options).(GetBookingPackagesResultOutput)
 }
 
 // A collection of arguments for invoking getBookingPackages.

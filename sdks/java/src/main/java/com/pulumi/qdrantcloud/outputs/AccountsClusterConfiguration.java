@@ -74,7 +74,7 @@ public final class AccountsClusterConfiguration {
      */
     private @Nullable List<AccountsClusterConfigurationPodLabel> podLabels;
     /**
-     * @return The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE.
+     * @return The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_DISABLED.
      * 
      */
     private @Nullable String rebalanceStrategy;
@@ -191,7 +191,7 @@ public final class AccountsClusterConfiguration {
         return this.podLabels == null ? List.of() : this.podLabels;
     }
     /**
-     * @return The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE.
+     * @return The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_DISABLED.
      * 
      */
     public Optional<String> rebalanceStrategy() {

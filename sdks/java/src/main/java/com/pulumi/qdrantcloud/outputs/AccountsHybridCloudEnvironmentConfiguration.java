@@ -32,6 +32,11 @@ public final class AccountsHybridCloudEnvironmentConfiguration {
      */
     private @Nullable String chartRepositoryUrl;
     /**
+     * @return The Kubernetes cluster domain used to reach in-cluster services. Set this only for clusters configured with a custom cluster domain; when omitted the deployed components fall back to the default cluster.local.
+     * 
+     */
+    private @Nullable String clusterDomain;
+    /**
      * @return Container registry URL.
      * 
      */
@@ -123,6 +128,13 @@ public final class AccountsHybridCloudEnvironmentConfiguration {
      */
     public Optional<String> chartRepositoryUrl() {
         return Optional.ofNullable(this.chartRepositoryUrl);
+    }
+    /**
+     * @return The Kubernetes cluster domain used to reach in-cluster services. Set this only for clusters configured with a custom cluster domain; when omitted the deployed components fall back to the default cluster.local.
+     * 
+     */
+    public Optional<String> clusterDomain() {
+        return Optional.ofNullable(this.clusterDomain);
     }
     /**
      * @return Container registry URL.
@@ -235,6 +247,7 @@ public final class AccountsHybridCloudEnvironmentConfiguration {
         private @Nullable String advancedOperatorSettings;
         private @Nullable String caCertificates;
         private @Nullable String chartRepositoryUrl;
+        private @Nullable String clusterDomain;
         private @Nullable String containerRegistryUrl;
         private @Nullable List<AccountsHybridCloudEnvironmentConfigurationControlPlaneLabel> controlPlaneLabels;
         private @Nullable String databaseStorageClass;
@@ -255,6 +268,7 @@ public final class AccountsHybridCloudEnvironmentConfiguration {
     	      this.advancedOperatorSettings = defaults.advancedOperatorSettings;
     	      this.caCertificates = defaults.caCertificates;
     	      this.chartRepositoryUrl = defaults.chartRepositoryUrl;
+    	      this.clusterDomain = defaults.clusterDomain;
     	      this.containerRegistryUrl = defaults.containerRegistryUrl;
     	      this.controlPlaneLabels = defaults.controlPlaneLabels;
     	      this.databaseStorageClass = defaults.databaseStorageClass;
@@ -287,6 +301,12 @@ public final class AccountsHybridCloudEnvironmentConfiguration {
         public Builder chartRepositoryUrl(@Nullable String chartRepositoryUrl) {
 
             this.chartRepositoryUrl = chartRepositoryUrl;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterDomain(@Nullable String clusterDomain) {
+
+            this.clusterDomain = clusterDomain;
             return this;
         }
         @CustomType.Setter
@@ -392,6 +412,7 @@ public final class AccountsHybridCloudEnvironmentConfiguration {
             _resultValue.advancedOperatorSettings = advancedOperatorSettings;
             _resultValue.caCertificates = caCertificates;
             _resultValue.chartRepositoryUrl = chartRepositoryUrl;
+            _resultValue.clusterDomain = clusterDomain;
             _resultValue.containerRegistryUrl = containerRegistryUrl;
             _resultValue.controlPlaneLabels = controlPlaneLabels;
             _resultValue.databaseStorageClass = databaseStorageClass;

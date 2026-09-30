@@ -253,7 +253,7 @@ class AccountsClusterConfiguration(dict):
         :param _builtins.str last_modified_at: Cluster Schema Timestamp when the cluster configuration was last updated field
         :param Sequence['AccountsClusterConfigurationNodeSelectorArgs'] node_selectors: The node selector for this cluster in a hybrid cloud environment.
         :param Sequence['AccountsClusterConfigurationPodLabelArgs'] pod_labels: List of labels applied to the pods of this cluster in a hybrid cloud environment.
-        :param _builtins.str rebalance_strategy: The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE.
+        :param _builtins.str rebalance_strategy: The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_DISABLED.
         :param _builtins.float reserved_cpu_percentage: The percentage of CPU resources reserved for system components.
         :param _builtins.float reserved_memory_percentage: The percentage of RAM resources reserved for system components.
         :param _builtins.str restart_policy: The restart policy for the database. Must be one of: CLUSTER_CONFIGURATION_RESTART_POLICY_AUTOMATIC, CLUSTER_CONFIGURATION_RESTART_POLICY_PARALLEL, CLUSTER_CONFIGURATION_RESTART_POLICY_ROLLING.
@@ -384,7 +384,7 @@ class AccountsClusterConfiguration(dict):
     @pulumi.getter(name="rebalanceStrategy")
     def rebalance_strategy(self) -> Optional[_builtins.str]:
         """
-        The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE.
+        The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_DISABLED.
         """
         return pulumi.get(self, "rebalance_strategy")
 
@@ -1984,6 +1984,8 @@ class AccountsHybridCloudEnvironmentConfiguration(dict):
             suggest = "ca_certificates"
         elif key == "chartRepositoryUrl":
             suggest = "chart_repository_url"
+        elif key == "clusterDomain":
+            suggest = "cluster_domain"
         elif key == "containerRegistryUrl":
             suggest = "container_registry_url"
         elif key == "controlPlaneLabels":
@@ -2025,6 +2027,7 @@ class AccountsHybridCloudEnvironmentConfiguration(dict):
                  advanced_operator_settings: Optional[_builtins.str] = None,
                  ca_certificates: Optional[_builtins.str] = None,
                  chart_repository_url: Optional[_builtins.str] = None,
+                 cluster_domain: Optional[_builtins.str] = None,
                  container_registry_url: Optional[_builtins.str] = None,
                  control_plane_labels: Optional[Sequence['outputs.AccountsHybridCloudEnvironmentConfigurationControlPlaneLabel']] = None,
                  database_storage_class: Optional[_builtins.str] = None,
@@ -2043,6 +2046,7 @@ class AccountsHybridCloudEnvironmentConfiguration(dict):
         :param _builtins.str advanced_operator_settings: Advanced operator settings as a YAML string.
         :param _builtins.str ca_certificates: CA certificates for custom certificate authorities.
         :param _builtins.str chart_repository_url: Chart registry URL.
+        :param _builtins.str cluster_domain: The Kubernetes cluster domain used to reach in-cluster services. Set this only for clusters configured with a custom cluster domain; when omitted the deployed components fall back to the default cluster.local.
         :param _builtins.str container_registry_url: Container registry URL.
         :param Sequence['AccountsHybridCloudEnvironmentConfigurationControlPlaneLabelArgs'] control_plane_labels: Additional labels to apply to control plane components.
         :param _builtins.str database_storage_class: Default database storage class.
@@ -2064,6 +2068,8 @@ class AccountsHybridCloudEnvironmentConfiguration(dict):
             pulumi.set(__self__, "ca_certificates", ca_certificates)
         if chart_repository_url is not None:
             pulumi.set(__self__, "chart_repository_url", chart_repository_url)
+        if cluster_domain is not None:
+            pulumi.set(__self__, "cluster_domain", cluster_domain)
         if container_registry_url is not None:
             pulumi.set(__self__, "container_registry_url", container_registry_url)
         if control_plane_labels is not None:
@@ -2122,6 +2128,14 @@ class AccountsHybridCloudEnvironmentConfiguration(dict):
         Chart registry URL.
         """
         return pulumi.get(self, "chart_repository_url")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterDomain")
+    def cluster_domain(self) -> Optional[_builtins.str]:
+        """
+        The Kubernetes cluster domain used to reach in-cluster services. Set this only for clusters configured with a custom cluster domain; when omitted the deployed components fall back to the default cluster.local.
+        """
+        return pulumi.get(self, "cluster_domain")
 
     @_builtins.property
     @pulumi.getter(name="containerRegistryUrl")

@@ -51,17 +51,11 @@ type LookupAccountsClusterResult struct {
 }
 
 func LookupAccountsClusterOutput(ctx *pulumi.Context, args LookupAccountsClusterOutputArgs, opts ...pulumi.InvokeOption) LookupAccountsClusterResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAccountsClusterResultOutput, error) {
-			args := v.(LookupAccountsClusterArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			ref, err := internal.PkgGetPackageRef(ctx)
-			if err != nil {
-				return LookupAccountsClusterResultOutput{}, err
-			}
-			options.PackageRef = ref
-			return ctx.InvokeOutput("qdrant-cloud:index/getAccountsCluster:getAccountsCluster", args, LookupAccountsClusterResultOutput{}, options).(LookupAccountsClusterResultOutput), nil
-		}).(LookupAccountsClusterResultOutput)
+	options := pulumi.InvokeOutputOptions{
+		InvokeOptions: internal.PkgInvokeDefaultOpts(opts),
+		PackageRefF:   internal.PkgGetPackageRef,
+	}
+	return ctx.InvokeOutput("qdrant-cloud:index/getAccountsCluster:getAccountsCluster", args, LookupAccountsClusterResultOutput{}, options).(LookupAccountsClusterResultOutput)
 }
 
 // A collection of arguments for invoking getAccountsCluster.

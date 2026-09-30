@@ -98,10 +98,10 @@ export async function callAsync<T>(
 export async function getPackage(): Promise<string | undefined> {
 	return runtime.registerPackage({
 		baseProviderName: "terraform-provider",
-		baseProviderVersion: "1.1.4",
+		baseProviderVersion: "1.4.0",
 		baseProviderDownloadUrl: "",
 		packageName: "qdrant-cloud",
-		packageVersion: "1.28.0",
-		base64Parameter: "eyJyZW1vdGUiOnsidXJsIjoicmVnaXN0cnkub3BlbnRvZnUub3JnL3FkcmFudC9xZHJhbnQtY2xvdWQiLCJ2ZXJzaW9uIjoiMS4yOC4wIn19",
+		packageVersion: "1.29.0",
+		base64Parameter: "eyJyZW1vdGUiOnsidXJsIjoicmVnaXN0cnkub3BlbnRvZnUub3JnL3FkcmFudC9xZHJhbnQtY2xvdWQiLCJ2ZXJzaW9uIjoiMS4yOS4wIn19",
 	});
 }

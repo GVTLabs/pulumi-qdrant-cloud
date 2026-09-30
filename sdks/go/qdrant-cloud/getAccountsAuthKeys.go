@@ -39,17 +39,11 @@ type GetAccountsAuthKeysResult struct {
 }
 
 func GetAccountsAuthKeysOutput(ctx *pulumi.Context, args GetAccountsAuthKeysOutputArgs, opts ...pulumi.InvokeOption) GetAccountsAuthKeysResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAccountsAuthKeysResultOutput, error) {
-			args := v.(GetAccountsAuthKeysArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			ref, err := internal.PkgGetPackageRef(ctx)
-			if err != nil {
-				return GetAccountsAuthKeysResultOutput{}, err
-			}
-			options.PackageRef = ref
-			return ctx.InvokeOutput("qdrant-cloud:index/getAccountsAuthKeys:getAccountsAuthKeys", args, GetAccountsAuthKeysResultOutput{}, options).(GetAccountsAuthKeysResultOutput), nil
-		}).(GetAccountsAuthKeysResultOutput)
+	options := pulumi.InvokeOutputOptions{
+		InvokeOptions: internal.PkgInvokeDefaultOpts(opts),
+		PackageRefF:   internal.PkgGetPackageRef,
+	}
+	return ctx.InvokeOutput("qdrant-cloud:index/getAccountsAuthKeys:getAccountsAuthKeys", args, GetAccountsAuthKeysResultOutput{}, options).(GetAccountsAuthKeysResultOutput)
 }
 
 // A collection of arguments for invoking getAccountsAuthKeys.

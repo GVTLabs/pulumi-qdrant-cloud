@@ -67,12 +67,12 @@ namespace Pulumi.QdrantCloud
         {
             return new global::Pulumi.RegisterPackageRequest(
                 name: "terraform-provider",
-                version: "1.1.4",
+                version: "1.4.0",
                 downloadUrl: "",
                 parameterization: new global::Pulumi.RegisterPackageRequest.PackageParameterization(
                     name: "qdrant-cloud",
-                    version: "1.28.0",
-                    value: global::System.Convert.FromBase64String("eyJyZW1vdGUiOnsidXJsIjoicmVnaXN0cnkub3BlbnRvZnUub3JnL3FkcmFudC9xZHJhbnQtY2xvdWQiLCJ2ZXJzaW9uIjoiMS4yOC4wIn19")));
+                    version: "1.29.0",
+                    value: global::System.Convert.FromBase64String("eyJyZW1vdGUiOnsidXJsIjoicmVnaXN0cnkub3BlbnRvZnUub3JnL3FkcmFudC9xZHJhbnQtY2xvdWQiLCJ2ZXJzaW9uIjoiMS4yOS4wIn19")));
         }
 
         private readonly static string version;

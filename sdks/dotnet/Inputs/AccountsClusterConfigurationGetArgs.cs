@@ -97,7 +97,7 @@ namespace Pulumi.QdrantCloud.Inputs
         }
 
         /// <summary>
-        /// The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE.
+        /// The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_DISABLED.
         /// </summary>
         [Input("rebalanceStrategy")]
         public Input<string>? RebalanceStrategy { get; set; }

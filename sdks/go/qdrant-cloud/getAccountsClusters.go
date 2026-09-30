@@ -39,17 +39,11 @@ type GetAccountsClustersResult struct {
 }
 
 func GetAccountsClustersOutput(ctx *pulumi.Context, args GetAccountsClustersOutputArgs, opts ...pulumi.InvokeOption) GetAccountsClustersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAccountsClustersResultOutput, error) {
-			args := v.(GetAccountsClustersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			ref, err := internal.PkgGetPackageRef(ctx)
-			if err != nil {
-				return GetAccountsClustersResultOutput{}, err
-			}
-			options.PackageRef = ref
-			return ctx.InvokeOutput("qdrant-cloud:index/getAccountsClusters:getAccountsClusters", args, GetAccountsClustersResultOutput{}, options).(GetAccountsClustersResultOutput), nil
-		}).(GetAccountsClustersResultOutput)
+	options := pulumi.InvokeOutputOptions{
+		InvokeOptions: internal.PkgInvokeDefaultOpts(opts),
+		PackageRefF:   internal.PkgGetPackageRef,
+	}
+	return ctx.InvokeOutput("qdrant-cloud:index/getAccountsClusters:getAccountsClusters", args, GetAccountsClustersResultOutput{}, options).(GetAccountsClustersResultOutput)
 }
 
 // A collection of arguments for invoking getAccountsClusters.

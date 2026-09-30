@@ -410,12 +410,12 @@ class AccountsCluster(pulumi.CustomResource):
                  account_id: pulumi.Input[Optional[_builtins.str]] = None,
                  cloud_provider: pulumi.Input[Optional[_builtins.str]] = None,
                  cloud_region: pulumi.Input[Optional[_builtins.str]] = None,
-                 configuration: pulumi.Input[Optional[Union['AccountsClusterConfigurationArgs', 'AccountsClusterConfigurationArgsDict']]] = None,
+                 configuration: pulumi.Input[Optional[Union['AccountsClusterConfigurationArgs', 'AccountsClusterConfigurationArgsDict', 'outputs.AccountsClusterConfiguration']]] = None,
                  delete_backups_on_destroy: pulumi.Input[Optional[_builtins.bool]] = None,
-                 labels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsClusterLabelArgs', 'AccountsClusterLabelArgsDict']]]]] = None,
+                 labels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsClusterLabelArgs', 'AccountsClusterLabelArgsDict', 'outputs.AccountsClusterLabel']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  private_region_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 timeouts: pulumi.Input[Optional[Union['AccountsClusterTimeoutsArgs', 'AccountsClusterTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['AccountsClusterTimeoutsArgs', 'AccountsClusterTimeoutsArgsDict', 'outputs.AccountsClusterTimeouts']]] = None,
                  __props__=None):
         """
         Create a AccountsCluster resource with the given unique name, props, and options.
@@ -429,9 +429,9 @@ class AccountsCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cloud_region: Cluster Schema Cloud provider region where the cluster is hosted.
                Must match one of the region IDs returned by the "qdrant.cloud.platform.v1.PlatformService.ListCloudProviderRegions" method.
                For hybrid this should be the hybrid cloud environment ID. field
-        :param pulumi.Input[Union['AccountsClusterConfigurationArgs', 'AccountsClusterConfigurationArgsDict']] configuration: Cluster Schema The configuration options of a cluster field
+        :param pulumi.Input[Union['AccountsClusterConfigurationArgs', 'AccountsClusterConfigurationArgsDict', 'outputs.AccountsClusterConfiguration']] configuration: Cluster Schema The configuration options of a cluster field
         :param pulumi.Input[_builtins.bool] delete_backups_on_destroy: Whether to delete backups when the cluster is destroyed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AccountsClusterLabelArgs', 'AccountsClusterLabelArgsDict']]]] labels: Cluster Schema List of labels associated with the cluster field
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AccountsClusterLabelArgs', 'AccountsClusterLabelArgsDict', 'outputs.AccountsClusterLabel']]]] labels: Cluster Schema List of labels associated with the cluster field
         :param pulumi.Input[_builtins.str] name: Cluster Schema Name of the cluster field
         :param pulumi.Input[_builtins.str] private_region_id: Cluster Schema Identifier of the Hybrid cloud region field
         """
@@ -462,12 +462,12 @@ class AccountsCluster(pulumi.CustomResource):
                  account_id: pulumi.Input[Optional[_builtins.str]] = None,
                  cloud_provider: pulumi.Input[Optional[_builtins.str]] = None,
                  cloud_region: pulumi.Input[Optional[_builtins.str]] = None,
-                 configuration: pulumi.Input[Optional[Union['AccountsClusterConfigurationArgs', 'AccountsClusterConfigurationArgsDict']]] = None,
+                 configuration: pulumi.Input[Optional[Union['AccountsClusterConfigurationArgs', 'AccountsClusterConfigurationArgsDict', 'outputs.AccountsClusterConfiguration']]] = None,
                  delete_backups_on_destroy: pulumi.Input[Optional[_builtins.bool]] = None,
-                 labels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsClusterLabelArgs', 'AccountsClusterLabelArgsDict']]]]] = None,
+                 labels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsClusterLabelArgs', 'AccountsClusterLabelArgsDict', 'outputs.AccountsClusterLabel']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  private_region_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 timeouts: pulumi.Input[Optional[Union['AccountsClusterTimeoutsArgs', 'AccountsClusterTimeoutsArgsDict']]] = None,
+                 timeouts: pulumi.Input[Optional[Union['AccountsClusterTimeoutsArgs', 'AccountsClusterTimeoutsArgsDict', 'outputs.AccountsClusterTimeouts']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -510,15 +510,15 @@ class AccountsCluster(pulumi.CustomResource):
             account_id: pulumi.Input[Optional[_builtins.str]] = None,
             cloud_provider: pulumi.Input[Optional[_builtins.str]] = None,
             cloud_region: pulumi.Input[Optional[_builtins.str]] = None,
-            configuration: pulumi.Input[Optional[Union['AccountsClusterConfigurationArgs', 'AccountsClusterConfigurationArgsDict']]] = None,
+            configuration: pulumi.Input[Optional[Union['AccountsClusterConfigurationArgs', 'AccountsClusterConfigurationArgsDict', 'outputs.AccountsClusterConfiguration']]] = None,
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
             delete_backups_on_destroy: pulumi.Input[Optional[_builtins.bool]] = None,
-            labels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsClusterLabelArgs', 'AccountsClusterLabelArgsDict']]]]] = None,
+            labels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsClusterLabelArgs', 'AccountsClusterLabelArgsDict', 'outputs.AccountsClusterLabel']]]]] = None,
             marked_for_deletion_at: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             private_region_id: pulumi.Input[Optional[_builtins.str]] = None,
-            statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsClusterStatusArgs', 'AccountsClusterStatusArgsDict']]]]] = None,
-            timeouts: pulumi.Input[Optional[Union['AccountsClusterTimeoutsArgs', 'AccountsClusterTimeoutsArgsDict']]] = None,
+            statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsClusterStatusArgs', 'AccountsClusterStatusArgsDict', 'outputs.AccountsClusterStatus']]]]] = None,
+            timeouts: pulumi.Input[Optional[Union['AccountsClusterTimeoutsArgs', 'AccountsClusterTimeoutsArgsDict', 'outputs.AccountsClusterTimeouts']]] = None,
             url: pulumi.Input[Optional[_builtins.str]] = None) -> 'AccountsCluster':
         """
         Get an existing AccountsCluster resource's state with the given name, id, and optional extra
@@ -534,14 +534,14 @@ class AccountsCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cloud_region: Cluster Schema Cloud provider region where the cluster is hosted.
                Must match one of the region IDs returned by the "qdrant.cloud.platform.v1.PlatformService.ListCloudProviderRegions" method.
                For hybrid this should be the hybrid cloud environment ID. field
-        :param pulumi.Input[Union['AccountsClusterConfigurationArgs', 'AccountsClusterConfigurationArgsDict']] configuration: Cluster Schema The configuration options of a cluster field
+        :param pulumi.Input[Union['AccountsClusterConfigurationArgs', 'AccountsClusterConfigurationArgsDict', 'outputs.AccountsClusterConfiguration']] configuration: Cluster Schema The configuration options of a cluster field
         :param pulumi.Input[_builtins.str] created_at: Cluster Schema Timestamp when the cluster is created field
         :param pulumi.Input[_builtins.bool] delete_backups_on_destroy: Whether to delete backups when the cluster is destroyed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AccountsClusterLabelArgs', 'AccountsClusterLabelArgsDict']]]] labels: Cluster Schema List of labels associated with the cluster field
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AccountsClusterLabelArgs', 'AccountsClusterLabelArgsDict', 'outputs.AccountsClusterLabel']]]] labels: Cluster Schema List of labels associated with the cluster field
         :param pulumi.Input[_builtins.str] marked_for_deletion_at: Cluster Schema Timestamp when this cluster was marked for deletion field
         :param pulumi.Input[_builtins.str] name: Cluster Schema Name of the cluster field
         :param pulumi.Input[_builtins.str] private_region_id: Cluster Schema Identifier of the Hybrid cloud region field
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AccountsClusterStatusArgs', 'AccountsClusterStatusArgsDict']]]] statuses: Cluster Schema The status of the cluster field
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AccountsClusterStatusArgs', 'AccountsClusterStatusArgsDict', 'outputs.AccountsClusterStatus']]]] statuses: Cluster Schema The status of the cluster field
         :param pulumi.Input[_builtins.str] url: Cluster Schema The URL of the endpoint of the Qdrant cluster field
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

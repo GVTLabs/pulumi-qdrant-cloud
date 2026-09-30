@@ -41,17 +41,11 @@ type GetAccountsDatabaseApiKeysV2Result struct {
 }
 
 func GetAccountsDatabaseApiKeysV2Output(ctx *pulumi.Context, args GetAccountsDatabaseApiKeysV2OutputArgs, opts ...pulumi.InvokeOption) GetAccountsDatabaseApiKeysV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAccountsDatabaseApiKeysV2ResultOutput, error) {
-			args := v.(GetAccountsDatabaseApiKeysV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			ref, err := internal.PkgGetPackageRef(ctx)
-			if err != nil {
-				return GetAccountsDatabaseApiKeysV2ResultOutput{}, err
-			}
-			options.PackageRef = ref
-			return ctx.InvokeOutput("qdrant-cloud:index/getAccountsDatabaseApiKeysV2:getAccountsDatabaseApiKeysV2", args, GetAccountsDatabaseApiKeysV2ResultOutput{}, options).(GetAccountsDatabaseApiKeysV2ResultOutput), nil
-		}).(GetAccountsDatabaseApiKeysV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{
+		InvokeOptions: internal.PkgInvokeDefaultOpts(opts),
+		PackageRefF:   internal.PkgGetPackageRef,
+	}
+	return ctx.InvokeOutput("qdrant-cloud:index/getAccountsDatabaseApiKeysV2:getAccountsDatabaseApiKeysV2", args, GetAccountsDatabaseApiKeysV2ResultOutput{}, options).(GetAccountsDatabaseApiKeysV2ResultOutput)
 }
 
 // A collection of arguments for invoking getAccountsDatabaseApiKeysV2.

@@ -47,7 +47,7 @@ export interface AccountsClusterConfiguration {
      */
     podLabels?: outputs.AccountsClusterConfigurationPodLabel[];
     /**
-     * The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE.
+     * The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_DISABLED.
      */
     rebalanceStrategy: string;
     /**
@@ -424,6 +424,10 @@ export interface AccountsHybridCloudEnvironmentConfiguration {
      * Chart registry URL.
      */
     chartRepositoryUrl: string;
+    /**
+     * The Kubernetes cluster domain used to reach in-cluster services. Set this only for clusters configured with a custom cluster domain; when omitted the deployed components fall back to the default cluster.local.
+     */
+    clusterDomain: string;
     /**
      * Container registry URL.
      */

@@ -178,14 +178,14 @@ public final class AccountsClusterConfigurationArgs extends com.pulumi.resources
     }
 
     /**
-     * The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE.
+     * The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_DISABLED.
      * 
      */
     @Import(name="rebalanceStrategy")
     private @Nullable Output<String> rebalanceStrategy;
 
     /**
-     * @return The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE.
+     * @return The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_DISABLED.
      * 
      */
     public Optional<Output<String>> rebalanceStrategy() {
@@ -605,7 +605,7 @@ public final class AccountsClusterConfigurationArgs extends com.pulumi.resources
         }
 
         /**
-         * @param rebalanceStrategy The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE.
+         * @param rebalanceStrategy The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_DISABLED.
          * 
          * @return builder
          * 
@@ -616,7 +616,7 @@ public final class AccountsClusterConfigurationArgs extends com.pulumi.resources
         }
 
         /**
-         * @param rebalanceStrategy The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE.
+         * @param rebalanceStrategy The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_DISABLED.
          * 
          * @return builder
          * 

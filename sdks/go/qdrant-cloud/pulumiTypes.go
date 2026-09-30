@@ -34,7 +34,7 @@ type AccountsClusterConfiguration struct {
 	NumberOfNodes float64 `pulumi:"numberOfNodes"`
 	// List of labels applied to the pods of this cluster in a hybrid cloud environment.
 	PodLabels []AccountsClusterConfigurationPodLabel `pulumi:"podLabels"`
-	// The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE.
+	// The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_DISABLED.
 	RebalanceStrategy *string `pulumi:"rebalanceStrategy"`
 	// The percentage of CPU resources reserved for system components.
 	ReservedCpuPercentage *float64 `pulumi:"reservedCpuPercentage"`
@@ -86,7 +86,7 @@ type AccountsClusterConfigurationArgs struct {
 	NumberOfNodes pulumi.Float64Input `pulumi:"numberOfNodes"`
 	// List of labels applied to the pods of this cluster in a hybrid cloud environment.
 	PodLabels AccountsClusterConfigurationPodLabelArrayInput `pulumi:"podLabels"`
-	// The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE.
+	// The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_DISABLED.
 	RebalanceStrategy pulumi.StringPtrInput `pulumi:"rebalanceStrategy"`
 	// The percentage of CPU resources reserved for system components.
 	ReservedCpuPercentage pulumi.Float64PtrInput `pulumi:"reservedCpuPercentage"`
@@ -241,7 +241,7 @@ func (o AccountsClusterConfigurationOutput) PodLabels() AccountsClusterConfigura
 	return o.ApplyT(func(v AccountsClusterConfiguration) []AccountsClusterConfigurationPodLabel { return v.PodLabels }).(AccountsClusterConfigurationPodLabelArrayOutput)
 }
 
-// The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE.
+// The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_DISABLED.
 func (o AccountsClusterConfigurationOutput) RebalanceStrategy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AccountsClusterConfiguration) *string { return v.RebalanceStrategy }).(pulumi.StringPtrOutput)
 }
@@ -414,7 +414,7 @@ func (o AccountsClusterConfigurationPtrOutput) PodLabels() AccountsClusterConfig
 	}).(AccountsClusterConfigurationPodLabelArrayOutput)
 }
 
-// The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE.
+// The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_DISABLED.
 func (o AccountsClusterConfigurationPtrOutput) RebalanceStrategy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AccountsClusterConfiguration) *string {
 		if v == nil {
@@ -5375,6 +5375,8 @@ type AccountsHybridCloudEnvironmentConfiguration struct {
 	CaCertificates *string `pulumi:"caCertificates"`
 	// Chart registry URL.
 	ChartRepositoryUrl *string `pulumi:"chartRepositoryUrl"`
+	// The Kubernetes cluster domain used to reach in-cluster services. Set this only for clusters configured with a custom cluster domain; when omitted the deployed components fall back to the default cluster.local.
+	ClusterDomain *string `pulumi:"clusterDomain"`
 	// Container registry URL.
 	ContainerRegistryUrl *string `pulumi:"containerRegistryUrl"`
 	// Additional labels to apply to control plane components.
@@ -5423,6 +5425,8 @@ type AccountsHybridCloudEnvironmentConfigurationArgs struct {
 	CaCertificates pulumi.StringPtrInput `pulumi:"caCertificates"`
 	// Chart registry URL.
 	ChartRepositoryUrl pulumi.StringPtrInput `pulumi:"chartRepositoryUrl"`
+	// The Kubernetes cluster domain used to reach in-cluster services. Set this only for clusters configured with a custom cluster domain; when omitted the deployed components fall back to the default cluster.local.
+	ClusterDomain pulumi.StringPtrInput `pulumi:"clusterDomain"`
 	// Container registry URL.
 	ContainerRegistryUrl pulumi.StringPtrInput `pulumi:"containerRegistryUrl"`
 	// Additional labels to apply to control plane components.
@@ -5543,6 +5547,11 @@ func (o AccountsHybridCloudEnvironmentConfigurationOutput) CaCertificates() pulu
 // Chart registry URL.
 func (o AccountsHybridCloudEnvironmentConfigurationOutput) ChartRepositoryUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AccountsHybridCloudEnvironmentConfiguration) *string { return v.ChartRepositoryUrl }).(pulumi.StringPtrOutput)
+}
+
+// The Kubernetes cluster domain used to reach in-cluster services. Set this only for clusters configured with a custom cluster domain; when omitted the deployed components fall back to the default cluster.local.
+func (o AccountsHybridCloudEnvironmentConfigurationOutput) ClusterDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AccountsHybridCloudEnvironmentConfiguration) *string { return v.ClusterDomain }).(pulumi.StringPtrOutput)
 }
 
 // Container registry URL.
@@ -5672,6 +5681,16 @@ func (o AccountsHybridCloudEnvironmentConfigurationPtrOutput) ChartRepositoryUrl
 			return nil
 		}
 		return v.ChartRepositoryUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+// The Kubernetes cluster domain used to reach in-cluster services. Set this only for clusters configured with a custom cluster domain; when omitted the deployed components fall back to the default cluster.local.
+func (o AccountsHybridCloudEnvironmentConfigurationPtrOutput) ClusterDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AccountsHybridCloudEnvironmentConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClusterDomain
 	}).(pulumi.StringPtrOutput)
 }
 

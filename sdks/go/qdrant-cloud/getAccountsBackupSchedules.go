@@ -41,17 +41,11 @@ type GetAccountsBackupSchedulesResult struct {
 }
 
 func GetAccountsBackupSchedulesOutput(ctx *pulumi.Context, args GetAccountsBackupSchedulesOutputArgs, opts ...pulumi.InvokeOption) GetAccountsBackupSchedulesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAccountsBackupSchedulesResultOutput, error) {
-			args := v.(GetAccountsBackupSchedulesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			ref, err := internal.PkgGetPackageRef(ctx)
-			if err != nil {
-				return GetAccountsBackupSchedulesResultOutput{}, err
-			}
-			options.PackageRef = ref
-			return ctx.InvokeOutput("qdrant-cloud:index/getAccountsBackupSchedules:getAccountsBackupSchedules", args, GetAccountsBackupSchedulesResultOutput{}, options).(GetAccountsBackupSchedulesResultOutput), nil
-		}).(GetAccountsBackupSchedulesResultOutput)
+	options := pulumi.InvokeOutputOptions{
+		InvokeOptions: internal.PkgInvokeDefaultOpts(opts),
+		PackageRefF:   internal.PkgGetPackageRef,
+	}
+	return ctx.InvokeOutput("qdrant-cloud:index/getAccountsBackupSchedules:getAccountsBackupSchedules", args, GetAccountsBackupSchedulesResultOutput{}, options).(GetAccountsBackupSchedulesResultOutput)
 }
 
 // A collection of arguments for invoking getAccountsBackupSchedules.

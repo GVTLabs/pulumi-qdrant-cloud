@@ -109,7 +109,7 @@ public class Utilities {
 			// Base provider name
 			"terraform-provider",
 			// Base provider version
-			"1.1.4",
+			"1.4.0",
 			// Base provider download URL
 			"",
 			// Package name
@@ -117,7 +117,7 @@ public class Utilities {
 			// Package version
 			getVersion(),
 			// Parameter
-			"eyJyZW1vdGUiOnsidXJsIjoicmVnaXN0cnkub3BlbnRvZnUub3JnL3FkcmFudC9xZHJhbnQtY2xvdWQiLCJ2ZXJzaW9uIjoiMS4yOC4wIn19"
+			"eyJyZW1vdGUiOnsidXJsIjoicmVnaXN0cnkub3BlbnRvZnUub3JnL3FkcmFudC9xZHJhbnQtY2xvdWQiLCJ2ZXJzaW9uIjoiMS4yOS4wIn19"
 		);
 	}
 

@@ -299,9 +299,9 @@ class AccountsDatabaseApiKeyV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  account_id: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 collection_access_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsDatabaseApiKeyV2CollectionAccessRuleArgs', 'AccountsDatabaseApiKeyV2CollectionAccessRuleArgsDict']]]]] = None,
+                 collection_access_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsDatabaseApiKeyV2CollectionAccessRuleArgs', 'AccountsDatabaseApiKeyV2CollectionAccessRuleArgsDict', 'outputs.AccountsDatabaseApiKeyV2CollectionAccessRule']]]]] = None,
                  expires_at: pulumi.Input[Optional[_builtins.str]] = None,
-                 global_access_rule: pulumi.Input[Optional[Union['AccountsDatabaseApiKeyV2GlobalAccessRuleArgs', 'AccountsDatabaseApiKeyV2GlobalAccessRuleArgsDict']]] = None,
+                 global_access_rule: pulumi.Input[Optional[Union['AccountsDatabaseApiKeyV2GlobalAccessRuleArgs', 'AccountsDatabaseApiKeyV2GlobalAccessRuleArgsDict', 'outputs.AccountsDatabaseApiKeyV2GlobalAccessRule']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -311,9 +311,9 @@ class AccountsDatabaseApiKeyV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] account_id: Database API Keys V2 Schema Account Identifier field
         :param pulumi.Input[_builtins.str] cluster_id: Database API Keys V2 Schema Cluster Identifier for which this Auth Key is attached field
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AccountsDatabaseApiKeyV2CollectionAccessRuleArgs', 'AccountsDatabaseApiKeyV2CollectionAccessRuleArgsDict']]]] collection_access_rules: A list of rules granting access to specific collections. Cannot be used with <span pulumi-lang-nodejs="`globalAccessRule`" pulumi-lang-dotnet="`GlobalAccessRule`" pulumi-lang-go="`globalAccessRule`" pulumi-lang-python="`global_access_rule`" pulumi-lang-yaml="`globalAccessRule`" pulumi-lang-java="`globalAccessRule`" pulumi-lang-hcl="`global_access_rule`">`globalAccessRule`</span>.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AccountsDatabaseApiKeyV2CollectionAccessRuleArgs', 'AccountsDatabaseApiKeyV2CollectionAccessRuleArgsDict', 'outputs.AccountsDatabaseApiKeyV2CollectionAccessRule']]]] collection_access_rules: A list of rules granting access to specific collections. Cannot be used with <span pulumi-lang-nodejs="`globalAccessRule`" pulumi-lang-dotnet="`GlobalAccessRule`" pulumi-lang-go="`globalAccessRule`" pulumi-lang-python="`global_access_rule`" pulumi-lang-yaml="`globalAccessRule`" pulumi-lang-java="`globalAccessRule`" pulumi-lang-hcl="`global_access_rule`">`globalAccessRule`</span>.
         :param pulumi.Input[_builtins.str] expires_at: Database API Keys V2 Schema Timestamp when the Auth Key expires field
-        :param pulumi.Input[Union['AccountsDatabaseApiKeyV2GlobalAccessRuleArgs', 'AccountsDatabaseApiKeyV2GlobalAccessRuleArgsDict']] global_access_rule: A rule granting global access to the entire database. Cannot be used with <span pulumi-lang-nodejs="`collectionAccessRules`" pulumi-lang-dotnet="`CollectionAccessRules`" pulumi-lang-go="`collectionAccessRules`" pulumi-lang-python="`collection_access_rules`" pulumi-lang-yaml="`collectionAccessRules`" pulumi-lang-java="`collectionAccessRules`" pulumi-lang-hcl="`collection_access_rules`">`collectionAccessRules`</span>.
+        :param pulumi.Input[Union['AccountsDatabaseApiKeyV2GlobalAccessRuleArgs', 'AccountsDatabaseApiKeyV2GlobalAccessRuleArgsDict', 'outputs.AccountsDatabaseApiKeyV2GlobalAccessRule']] global_access_rule: A rule granting global access to the entire database. Cannot be used with <span pulumi-lang-nodejs="`collectionAccessRules`" pulumi-lang-dotnet="`CollectionAccessRules`" pulumi-lang-go="`collectionAccessRules`" pulumi-lang-python="`collection_access_rules`" pulumi-lang-yaml="`collectionAccessRules`" pulumi-lang-java="`collectionAccessRules`" pulumi-lang-hcl="`collection_access_rules`">`collectionAccessRules`</span>.
         :param pulumi.Input[_builtins.str] name: Database API Keys V2 Schema Auth Key Name field
         """
         ...
@@ -342,9 +342,9 @@ class AccountsDatabaseApiKeyV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  account_id: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 collection_access_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsDatabaseApiKeyV2CollectionAccessRuleArgs', 'AccountsDatabaseApiKeyV2CollectionAccessRuleArgsDict']]]]] = None,
+                 collection_access_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsDatabaseApiKeyV2CollectionAccessRuleArgs', 'AccountsDatabaseApiKeyV2CollectionAccessRuleArgsDict', 'outputs.AccountsDatabaseApiKeyV2CollectionAccessRule']]]]] = None,
                  expires_at: pulumi.Input[Optional[_builtins.str]] = None,
-                 global_access_rule: pulumi.Input[Optional[Union['AccountsDatabaseApiKeyV2GlobalAccessRuleArgs', 'AccountsDatabaseApiKeyV2GlobalAccessRuleArgsDict']]] = None,
+                 global_access_rule: pulumi.Input[Optional[Union['AccountsDatabaseApiKeyV2GlobalAccessRuleArgs', 'AccountsDatabaseApiKeyV2GlobalAccessRuleArgsDict', 'outputs.AccountsDatabaseApiKeyV2GlobalAccessRule']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -380,11 +380,11 @@ class AccountsDatabaseApiKeyV2(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             account_id: pulumi.Input[Optional[_builtins.str]] = None,
             cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-            collection_access_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsDatabaseApiKeyV2CollectionAccessRuleArgs', 'AccountsDatabaseApiKeyV2CollectionAccessRuleArgsDict']]]]] = None,
+            collection_access_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsDatabaseApiKeyV2CollectionAccessRuleArgs', 'AccountsDatabaseApiKeyV2CollectionAccessRuleArgsDict', 'outputs.AccountsDatabaseApiKeyV2CollectionAccessRule']]]]] = None,
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
             created_by_email: pulumi.Input[Optional[_builtins.str]] = None,
             expires_at: pulumi.Input[Optional[_builtins.str]] = None,
-            global_access_rule: pulumi.Input[Optional[Union['AccountsDatabaseApiKeyV2GlobalAccessRuleArgs', 'AccountsDatabaseApiKeyV2GlobalAccessRuleArgsDict']]] = None,
+            global_access_rule: pulumi.Input[Optional[Union['AccountsDatabaseApiKeyV2GlobalAccessRuleArgs', 'AccountsDatabaseApiKeyV2GlobalAccessRuleArgsDict', 'outputs.AccountsDatabaseApiKeyV2GlobalAccessRule']]] = None,
             key: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             postfix: pulumi.Input[Optional[_builtins.str]] = None) -> 'AccountsDatabaseApiKeyV2':
@@ -397,11 +397,11 @@ class AccountsDatabaseApiKeyV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] account_id: Database API Keys V2 Schema Account Identifier field
         :param pulumi.Input[_builtins.str] cluster_id: Database API Keys V2 Schema Cluster Identifier for which this Auth Key is attached field
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AccountsDatabaseApiKeyV2CollectionAccessRuleArgs', 'AccountsDatabaseApiKeyV2CollectionAccessRuleArgsDict']]]] collection_access_rules: A list of rules granting access to specific collections. Cannot be used with <span pulumi-lang-nodejs="`globalAccessRule`" pulumi-lang-dotnet="`GlobalAccessRule`" pulumi-lang-go="`globalAccessRule`" pulumi-lang-python="`global_access_rule`" pulumi-lang-yaml="`globalAccessRule`" pulumi-lang-java="`globalAccessRule`" pulumi-lang-hcl="`global_access_rule`">`globalAccessRule`</span>.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AccountsDatabaseApiKeyV2CollectionAccessRuleArgs', 'AccountsDatabaseApiKeyV2CollectionAccessRuleArgsDict', 'outputs.AccountsDatabaseApiKeyV2CollectionAccessRule']]]] collection_access_rules: A list of rules granting access to specific collections. Cannot be used with <span pulumi-lang-nodejs="`globalAccessRule`" pulumi-lang-dotnet="`GlobalAccessRule`" pulumi-lang-go="`globalAccessRule`" pulumi-lang-python="`global_access_rule`" pulumi-lang-yaml="`globalAccessRule`" pulumi-lang-java="`globalAccessRule`" pulumi-lang-hcl="`global_access_rule`">`globalAccessRule`</span>.
         :param pulumi.Input[_builtins.str] created_at: Database API Keys V2 Schema Timestamp when the Auth Key is created field
         :param pulumi.Input[_builtins.str] created_by_email: Database API Keys V2 Schema Email of the user who created the key field
         :param pulumi.Input[_builtins.str] expires_at: Database API Keys V2 Schema Timestamp when the Auth Key expires field
-        :param pulumi.Input[Union['AccountsDatabaseApiKeyV2GlobalAccessRuleArgs', 'AccountsDatabaseApiKeyV2GlobalAccessRuleArgsDict']] global_access_rule: A rule granting global access to the entire database. Cannot be used with <span pulumi-lang-nodejs="`collectionAccessRules`" pulumi-lang-dotnet="`CollectionAccessRules`" pulumi-lang-go="`collectionAccessRules`" pulumi-lang-python="`collection_access_rules`" pulumi-lang-yaml="`collectionAccessRules`" pulumi-lang-java="`collectionAccessRules`" pulumi-lang-hcl="`collection_access_rules`">`collectionAccessRules`</span>.
+        :param pulumi.Input[Union['AccountsDatabaseApiKeyV2GlobalAccessRuleArgs', 'AccountsDatabaseApiKeyV2GlobalAccessRuleArgsDict', 'outputs.AccountsDatabaseApiKeyV2GlobalAccessRule']] global_access_rule: A rule granting global access to the entire database. Cannot be used with <span pulumi-lang-nodejs="`collectionAccessRules`" pulumi-lang-dotnet="`CollectionAccessRules`" pulumi-lang-go="`collectionAccessRules`" pulumi-lang-python="`collection_access_rules`" pulumi-lang-yaml="`collectionAccessRules`" pulumi-lang-java="`collectionAccessRules`" pulumi-lang-hcl="`collection_access_rules`">`collectionAccessRules`</span>.
         :param pulumi.Input[_builtins.str] key: Database API Keys V2 Schema Secret key for this Auth Key field
         :param pulumi.Input[_builtins.str] name: Database API Keys V2 Schema Auth Key Name field
         :param pulumi.Input[_builtins.str] postfix: Database API Keys V2 Schema Postfix of the Auth Key field

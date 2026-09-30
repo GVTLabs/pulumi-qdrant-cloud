@@ -325,7 +325,7 @@ class AccountsManualBackup(pulumi.CustomResource):
             backup_duration: pulumi.Input[Optional[_builtins.str]] = None,
             backup_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
             cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-            cluster_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsManualBackupClusterInfoArgs', 'AccountsManualBackupClusterInfoArgsDict']]]]] = None,
+            cluster_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsManualBackupClusterInfoArgs', 'AccountsManualBackupClusterInfoArgsDict', 'outputs.AccountsManualBackupClusterInfo']]]]] = None,
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
             deleted_at: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -342,7 +342,7 @@ class AccountsManualBackup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] backup_duration: Backup Schema Backup duration (e.g., 36s) field
         :param pulumi.Input[_builtins.str] backup_schedule_id: Backup Schema Backup Schedule ID that produced this backup (if any) field
         :param pulumi.Input[_builtins.str] cluster_id: Backup Schema Cluster ID field
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AccountsManualBackupClusterInfoArgs', 'AccountsManualBackupClusterInfoArgsDict']]]] cluster_infos: Cluster metadata captured at backup time (read-only).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AccountsManualBackupClusterInfoArgs', 'AccountsManualBackupClusterInfoArgsDict', 'outputs.AccountsManualBackupClusterInfo']]]] cluster_infos: Cluster metadata captured at backup time (read-only).
         :param pulumi.Input[_builtins.str] created_at: Backup Schema Creation timestamp field
         :param pulumi.Input[_builtins.str] deleted_at: Backup Schema Deletion timestamp (if applicable) field
         :param pulumi.Input[_builtins.str] name: Backup Schema Auto-generated backup name field

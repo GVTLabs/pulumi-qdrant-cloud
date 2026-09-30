@@ -39,17 +39,11 @@ type GetAccountsRolesResult struct {
 }
 
 func GetAccountsRolesOutput(ctx *pulumi.Context, args GetAccountsRolesOutputArgs, opts ...pulumi.InvokeOption) GetAccountsRolesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAccountsRolesResultOutput, error) {
-			args := v.(GetAccountsRolesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			ref, err := internal.PkgGetPackageRef(ctx)
-			if err != nil {
-				return GetAccountsRolesResultOutput{}, err
-			}
-			options.PackageRef = ref
-			return ctx.InvokeOutput("qdrant-cloud:index/getAccountsRoles:getAccountsRoles", args, GetAccountsRolesResultOutput{}, options).(GetAccountsRolesResultOutput), nil
-		}).(GetAccountsRolesResultOutput)
+	options := pulumi.InvokeOutputOptions{
+		InvokeOptions: internal.PkgInvokeDefaultOpts(opts),
+		PackageRefF:   internal.PkgGetPackageRef,
+	}
+	return ctx.InvokeOutput("qdrant-cloud:index/getAccountsRoles:getAccountsRoles", args, GetAccountsRolesResultOutput{}, options).(GetAccountsRolesResultOutput)
 }
 
 // A collection of arguments for invoking getAccountsRoles.

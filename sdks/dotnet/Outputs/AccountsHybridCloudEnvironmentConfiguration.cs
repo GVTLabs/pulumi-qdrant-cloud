@@ -26,6 +26,10 @@ namespace Pulumi.QdrantCloud.Outputs
         /// </summary>
         public readonly string? ChartRepositoryUrl;
         /// <summary>
+        /// The Kubernetes cluster domain used to reach in-cluster services. Set this only for clusters configured with a custom cluster domain; when omitted the deployed components fall back to the default cluster.local.
+        /// </summary>
+        public readonly string? ClusterDomain;
+        /// <summary>
         /// Container registry URL.
         /// </summary>
         public readonly string? ContainerRegistryUrl;
@@ -90,6 +94,8 @@ namespace Pulumi.QdrantCloud.Outputs
 
             string? chartRepositoryUrl,
 
+            string? clusterDomain,
+
             string? containerRegistryUrl,
 
             ImmutableArray<Outputs.AccountsHybridCloudEnvironmentConfigurationControlPlaneLabel> controlPlaneLabels,
@@ -121,6 +127,7 @@ namespace Pulumi.QdrantCloud.Outputs
             AdvancedOperatorSettings = advancedOperatorSettings;
             CaCertificates = caCertificates;
             ChartRepositoryUrl = chartRepositoryUrl;
+            ClusterDomain = clusterDomain;
             ContainerRegistryUrl = containerRegistryUrl;
             ControlPlaneLabels = controlPlaneLabels;
             DatabaseStorageClass = databaseStorageClass;

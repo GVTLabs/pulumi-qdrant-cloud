@@ -236,7 +236,7 @@ class AccountsRole(pulumi.CustomResource):
                  account_id: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 permissions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsRolePermissionArgs', 'AccountsRolePermissionArgsDict']]]]] = None,
+                 permissions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsRolePermissionArgs', 'AccountsRolePermissionArgsDict', 'outputs.AccountsRolePermission']]]]] = None,
                  __props__=None):
         """
         Create a AccountsRole resource with the given unique name, props, and options.
@@ -246,7 +246,7 @@ class AccountsRole(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] account_id: Role Schema Account ID field
         :param pulumi.Input[_builtins.str] description: Role Schema Human-readable description (<=256 chars) field
         :param pulumi.Input[_builtins.str] name: Role Schema Role name (printable, length 4-64) field
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AccountsRolePermissionArgs', 'AccountsRolePermissionArgsDict']]]] permissions: Permissions assigned to this role (unordered).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AccountsRolePermissionArgs', 'AccountsRolePermissionArgsDict', 'outputs.AccountsRolePermission']]]] permissions: Permissions assigned to this role (unordered).
         """
         ...
     @overload
@@ -275,7 +275,7 @@ class AccountsRole(pulumi.CustomResource):
                  account_id: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 permissions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsRolePermissionArgs', 'AccountsRolePermissionArgsDict']]]]] = None,
+                 permissions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsRolePermissionArgs', 'AccountsRolePermissionArgsDict', 'outputs.AccountsRolePermission']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -311,7 +311,7 @@ class AccountsRole(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             last_modified_at: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            permissions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsRolePermissionArgs', 'AccountsRolePermissionArgsDict']]]]] = None,
+            permissions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsRolePermissionArgs', 'AccountsRolePermissionArgsDict', 'outputs.AccountsRolePermission']]]]] = None,
             role_type: pulumi.Input[Optional[_builtins.str]] = None,
             sub_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'AccountsRole':
         """
@@ -326,7 +326,7 @@ class AccountsRole(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: Role Schema Human-readable description (<=256 chars) field
         :param pulumi.Input[_builtins.str] last_modified_at: Role Schema Last modification timestamp field
         :param pulumi.Input[_builtins.str] name: Role Schema Role name (printable, length 4-64) field
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AccountsRolePermissionArgs', 'AccountsRolePermissionArgsDict']]]] permissions: Permissions assigned to this role (unordered).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AccountsRolePermissionArgs', 'AccountsRolePermissionArgsDict', 'outputs.AccountsRolePermission']]]] permissions: Permissions assigned to this role (unordered).
         :param pulumi.Input[_builtins.str] role_type: Role Schema Role type field
         :param pulumi.Input[_builtins.str] sub_type: Role Schema System role sub-type (if any) field
         """

@@ -31,6 +31,12 @@ namespace Pulumi.QdrantCloud.Inputs
         public Input<string>? ChartRepositoryUrl { get; set; }
 
         /// <summary>
+        /// The Kubernetes cluster domain used to reach in-cluster services. Set this only for clusters configured with a custom cluster domain; when omitted the deployed components fall back to the default cluster.local.
+        /// </summary>
+        [Input("clusterDomain")]
+        public Input<string>? ClusterDomain { get; set; }
+
+        /// <summary>
         /// Container registry URL.
         /// </summary>
         [Input("containerRegistryUrl")]

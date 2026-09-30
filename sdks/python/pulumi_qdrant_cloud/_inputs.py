@@ -210,7 +210,7 @@ class AccountsClusterConfigurationArgsDict(TypedDict):
     """
     rebalance_strategy: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE.
+    The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_DISABLED.
     """
     reserved_cpu_percentage: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
@@ -278,7 +278,7 @@ class AccountsClusterConfigurationArgs:
         :param pulumi.Input[_builtins.str] last_modified_at: Cluster Schema Timestamp when the cluster configuration was last updated field
         :param pulumi.Input[Sequence[pulumi.Input['AccountsClusterConfigurationNodeSelectorArgs']]] node_selectors: The node selector for this cluster in a hybrid cloud environment.
         :param pulumi.Input[Sequence[pulumi.Input['AccountsClusterConfigurationPodLabelArgs']]] pod_labels: List of labels applied to the pods of this cluster in a hybrid cloud environment.
-        :param pulumi.Input[_builtins.str] rebalance_strategy: The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE.
+        :param pulumi.Input[_builtins.str] rebalance_strategy: The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_DISABLED.
         :param pulumi.Input[_builtins.float] reserved_cpu_percentage: The percentage of CPU resources reserved for system components.
         :param pulumi.Input[_builtins.float] reserved_memory_percentage: The percentage of RAM resources reserved for system components.
         :param pulumi.Input[_builtins.str] restart_policy: The restart policy for the database. Must be one of: CLUSTER_CONFIGURATION_RESTART_POLICY_AUTOMATIC, CLUSTER_CONFIGURATION_RESTART_POLICY_PARALLEL, CLUSTER_CONFIGURATION_RESTART_POLICY_ROLLING.
@@ -449,7 +449,7 @@ class AccountsClusterConfigurationArgs:
     @pulumi.getter(name="rebalanceStrategy")
     def rebalance_strategy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE.
+        The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_DISABLED.
         """
         return pulumi.get(self, "rebalance_strategy")
 
@@ -2421,6 +2421,10 @@ class AccountsHybridCloudEnvironmentConfigurationArgsDict(TypedDict):
     """
     Chart registry URL.
     """
+    cluster_domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The Kubernetes cluster domain used to reach in-cluster services. Set this only for clusters configured with a custom cluster domain; when omitted the deployed components fall back to the default cluster.local.
+    """
     container_registry_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Container registry URL.
@@ -2481,6 +2485,7 @@ class AccountsHybridCloudEnvironmentConfigurationArgs:
                  advanced_operator_settings: pulumi.Input[Optional[_builtins.str]] = None,
                  ca_certificates: pulumi.Input[Optional[_builtins.str]] = None,
                  chart_repository_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  container_registry_url: pulumi.Input[Optional[_builtins.str]] = None,
                  control_plane_labels: pulumi.Input[Optional[Sequence[pulumi.Input['AccountsHybridCloudEnvironmentConfigurationControlPlaneLabelArgs']]]] = None,
                  database_storage_class: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2499,6 +2504,7 @@ class AccountsHybridCloudEnvironmentConfigurationArgs:
         :param pulumi.Input[_builtins.str] advanced_operator_settings: Advanced operator settings as a YAML string.
         :param pulumi.Input[_builtins.str] ca_certificates: CA certificates for custom certificate authorities.
         :param pulumi.Input[_builtins.str] chart_repository_url: Chart registry URL.
+        :param pulumi.Input[_builtins.str] cluster_domain: The Kubernetes cluster domain used to reach in-cluster services. Set this only for clusters configured with a custom cluster domain; when omitted the deployed components fall back to the default cluster.local.
         :param pulumi.Input[_builtins.str] container_registry_url: Container registry URL.
         :param pulumi.Input[Sequence[pulumi.Input['AccountsHybridCloudEnvironmentConfigurationControlPlaneLabelArgs']]] control_plane_labels: Additional labels to apply to control plane components.
         :param pulumi.Input[_builtins.str] database_storage_class: Default database storage class.
@@ -2520,6 +2526,8 @@ class AccountsHybridCloudEnvironmentConfigurationArgs:
             pulumi.set(__self__, "ca_certificates", ca_certificates)
         if chart_repository_url is not None:
             pulumi.set(__self__, "chart_repository_url", chart_repository_url)
+        if cluster_domain is not None:
+            pulumi.set(__self__, "cluster_domain", cluster_domain)
         if container_registry_url is not None:
             pulumi.set(__self__, "container_registry_url", container_registry_url)
         if control_plane_labels is not None:
@@ -2594,6 +2602,18 @@ class AccountsHybridCloudEnvironmentConfigurationArgs:
     @chart_repository_url.setter
     def chart_repository_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "chart_repository_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterDomain")
+    def cluster_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The Kubernetes cluster domain used to reach in-cluster services. Set this only for clusters configured with a custom cluster domain; when omitted the deployed components fall back to the default cluster.local.
+        """
+        return pulumi.get(self, "cluster_domain")
+
+    @cluster_domain.setter
+    def cluster_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "cluster_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="containerRegistryUrl")

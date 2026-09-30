@@ -167,19 +167,19 @@ func callPlainInner(
 // The reference is cached per pulumi.Context so that concurrent inline
 // programs each register with their own engine and receive distinct refs.
 func PkgGetPackageRef(ctx *pulumi.Context) (string, error) {
-	return ctx.GetOrRegisterPackageRef("qdrant-cloud:1.28.0", func() (*pulumirpc.RegisterPackageRequest, error) {
-		parameter, err := base64.StdEncoding.DecodeString("eyJyZW1vdGUiOnsidXJsIjoicmVnaXN0cnkub3BlbnRvZnUub3JnL3FkcmFudC9xZHJhbnQtY2xvdWQiLCJ2ZXJzaW9uIjoiMS4yOC4wIn19")
+	return ctx.GetOrRegisterPackageRef("qdrant-cloud:1.29.0", func() (*pulumirpc.RegisterPackageRequest, error) {
+		parameter, err := base64.StdEncoding.DecodeString("eyJyZW1vdGUiOnsidXJsIjoicmVnaXN0cnkub3BlbnRvZnUub3JnL3FkcmFudC9xZHJhbnQtY2xvdWQiLCJ2ZXJzaW9uIjoiMS4yOS4wIn19")
 		if err != nil {
 			return nil, err
 		}
 
 		return &pulumirpc.RegisterPackageRequest{
 			Name:        "terraform-provider",
-			Version:     "1.1.4",
+			Version:     "1.4.0",
 			DownloadUrl: "",
 			Parameterization: &pulumirpc.Parameterization{
 				Name:    "qdrant-cloud",
-				Version: "1.28.0",
+				Version: "1.29.0",
 				Value:   parameter,
 			},
 		}, nil
@@ -190,7 +190,7 @@ func PkgGetPackageRef(ctx *pulumi.Context) (string, error) {
 func PkgResourceDefaultOpts(opts []pulumi.ResourceOption) []pulumi.ResourceOption {
 	defaults := []pulumi.ResourceOption{}
 
-	version := semver.MustParse("1.28.0")
+	version := semver.MustParse("1.29.0")
 	if !version.Equals(semver.Version{}) {
 		defaults = append(defaults, pulumi.Version(version.String()))
 	}
@@ -201,7 +201,7 @@ func PkgResourceDefaultOpts(opts []pulumi.ResourceOption) []pulumi.ResourceOptio
 func PkgInvokeDefaultOpts(opts []pulumi.InvokeOption) []pulumi.InvokeOption {
 	defaults := []pulumi.InvokeOption{}
 
-	version := semver.MustParse("1.28.0")
+	version := semver.MustParse("1.29.0")
 	if !version.Equals(semver.Version{}) {
 		defaults = append(defaults, pulumi.Version(version.String()))
 	}

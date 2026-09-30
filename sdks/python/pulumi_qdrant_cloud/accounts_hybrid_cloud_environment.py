@@ -267,7 +267,7 @@ class AccountsHybridCloudEnvironment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  account_id: pulumi.Input[Optional[_builtins.str]] = None,
                  bootstrap_commands_version: pulumi.Input[Optional[_builtins.float]] = None,
-                 configuration: pulumi.Input[Optional[Union['AccountsHybridCloudEnvironmentConfigurationArgs', 'AccountsHybridCloudEnvironmentConfigurationArgsDict']]] = None,
+                 configuration: pulumi.Input[Optional[Union['AccountsHybridCloudEnvironmentConfigurationArgs', 'AccountsHybridCloudEnvironmentConfigurationArgsDict', 'outputs.AccountsHybridCloudEnvironmentConfiguration']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -277,7 +277,7 @@ class AccountsHybridCloudEnvironment(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] account_id: Hybrid cloud environment Schema Account ID field
         :param pulumi.Input[_builtins.float] bootstrap_commands_version: Version knob to (re)generate bootstrap commands. -1 = never generate, 0 = idle/do not (re)generate, >0 = generate/rotate.
-        :param pulumi.Input[Union['AccountsHybridCloudEnvironmentConfigurationArgs', 'AccountsHybridCloudEnvironmentConfigurationArgsDict']] configuration: Hybrid cloud environment Schema Configuration field
+        :param pulumi.Input[Union['AccountsHybridCloudEnvironmentConfigurationArgs', 'AccountsHybridCloudEnvironmentConfigurationArgsDict', 'outputs.AccountsHybridCloudEnvironmentConfiguration']] configuration: Hybrid cloud environment Schema Configuration field
         :param pulumi.Input[_builtins.str] name: Hybrid cloud environment Schema Name field
         """
         ...
@@ -306,7 +306,7 @@ class AccountsHybridCloudEnvironment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  account_id: pulumi.Input[Optional[_builtins.str]] = None,
                  bootstrap_commands_version: pulumi.Input[Optional[_builtins.float]] = None,
-                 configuration: pulumi.Input[Optional[Union['AccountsHybridCloudEnvironmentConfigurationArgs', 'AccountsHybridCloudEnvironmentConfigurationArgsDict']]] = None,
+                 configuration: pulumi.Input[Optional[Union['AccountsHybridCloudEnvironmentConfigurationArgs', 'AccountsHybridCloudEnvironmentConfigurationArgsDict', 'outputs.AccountsHybridCloudEnvironmentConfiguration']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -346,12 +346,12 @@ class AccountsHybridCloudEnvironment(pulumi.CustomResource):
             bootstrap_commands: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             bootstrap_commands_generated: pulumi.Input[Optional[_builtins.bool]] = None,
             bootstrap_commands_version: pulumi.Input[Optional[_builtins.float]] = None,
-            configuration: pulumi.Input[Optional[Union['AccountsHybridCloudEnvironmentConfigurationArgs', 'AccountsHybridCloudEnvironmentConfigurationArgsDict']]] = None,
+            configuration: pulumi.Input[Optional[Union['AccountsHybridCloudEnvironmentConfigurationArgs', 'AccountsHybridCloudEnvironmentConfigurationArgsDict', 'outputs.AccountsHybridCloudEnvironmentConfiguration']]] = None,
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
             created_by_email: pulumi.Input[Optional[_builtins.str]] = None,
             last_modified_at: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsHybridCloudEnvironmentStatusArgs', 'AccountsHybridCloudEnvironmentStatusArgsDict']]]]] = None) -> 'AccountsHybridCloudEnvironment':
+            statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccountsHybridCloudEnvironmentStatusArgs', 'AccountsHybridCloudEnvironmentStatusArgsDict', 'outputs.AccountsHybridCloudEnvironmentStatus']]]]] = None) -> 'AccountsHybridCloudEnvironment':
         """
         Get an existing AccountsHybridCloudEnvironment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -363,12 +363,12 @@ class AccountsHybridCloudEnvironment(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] bootstrap_commands: Hybrid cloud environment Schema Commands to bootstrap a Kubernetes cluster into this environment field
         :param pulumi.Input[_builtins.bool] bootstrap_commands_generated: Hybrid cloud environment Schema Set if the generate bootstrap commands has been called at least once field
         :param pulumi.Input[_builtins.float] bootstrap_commands_version: Version knob to (re)generate bootstrap commands. -1 = never generate, 0 = idle/do not (re)generate, >0 = generate/rotate.
-        :param pulumi.Input[Union['AccountsHybridCloudEnvironmentConfigurationArgs', 'AccountsHybridCloudEnvironmentConfigurationArgsDict']] configuration: Hybrid cloud environment Schema Configuration field
+        :param pulumi.Input[Union['AccountsHybridCloudEnvironmentConfigurationArgs', 'AccountsHybridCloudEnvironmentConfigurationArgsDict', 'outputs.AccountsHybridCloudEnvironmentConfiguration']] configuration: Hybrid cloud environment Schema Configuration field
         :param pulumi.Input[_builtins.str] created_at: Hybrid cloud environment Schema Creation timestamp field
         :param pulumi.Input[_builtins.str] created_by_email: Hybrid cloud environment Schema The email of the user who created the hybrid cloud environment field
         :param pulumi.Input[_builtins.str] last_modified_at: Hybrid cloud environment Schema Last modification timestamp field
         :param pulumi.Input[_builtins.str] name: Hybrid cloud environment Schema Name field
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AccountsHybridCloudEnvironmentStatusArgs', 'AccountsHybridCloudEnvironmentStatusArgsDict']]]] statuses: Current status of the hybrid cloud environment (read-only).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AccountsHybridCloudEnvironmentStatusArgs', 'AccountsHybridCloudEnvironmentStatusArgsDict', 'outputs.AccountsHybridCloudEnvironmentStatus']]]] statuses: Current status of the hybrid cloud environment (read-only).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

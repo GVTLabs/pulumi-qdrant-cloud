@@ -47,7 +47,7 @@ export interface AccountsClusterConfiguration {
      */
     podLabels?: pulumi.Input<pulumi.Input<inputs.AccountsClusterConfigurationPodLabel>[] | undefined>;
     /**
-     * The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE.
+     * The automatic shard rebalancing strategy for the database. Must be one of: CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_COUNT_AND_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_BY_SIZE, CLUSTER_CONFIGURATION_REBALANCE_STRATEGY_DISABLED.
      */
     rebalanceStrategy?: pulumi.Input<string | undefined>;
     /**
@@ -424,6 +424,10 @@ export interface AccountsHybridCloudEnvironmentConfiguration {
      * Chart registry URL.
      */
     chartRepositoryUrl?: pulumi.Input<string | undefined>;
+    /**
+     * The Kubernetes cluster domain used to reach in-cluster services. Set this only for clusters configured with a custom cluster domain; when omitted the deployed components fall back to the default cluster.local.
+     */
+    clusterDomain?: pulumi.Input<string | undefined>;
     /**
      * Container registry URL.
      */

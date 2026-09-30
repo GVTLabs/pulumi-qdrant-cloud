@@ -66,6 +66,21 @@ public final class AccountsHybridCloudEnvironmentConfigurationArgs extends com.p
     }
 
     /**
+     * The Kubernetes cluster domain used to reach in-cluster services. Set this only for clusters configured with a custom cluster domain; when omitted the deployed components fall back to the default cluster.local.
+     * 
+     */
+    @Import(name="clusterDomain")
+    private @Nullable Output<String> clusterDomain;
+
+    /**
+     * @return The Kubernetes cluster domain used to reach in-cluster services. Set this only for clusters configured with a custom cluster domain; when omitted the deployed components fall back to the default cluster.local.
+     * 
+     */
+    public Optional<Output<String>> clusterDomain() {
+        return Optional.ofNullable(this.clusterDomain);
+    }
+
+    /**
      * Container registry URL.
      * 
      */
@@ -281,6 +296,7 @@ public final class AccountsHybridCloudEnvironmentConfigurationArgs extends com.p
         this.advancedOperatorSettings = $.advancedOperatorSettings;
         this.caCertificates = $.caCertificates;
         this.chartRepositoryUrl = $.chartRepositoryUrl;
+        this.clusterDomain = $.clusterDomain;
         this.containerRegistryUrl = $.containerRegistryUrl;
         this.controlPlaneLabels = $.controlPlaneLabels;
         this.databaseStorageClass = $.databaseStorageClass;
@@ -376,6 +392,27 @@ public final class AccountsHybridCloudEnvironmentConfigurationArgs extends com.p
          */
         public Builder chartRepositoryUrl(String chartRepositoryUrl) {
             return chartRepositoryUrl(Output.of(chartRepositoryUrl));
+        }
+
+        /**
+         * @param clusterDomain The Kubernetes cluster domain used to reach in-cluster services. Set this only for clusters configured with a custom cluster domain; when omitted the deployed components fall back to the default cluster.local.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterDomain(@Nullable Output<String> clusterDomain) {
+            $.clusterDomain = clusterDomain;
+            return this;
+        }
+
+        /**
+         * @param clusterDomain The Kubernetes cluster domain used to reach in-cluster services. Set this only for clusters configured with a custom cluster domain; when omitted the deployed components fall back to the default cluster.local.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterDomain(String clusterDomain) {
+            return clusterDomain(Output.of(clusterDomain));
         }
 
         /**
