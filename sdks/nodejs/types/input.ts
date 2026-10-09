@@ -739,3 +739,109 @@ export interface AccountsRolePermission {
     value: pulumi.Input<string>;
 }
 
+export interface ServerlessBackupStat {
+    collectionCount?: pulumi.Input<number | undefined>;
+    duration?: pulumi.Input<string | undefined>;
+    sizeBytes?: pulumi.Input<number | undefined>;
+    totalPoints?: pulumi.Input<number | undefined>;
+}
+
+export interface ServerlessBackupTimeouts {
+    create?: pulumi.Input<string | undefined>;
+}
+
+export interface ServerlessSpaceApiKeyCollectionAccessRule {
+    /**
+     * Access type for the collection. Must be one of: COLLECTION_ACCESS_RULE_ACCESS_TYPE_READ_ONLY, COLLECTION_ACCESS_RULE_ACCESS_TYPE_READ_WRITE.
+     */
+    accessType: pulumi.Input<string>;
+    /**
+     * Name of the collection.
+     */
+    collectionName: pulumi.Input<string>;
+}
+
+export interface ServerlessSpaceApiKeyGlobalAccessRule {
+    /**
+     * Access type for the entire space. Must be one of: GLOBAL_ACCESS_RULE_ACCESS_TYPE_MANAGE, GLOBAL_ACCESS_RULE_ACCESS_TYPE_METRICS_READ_ONLY, GLOBAL_ACCESS_RULE_ACCESS_TYPE_READ_ONLY.
+     */
+    accessType: pulumi.Input<string>;
+}
+
+export interface ServerlessSpaceApiKeyState {
+    phase?: pulumi.Input<string | undefined>;
+    reason?: pulumi.Input<string | undefined>;
+}
+
+export interface ServerlessSpaceApiKeyTimeouts {
+    create?: pulumi.Input<string | undefined>;
+}
+
+export interface ServerlessSpaceConfiguration {
+    /**
+     * List of allowed IPv4 source ranges (CIDR) for this space (max 40).
+     */
+    allowedIpSourceRanges?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * List of origins (scheme + host + optional port, e.g. `https://app.example.com`) from which browser-based clients are allowed to call the space via CORS (max 10).
+     */
+    allowedOrigins?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Per-collection size limits for this space.
+     */
+    collectionSettings?: pulumi.Input<inputs.ServerlessSpaceConfigurationCollectionSettings | undefined>;
+    /**
+     * Time when the configuration was last updated.
+     */
+    lastModifiedAt?: pulumi.Input<string | undefined>;
+    /**
+     * Platform-enforced limit on the number of collections for this space (0 means unlimited).
+     */
+    maxCollectionsPerSpace?: pulumi.Input<number | undefined>;
+    /**
+     * Search-worker settings for this space.
+     */
+    searcherSettings?: pulumi.Input<inputs.ServerlessSpaceConfigurationSearcherSettings | undefined>;
+}
+
+export interface ServerlessSpaceConfigurationCollectionSettings {
+    /**
+     * Customer-defined maximum size in bytes per collection, used for cost control. Must not exceed <span pulumi-lang-nodejs="`platformMaxSize`" pulumi-lang-dotnet="`PlatformMaxSize`" pulumi-lang-go="`platformMaxSize`" pulumi-lang-python="`platform_max_size`" pulumi-lang-yaml="`platformMaxSize`" pulumi-lang-java="`platformMaxSize`" pulumi-lang-hcl="`platform_max_size`">`platformMaxSize`</span>.
+     */
+    maxSize?: pulumi.Input<number | undefined>;
+    /**
+     * Platform-enforced maximum size in bytes per collection (0 means unlimited).
+     */
+    platformMaxSize?: pulumi.Input<number | undefined>;
+}
+
+export interface ServerlessSpaceConfigurationSearcherSettings {
+    /**
+     * Idle timeout after which idle search workers may be scaled down, as a Go duration string (between "1m" and "15m", defaults to "5m").
+     */
+    idleTimeout?: pulumi.Input<string | undefined>;
+    /**
+     * Maximum number of search workers per collection in this space (defaults to 2).
+     */
+    maxWorkers?: pulumi.Input<number | undefined>;
+    /**
+     * Platform-enforced maximum number of search workers per collection (0 means unlimited).
+     */
+    platformMaxWorkers?: pulumi.Input<number | undefined>;
+}
+
+export interface ServerlessSpaceLabel {
+    key: pulumi.Input<string>;
+    value: pulumi.Input<string>;
+}
+
+export interface ServerlessSpaceState {
+    phase?: pulumi.Input<string | undefined>;
+    reason?: pulumi.Input<string | undefined>;
+}
+
+export interface ServerlessSpaceTimeouts {
+    create?: pulumi.Input<string | undefined>;
+    delete?: pulumi.Input<string | undefined>;
+    update?: pulumi.Input<string | undefined>;
+}

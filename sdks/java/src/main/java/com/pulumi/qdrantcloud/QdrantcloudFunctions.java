@@ -27,6 +27,20 @@ import com.pulumi.qdrantcloud.inputs.GetAccountsRolesArgs;
 import com.pulumi.qdrantcloud.inputs.GetAccountsRolesPlainArgs;
 import com.pulumi.qdrantcloud.inputs.GetBookingPackagesArgs;
 import com.pulumi.qdrantcloud.inputs.GetBookingPackagesPlainArgs;
+import com.pulumi.qdrantcloud.inputs.GetServerlessBackupScheduleArgs;
+import com.pulumi.qdrantcloud.inputs.GetServerlessBackupSchedulePlainArgs;
+import com.pulumi.qdrantcloud.inputs.GetServerlessBackupSchedulesArgs;
+import com.pulumi.qdrantcloud.inputs.GetServerlessBackupSchedulesPlainArgs;
+import com.pulumi.qdrantcloud.inputs.GetServerlessBackupsArgs;
+import com.pulumi.qdrantcloud.inputs.GetServerlessBackupsPlainArgs;
+import com.pulumi.qdrantcloud.inputs.GetServerlessCloudRegionsArgs;
+import com.pulumi.qdrantcloud.inputs.GetServerlessCloudRegionsPlainArgs;
+import com.pulumi.qdrantcloud.inputs.GetServerlessSpaceApiKeysArgs;
+import com.pulumi.qdrantcloud.inputs.GetServerlessSpaceApiKeysPlainArgs;
+import com.pulumi.qdrantcloud.inputs.GetServerlessSpaceArgs;
+import com.pulumi.qdrantcloud.inputs.GetServerlessSpacePlainArgs;
+import com.pulumi.qdrantcloud.inputs.GetServerlessSpacesArgs;
+import com.pulumi.qdrantcloud.inputs.GetServerlessSpacesPlainArgs;
 import com.pulumi.qdrantcloud.outputs.GetAccountsAuthKeysResult;
 import com.pulumi.qdrantcloud.outputs.GetAccountsBackupScheduleResult;
 import com.pulumi.qdrantcloud.outputs.GetAccountsBackupSchedulesResult;
@@ -36,6 +50,13 @@ import com.pulumi.qdrantcloud.outputs.GetAccountsDatabaseApiKeysV2Result;
 import com.pulumi.qdrantcloud.outputs.GetAccountsMembersResult;
 import com.pulumi.qdrantcloud.outputs.GetAccountsRolesResult;
 import com.pulumi.qdrantcloud.outputs.GetBookingPackagesResult;
+import com.pulumi.qdrantcloud.outputs.GetServerlessBackupScheduleResult;
+import com.pulumi.qdrantcloud.outputs.GetServerlessBackupSchedulesResult;
+import com.pulumi.qdrantcloud.outputs.GetServerlessBackupsResult;
+import com.pulumi.qdrantcloud.outputs.GetServerlessCloudRegionsResult;
+import com.pulumi.qdrantcloud.outputs.GetServerlessSpaceApiKeysResult;
+import com.pulumi.qdrantcloud.outputs.GetServerlessSpaceResult;
+import com.pulumi.qdrantcloud.outputs.GetServerlessSpacesResult;
 import java.util.concurrent.CompletableFuture;
 
 public final class QdrantcloudFunctions {
@@ -197,5 +218,134 @@ public final class QdrantcloudFunctions {
     }
     public static CompletableFuture<GetBookingPackagesResult> getBookingPackagesPlain(GetBookingPackagesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("qdrant-cloud:index/getBookingPackages:getBookingPackages", TypeShape.of(GetBookingPackagesResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
+    }
+    public static Output<GetServerlessBackupScheduleResult> getServerlessBackupSchedule(GetServerlessBackupScheduleArgs args) {
+        return getServerlessBackupSchedule(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetServerlessBackupScheduleResult> getServerlessBackupSchedulePlain(GetServerlessBackupSchedulePlainArgs args) {
+        return getServerlessBackupSchedulePlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetServerlessBackupScheduleResult> getServerlessBackupSchedule(GetServerlessBackupScheduleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("qdrant-cloud:index/getServerlessBackupSchedule:getServerlessBackupSchedule", TypeShape.of(GetServerlessBackupScheduleResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
+    }
+    public static Output<GetServerlessBackupScheduleResult> getServerlessBackupSchedule(GetServerlessBackupScheduleArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("qdrant-cloud:index/getServerlessBackupSchedule:getServerlessBackupSchedule", TypeShape.of(GetServerlessBackupScheduleResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
+    }
+    public static CompletableFuture<GetServerlessBackupScheduleResult> getServerlessBackupSchedulePlain(GetServerlessBackupSchedulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("qdrant-cloud:index/getServerlessBackupSchedule:getServerlessBackupSchedule", TypeShape.of(GetServerlessBackupScheduleResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
+    }
+    public static Output<GetServerlessBackupSchedulesResult> getServerlessBackupSchedules() {
+        return getServerlessBackupSchedules(GetServerlessBackupSchedulesArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetServerlessBackupSchedulesResult> getServerlessBackupSchedulesPlain() {
+        return getServerlessBackupSchedulesPlain(GetServerlessBackupSchedulesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetServerlessBackupSchedulesResult> getServerlessBackupSchedules(GetServerlessBackupSchedulesArgs args) {
+        return getServerlessBackupSchedules(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetServerlessBackupSchedulesResult> getServerlessBackupSchedulesPlain(GetServerlessBackupSchedulesPlainArgs args) {
+        return getServerlessBackupSchedulesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetServerlessBackupSchedulesResult> getServerlessBackupSchedules(GetServerlessBackupSchedulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("qdrant-cloud:index/getServerlessBackupSchedules:getServerlessBackupSchedules", TypeShape.of(GetServerlessBackupSchedulesResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
+    }
+    public static Output<GetServerlessBackupSchedulesResult> getServerlessBackupSchedules(GetServerlessBackupSchedulesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("qdrant-cloud:index/getServerlessBackupSchedules:getServerlessBackupSchedules", TypeShape.of(GetServerlessBackupSchedulesResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
+    }
+    public static CompletableFuture<GetServerlessBackupSchedulesResult> getServerlessBackupSchedulesPlain(GetServerlessBackupSchedulesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("qdrant-cloud:index/getServerlessBackupSchedules:getServerlessBackupSchedules", TypeShape.of(GetServerlessBackupSchedulesResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
+    }
+    public static Output<GetServerlessBackupsResult> getServerlessBackups() {
+        return getServerlessBackups(GetServerlessBackupsArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetServerlessBackupsResult> getServerlessBackupsPlain() {
+        return getServerlessBackupsPlain(GetServerlessBackupsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetServerlessBackupsResult> getServerlessBackups(GetServerlessBackupsArgs args) {
+        return getServerlessBackups(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetServerlessBackupsResult> getServerlessBackupsPlain(GetServerlessBackupsPlainArgs args) {
+        return getServerlessBackupsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetServerlessBackupsResult> getServerlessBackups(GetServerlessBackupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("qdrant-cloud:index/getServerlessBackups:getServerlessBackups", TypeShape.of(GetServerlessBackupsResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
+    }
+    public static Output<GetServerlessBackupsResult> getServerlessBackups(GetServerlessBackupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("qdrant-cloud:index/getServerlessBackups:getServerlessBackups", TypeShape.of(GetServerlessBackupsResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
+    }
+    public static CompletableFuture<GetServerlessBackupsResult> getServerlessBackupsPlain(GetServerlessBackupsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("qdrant-cloud:index/getServerlessBackups:getServerlessBackups", TypeShape.of(GetServerlessBackupsResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
+    }
+    public static Output<GetServerlessCloudRegionsResult> getServerlessCloudRegions() {
+        return getServerlessCloudRegions(GetServerlessCloudRegionsArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetServerlessCloudRegionsResult> getServerlessCloudRegionsPlain() {
+        return getServerlessCloudRegionsPlain(GetServerlessCloudRegionsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetServerlessCloudRegionsResult> getServerlessCloudRegions(GetServerlessCloudRegionsArgs args) {
+        return getServerlessCloudRegions(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetServerlessCloudRegionsResult> getServerlessCloudRegionsPlain(GetServerlessCloudRegionsPlainArgs args) {
+        return getServerlessCloudRegionsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetServerlessCloudRegionsResult> getServerlessCloudRegions(GetServerlessCloudRegionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("qdrant-cloud:index/getServerlessCloudRegions:getServerlessCloudRegions", TypeShape.of(GetServerlessCloudRegionsResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
+    }
+    public static Output<GetServerlessCloudRegionsResult> getServerlessCloudRegions(GetServerlessCloudRegionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("qdrant-cloud:index/getServerlessCloudRegions:getServerlessCloudRegions", TypeShape.of(GetServerlessCloudRegionsResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
+    }
+    public static CompletableFuture<GetServerlessCloudRegionsResult> getServerlessCloudRegionsPlain(GetServerlessCloudRegionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("qdrant-cloud:index/getServerlessCloudRegions:getServerlessCloudRegions", TypeShape.of(GetServerlessCloudRegionsResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
+    }
+    public static Output<GetServerlessSpaceResult> getServerlessSpace(GetServerlessSpaceArgs args) {
+        return getServerlessSpace(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetServerlessSpaceResult> getServerlessSpacePlain(GetServerlessSpacePlainArgs args) {
+        return getServerlessSpacePlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetServerlessSpaceResult> getServerlessSpace(GetServerlessSpaceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("qdrant-cloud:index/getServerlessSpace:getServerlessSpace", TypeShape.of(GetServerlessSpaceResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
+    }
+    public static Output<GetServerlessSpaceResult> getServerlessSpace(GetServerlessSpaceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("qdrant-cloud:index/getServerlessSpace:getServerlessSpace", TypeShape.of(GetServerlessSpaceResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
+    }
+    public static CompletableFuture<GetServerlessSpaceResult> getServerlessSpacePlain(GetServerlessSpacePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("qdrant-cloud:index/getServerlessSpace:getServerlessSpace", TypeShape.of(GetServerlessSpaceResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
+    }
+    public static Output<GetServerlessSpaceApiKeysResult> getServerlessSpaceApiKeys(GetServerlessSpaceApiKeysArgs args) {
+        return getServerlessSpaceApiKeys(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetServerlessSpaceApiKeysResult> getServerlessSpaceApiKeysPlain(GetServerlessSpaceApiKeysPlainArgs args) {
+        return getServerlessSpaceApiKeysPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetServerlessSpaceApiKeysResult> getServerlessSpaceApiKeys(GetServerlessSpaceApiKeysArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("qdrant-cloud:index/getServerlessSpaceApiKeys:getServerlessSpaceApiKeys", TypeShape.of(GetServerlessSpaceApiKeysResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
+    }
+    public static Output<GetServerlessSpaceApiKeysResult> getServerlessSpaceApiKeys(GetServerlessSpaceApiKeysArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("qdrant-cloud:index/getServerlessSpaceApiKeys:getServerlessSpaceApiKeys", TypeShape.of(GetServerlessSpaceApiKeysResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
+    }
+    public static CompletableFuture<GetServerlessSpaceApiKeysResult> getServerlessSpaceApiKeysPlain(GetServerlessSpaceApiKeysPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("qdrant-cloud:index/getServerlessSpaceApiKeys:getServerlessSpaceApiKeys", TypeShape.of(GetServerlessSpaceApiKeysResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
+    }
+    public static Output<GetServerlessSpacesResult> getServerlessSpaces() {
+        return getServerlessSpaces(GetServerlessSpacesArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetServerlessSpacesResult> getServerlessSpacesPlain() {
+        return getServerlessSpacesPlain(GetServerlessSpacesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetServerlessSpacesResult> getServerlessSpaces(GetServerlessSpacesArgs args) {
+        return getServerlessSpaces(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetServerlessSpacesResult> getServerlessSpacesPlain(GetServerlessSpacesPlainArgs args) {
+        return getServerlessSpacesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetServerlessSpacesResult> getServerlessSpaces(GetServerlessSpacesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("qdrant-cloud:index/getServerlessSpaces:getServerlessSpaces", TypeShape.of(GetServerlessSpacesResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
+    }
+    public static Output<GetServerlessSpacesResult> getServerlessSpaces(GetServerlessSpacesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("qdrant-cloud:index/getServerlessSpaces:getServerlessSpaces", TypeShape.of(GetServerlessSpacesResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
+    }
+    public static CompletableFuture<GetServerlessSpacesResult> getServerlessSpacesPlain(GetServerlessSpacesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("qdrant-cloud:index/getServerlessSpaces:getServerlessSpaces", TypeShape.of(GetServerlessSpacesResult.class), args, Utilities.withVersion(options), Utilities.getPackageRef());
     }
 }

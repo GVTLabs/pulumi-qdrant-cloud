@@ -37,6 +37,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AccountsRole{}
 	case "qdrant-cloud:index/accountsUserRoles:AccountsUserRoles":
 		r = &AccountsUserRoles{}
+	case "qdrant-cloud:index/serverlessBackup:ServerlessBackup":
+		r = &ServerlessBackup{}
+	case "qdrant-cloud:index/serverlessBackupSchedule:ServerlessBackupSchedule":
+		r = &ServerlessBackupSchedule{}
+	case "qdrant-cloud:index/serverlessSpace:ServerlessSpace":
+		r = &ServerlessSpace{}
+	case "qdrant-cloud:index/serverlessSpaceApiKey:ServerlessSpaceApiKey":
+		r = &ServerlessSpaceApiKey{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -106,6 +114,26 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"qdrant-cloud",
 		"index/accountsUserRoles",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"qdrant-cloud",
+		"index/serverlessBackup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"qdrant-cloud",
+		"index/serverlessBackupSchedule",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"qdrant-cloud",
+		"index/serverlessSpace",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"qdrant-cloud",
+		"index/serverlessSpaceApiKey",
 		&module{version},
 	)
 	pulumi.RegisterResourcePackage(

@@ -23,7 +23,18 @@ from .get_accounts_database_api_keys_v2 import *
 from .get_accounts_members import *
 from .get_accounts_roles import *
 from .get_booking_packages import *
+from .get_serverless_backup_schedule import *
+from .get_serverless_backup_schedules import *
+from .get_serverless_backups import *
+from .get_serverless_cloud_regions import *
+from .get_serverless_space import *
+from .get_serverless_space_api_keys import *
+from .get_serverless_spaces import *
 from .provider import *
+from .serverless_backup import *
+from .serverless_backup_schedule import *
+from .serverless_space import *
+from .serverless_space_api_key import *
 from ._inputs import *
 from . import outputs
 
@@ -99,6 +110,38 @@ _utilities.register(
   "fqn": "pulumi_qdrant_cloud",
   "classes": {
    "qdrant-cloud:index/accountsUserRoles:AccountsUserRoles": "AccountsUserRoles"
+  }
+ },
+ {
+  "pkg": "qdrant-cloud",
+  "mod": "index/serverlessBackup",
+  "fqn": "pulumi_qdrant_cloud",
+  "classes": {
+   "qdrant-cloud:index/serverlessBackup:ServerlessBackup": "ServerlessBackup"
+  }
+ },
+ {
+  "pkg": "qdrant-cloud",
+  "mod": "index/serverlessBackupSchedule",
+  "fqn": "pulumi_qdrant_cloud",
+  "classes": {
+   "qdrant-cloud:index/serverlessBackupSchedule:ServerlessBackupSchedule": "ServerlessBackupSchedule"
+  }
+ },
+ {
+  "pkg": "qdrant-cloud",
+  "mod": "index/serverlessSpace",
+  "fqn": "pulumi_qdrant_cloud",
+  "classes": {
+   "qdrant-cloud:index/serverlessSpace:ServerlessSpace": "ServerlessSpace"
+  }
+ },
+ {
+  "pkg": "qdrant-cloud",
+  "mod": "index/serverlessSpaceApiKey",
+  "fqn": "pulumi_qdrant_cloud",
+  "classes": {
+   "qdrant-cloud:index/serverlessSpaceApiKey:ServerlessSpaceApiKey": "ServerlessSpaceApiKey"
   }
  }
 ]

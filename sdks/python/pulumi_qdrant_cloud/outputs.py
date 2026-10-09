@@ -91,6 +91,18 @@ __all__ = [
     'AccountsManualBackupClusterInfoResourcesSummaryDisk',
     'AccountsManualBackupClusterInfoResourcesSummaryRam',
     'AccountsRolePermission',
+    'ServerlessBackupStat',
+    'ServerlessBackupTimeouts',
+    'ServerlessSpaceApiKeyCollectionAccessRule',
+    'ServerlessSpaceApiKeyGlobalAccessRule',
+    'ServerlessSpaceApiKeyState',
+    'ServerlessSpaceApiKeyTimeouts',
+    'ServerlessSpaceConfiguration',
+    'ServerlessSpaceConfigurationCollectionSettings',
+    'ServerlessSpaceConfigurationSearcherSettings',
+    'ServerlessSpaceLabel',
+    'ServerlessSpaceState',
+    'ServerlessSpaceTimeouts',
     'GetAccountsAuthKeysKeyResult',
     'GetAccountsBackupSchedulesScheduleResult',
     'GetAccountsClusterConfigurationResult',
@@ -171,6 +183,25 @@ __all__ = [
     'GetBookingPackagesPackageAvailableAdditionalResourceResult',
     'GetBookingPackagesPackageAvailableStorageTierConfigurationResult',
     'GetBookingPackagesPackageResourceConfigurationResult',
+    'GetServerlessBackupSchedulesScheduleResult',
+    'GetServerlessBackupsBackupResult',
+    'GetServerlessBackupsBackupStatResult',
+    'GetServerlessCloudRegionsRegionResult',
+    'GetServerlessSpaceApiKeysKeyResult',
+    'GetServerlessSpaceApiKeysKeyCollectionAccessRuleResult',
+    'GetServerlessSpaceApiKeysKeyGlobalAccessRuleResult',
+    'GetServerlessSpaceApiKeysKeyStateResult',
+    'GetServerlessSpaceConfigurationResult',
+    'GetServerlessSpaceConfigurationCollectionSettingResult',
+    'GetServerlessSpaceConfigurationSearcherSettingResult',
+    'GetServerlessSpaceLabelResult',
+    'GetServerlessSpaceStateResult',
+    'GetServerlessSpacesSpaceResult',
+    'GetServerlessSpacesSpaceConfigurationResult',
+    'GetServerlessSpacesSpaceConfigurationCollectionSettingResult',
+    'GetServerlessSpacesSpaceConfigurationSearcherSettingResult',
+    'GetServerlessSpacesSpaceLabelResult',
+    'GetServerlessSpacesSpaceStateResult',
 ]
 
 @pulumi.output_type
@@ -3932,6 +3963,483 @@ class AccountsRolePermission(dict):
 
 
 @pulumi.output_type
+class ServerlessBackupStat(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "collectionCount":
+            suggest = "collection_count"
+        elif key == "sizeBytes":
+            suggest = "size_bytes"
+        elif key == "totalPoints":
+            suggest = "total_points"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServerlessBackupStat. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServerlessBackupStat.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServerlessBackupStat.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 collection_count: Optional[_builtins.float] = None,
+                 duration: Optional[_builtins.str] = None,
+                 size_bytes: Optional[_builtins.float] = None,
+                 total_points: Optional[_builtins.float] = None):
+        if collection_count is not None:
+            pulumi.set(__self__, "collection_count", collection_count)
+        if duration is not None:
+            pulumi.set(__self__, "duration", duration)
+        if size_bytes is not None:
+            pulumi.set(__self__, "size_bytes", size_bytes)
+        if total_points is not None:
+            pulumi.set(__self__, "total_points", total_points)
+
+    @_builtins.property
+    @pulumi.getter(name="collectionCount")
+    def collection_count(self) -> Optional[_builtins.float]:
+        return pulumi.get(self, "collection_count")
+
+    @_builtins.property
+    @pulumi.getter
+    def duration(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "duration")
+
+    @_builtins.property
+    @pulumi.getter(name="sizeBytes")
+    def size_bytes(self) -> Optional[_builtins.float]:
+        return pulumi.get(self, "size_bytes")
+
+    @_builtins.property
+    @pulumi.getter(name="totalPoints")
+    def total_points(self) -> Optional[_builtins.float]:
+        return pulumi.get(self, "total_points")
+
+
+@pulumi.output_type
+class ServerlessBackupTimeouts(dict):
+    def __init__(__self__, *,
+                 create: Optional[_builtins.str] = None):
+        if create is not None:
+            pulumi.set(__self__, "create", create)
+
+    @_builtins.property
+    @pulumi.getter
+    def create(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "create")
+
+
+@pulumi.output_type
+class ServerlessSpaceApiKeyCollectionAccessRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "accessType":
+            suggest = "access_type"
+        elif key == "collectionName":
+            suggest = "collection_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServerlessSpaceApiKeyCollectionAccessRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServerlessSpaceApiKeyCollectionAccessRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServerlessSpaceApiKeyCollectionAccessRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 access_type: _builtins.str,
+                 collection_name: _builtins.str):
+        """
+        :param _builtins.str access_type: Access type for the collection. Must be one of: COLLECTION_ACCESS_RULE_ACCESS_TYPE_READ_ONLY, COLLECTION_ACCESS_RULE_ACCESS_TYPE_READ_WRITE.
+        :param _builtins.str collection_name: Name of the collection.
+        """
+        pulumi.set(__self__, "access_type", access_type)
+        pulumi.set(__self__, "collection_name", collection_name)
+
+    @_builtins.property
+    @pulumi.getter(name="accessType")
+    def access_type(self) -> _builtins.str:
+        """
+        Access type for the collection. Must be one of: COLLECTION_ACCESS_RULE_ACCESS_TYPE_READ_ONLY, COLLECTION_ACCESS_RULE_ACCESS_TYPE_READ_WRITE.
+        """
+        return pulumi.get(self, "access_type")
+
+    @_builtins.property
+    @pulumi.getter(name="collectionName")
+    def collection_name(self) -> _builtins.str:
+        """
+        Name of the collection.
+        """
+        return pulumi.get(self, "collection_name")
+
+
+@pulumi.output_type
+class ServerlessSpaceApiKeyGlobalAccessRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "accessType":
+            suggest = "access_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServerlessSpaceApiKeyGlobalAccessRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServerlessSpaceApiKeyGlobalAccessRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServerlessSpaceApiKeyGlobalAccessRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 access_type: _builtins.str):
+        """
+        :param _builtins.str access_type: Access type for the entire space. Must be one of: GLOBAL_ACCESS_RULE_ACCESS_TYPE_MANAGE, GLOBAL_ACCESS_RULE_ACCESS_TYPE_METRICS_READ_ONLY, GLOBAL_ACCESS_RULE_ACCESS_TYPE_READ_ONLY.
+        """
+        pulumi.set(__self__, "access_type", access_type)
+
+    @_builtins.property
+    @pulumi.getter(name="accessType")
+    def access_type(self) -> _builtins.str:
+        """
+        Access type for the entire space. Must be one of: GLOBAL_ACCESS_RULE_ACCESS_TYPE_MANAGE, GLOBAL_ACCESS_RULE_ACCESS_TYPE_METRICS_READ_ONLY, GLOBAL_ACCESS_RULE_ACCESS_TYPE_READ_ONLY.
+        """
+        return pulumi.get(self, "access_type")
+
+
+@pulumi.output_type
+class ServerlessSpaceApiKeyState(dict):
+    def __init__(__self__, *,
+                 phase: Optional[_builtins.str] = None,
+                 reason: Optional[_builtins.str] = None):
+        if phase is not None:
+            pulumi.set(__self__, "phase", phase)
+        if reason is not None:
+            pulumi.set(__self__, "reason", reason)
+
+    @_builtins.property
+    @pulumi.getter
+    def phase(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "phase")
+
+    @_builtins.property
+    @pulumi.getter
+    def reason(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "reason")
+
+
+@pulumi.output_type
+class ServerlessSpaceApiKeyTimeouts(dict):
+    def __init__(__self__, *,
+                 create: Optional[_builtins.str] = None):
+        if create is not None:
+            pulumi.set(__self__, "create", create)
+
+    @_builtins.property
+    @pulumi.getter
+    def create(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "create")
+
+
+@pulumi.output_type
+class ServerlessSpaceConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowedIpSourceRanges":
+            suggest = "allowed_ip_source_ranges"
+        elif key == "allowedOrigins":
+            suggest = "allowed_origins"
+        elif key == "collectionSettings":
+            suggest = "collection_settings"
+        elif key == "lastModifiedAt":
+            suggest = "last_modified_at"
+        elif key == "maxCollectionsPerSpace":
+            suggest = "max_collections_per_space"
+        elif key == "searcherSettings":
+            suggest = "searcher_settings"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServerlessSpaceConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServerlessSpaceConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServerlessSpaceConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 allowed_ip_source_ranges: Optional[Sequence[_builtins.str]] = None,
+                 allowed_origins: Optional[Sequence[_builtins.str]] = None,
+                 collection_settings: Optional['outputs.ServerlessSpaceConfigurationCollectionSettings'] = None,
+                 last_modified_at: Optional[_builtins.str] = None,
+                 max_collections_per_space: Optional[_builtins.float] = None,
+                 searcher_settings: Optional['outputs.ServerlessSpaceConfigurationSearcherSettings'] = None):
+        """
+        :param Sequence[_builtins.str] allowed_ip_source_ranges: List of allowed IPv4 source ranges (CIDR) for this space (max 40).
+        :param Sequence[_builtins.str] allowed_origins: List of origins (scheme + host + optional port, e.g. `https://app.example.com`) from which browser-based clients are allowed to call the space via CORS (max 10).
+        :param 'ServerlessSpaceConfigurationCollectionSettingsArgs' collection_settings: Per-collection size limits for this space.
+        :param _builtins.str last_modified_at: Time when the configuration was last updated.
+        :param _builtins.float max_collections_per_space: Platform-enforced limit on the number of collections for this space (0 means unlimited).
+        :param 'ServerlessSpaceConfigurationSearcherSettingsArgs' searcher_settings: Search-worker settings for this space.
+        """
+        if allowed_ip_source_ranges is not None:
+            pulumi.set(__self__, "allowed_ip_source_ranges", allowed_ip_source_ranges)
+        if allowed_origins is not None:
+            pulumi.set(__self__, "allowed_origins", allowed_origins)
+        if collection_settings is not None:
+            pulumi.set(__self__, "collection_settings", collection_settings)
+        if last_modified_at is not None:
+            pulumi.set(__self__, "last_modified_at", last_modified_at)
+        if max_collections_per_space is not None:
+            pulumi.set(__self__, "max_collections_per_space", max_collections_per_space)
+        if searcher_settings is not None:
+            pulumi.set(__self__, "searcher_settings", searcher_settings)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedIpSourceRanges")
+    def allowed_ip_source_ranges(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        List of allowed IPv4 source ranges (CIDR) for this space (max 40).
+        """
+        return pulumi.get(self, "allowed_ip_source_ranges")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedOrigins")
+    def allowed_origins(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        List of origins (scheme + host + optional port, e.g. `https://app.example.com`) from which browser-based clients are allowed to call the space via CORS (max 10).
+        """
+        return pulumi.get(self, "allowed_origins")
+
+    @_builtins.property
+    @pulumi.getter(name="collectionSettings")
+    def collection_settings(self) -> Optional['outputs.ServerlessSpaceConfigurationCollectionSettings']:
+        """
+        Per-collection size limits for this space.
+        """
+        return pulumi.get(self, "collection_settings")
+
+    @_builtins.property
+    @pulumi.getter(name="lastModifiedAt")
+    def last_modified_at(self) -> Optional[_builtins.str]:
+        """
+        Time when the configuration was last updated.
+        """
+        return pulumi.get(self, "last_modified_at")
+
+    @_builtins.property
+    @pulumi.getter(name="maxCollectionsPerSpace")
+    def max_collections_per_space(self) -> Optional[_builtins.float]:
+        """
+        Platform-enforced limit on the number of collections for this space (0 means unlimited).
+        """
+        return pulumi.get(self, "max_collections_per_space")
+
+    @_builtins.property
+    @pulumi.getter(name="searcherSettings")
+    def searcher_settings(self) -> Optional['outputs.ServerlessSpaceConfigurationSearcherSettings']:
+        """
+        Search-worker settings for this space.
+        """
+        return pulumi.get(self, "searcher_settings")
+
+
+@pulumi.output_type
+class ServerlessSpaceConfigurationCollectionSettings(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "maxSize":
+            suggest = "max_size"
+        elif key == "platformMaxSize":
+            suggest = "platform_max_size"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServerlessSpaceConfigurationCollectionSettings. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServerlessSpaceConfigurationCollectionSettings.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServerlessSpaceConfigurationCollectionSettings.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 max_size: Optional[_builtins.float] = None,
+                 platform_max_size: Optional[_builtins.float] = None):
+        """
+        :param _builtins.float max_size: Customer-defined maximum size in bytes per collection, used for cost control. Must not exceed <span pulumi-lang-nodejs="`platformMaxSize`" pulumi-lang-dotnet="`PlatformMaxSize`" pulumi-lang-go="`platformMaxSize`" pulumi-lang-python="`platform_max_size`" pulumi-lang-yaml="`platformMaxSize`" pulumi-lang-java="`platformMaxSize`" pulumi-lang-hcl="`platform_max_size`">`platformMaxSize`</span>.
+        :param _builtins.float platform_max_size: Platform-enforced maximum size in bytes per collection (0 means unlimited).
+        """
+        if max_size is not None:
+            pulumi.set(__self__, "max_size", max_size)
+        if platform_max_size is not None:
+            pulumi.set(__self__, "platform_max_size", platform_max_size)
+
+    @_builtins.property
+    @pulumi.getter(name="maxSize")
+    def max_size(self) -> Optional[_builtins.float]:
+        """
+        Customer-defined maximum size in bytes per collection, used for cost control. Must not exceed <span pulumi-lang-nodejs="`platformMaxSize`" pulumi-lang-dotnet="`PlatformMaxSize`" pulumi-lang-go="`platformMaxSize`" pulumi-lang-python="`platform_max_size`" pulumi-lang-yaml="`platformMaxSize`" pulumi-lang-java="`platformMaxSize`" pulumi-lang-hcl="`platform_max_size`">`platformMaxSize`</span>.
+        """
+        return pulumi.get(self, "max_size")
+
+    @_builtins.property
+    @pulumi.getter(name="platformMaxSize")
+    def platform_max_size(self) -> Optional[_builtins.float]:
+        """
+        Platform-enforced maximum size in bytes per collection (0 means unlimited).
+        """
+        return pulumi.get(self, "platform_max_size")
+
+
+@pulumi.output_type
+class ServerlessSpaceConfigurationSearcherSettings(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "idleTimeout":
+            suggest = "idle_timeout"
+        elif key == "maxWorkers":
+            suggest = "max_workers"
+        elif key == "platformMaxWorkers":
+            suggest = "platform_max_workers"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServerlessSpaceConfigurationSearcherSettings. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServerlessSpaceConfigurationSearcherSettings.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServerlessSpaceConfigurationSearcherSettings.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 idle_timeout: Optional[_builtins.str] = None,
+                 max_workers: Optional[_builtins.float] = None,
+                 platform_max_workers: Optional[_builtins.float] = None):
+        """
+        :param _builtins.str idle_timeout: Idle timeout after which idle search workers may be scaled down, as a Go duration string (between "1m" and "15m", defaults to "5m").
+        :param _builtins.float max_workers: Maximum number of search workers per collection in this space (defaults to 2).
+        :param _builtins.float platform_max_workers: Platform-enforced maximum number of search workers per collection (0 means unlimited).
+        """
+        if idle_timeout is not None:
+            pulumi.set(__self__, "idle_timeout", idle_timeout)
+        if max_workers is not None:
+            pulumi.set(__self__, "max_workers", max_workers)
+        if platform_max_workers is not None:
+            pulumi.set(__self__, "platform_max_workers", platform_max_workers)
+
+    @_builtins.property
+    @pulumi.getter(name="idleTimeout")
+    def idle_timeout(self) -> Optional[_builtins.str]:
+        """
+        Idle timeout after which idle search workers may be scaled down, as a Go duration string (between "1m" and "15m", defaults to "5m").
+        """
+        return pulumi.get(self, "idle_timeout")
+
+    @_builtins.property
+    @pulumi.getter(name="maxWorkers")
+    def max_workers(self) -> Optional[_builtins.float]:
+        """
+        Maximum number of search workers per collection in this space (defaults to 2).
+        """
+        return pulumi.get(self, "max_workers")
+
+    @_builtins.property
+    @pulumi.getter(name="platformMaxWorkers")
+    def platform_max_workers(self) -> Optional[_builtins.float]:
+        """
+        Platform-enforced maximum number of search workers per collection (0 means unlimited).
+        """
+        return pulumi.get(self, "platform_max_workers")
+
+
+@pulumi.output_type
+class ServerlessSpaceLabel(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ServerlessSpaceState(dict):
+    def __init__(__self__, *,
+                 phase: Optional[_builtins.str] = None,
+                 reason: Optional[_builtins.str] = None):
+        if phase is not None:
+            pulumi.set(__self__, "phase", phase)
+        if reason is not None:
+            pulumi.set(__self__, "reason", reason)
+
+    @_builtins.property
+    @pulumi.getter
+    def phase(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "phase")
+
+    @_builtins.property
+    @pulumi.getter
+    def reason(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "reason")
+
+
+@pulumi.output_type
+class ServerlessSpaceTimeouts(dict):
+    def __init__(__self__, *,
+                 create: Optional[_builtins.str] = None,
+                 delete: Optional[_builtins.str] = None,
+                 update: Optional[_builtins.str] = None):
+        if create is not None:
+            pulumi.set(__self__, "create", create)
+        if delete is not None:
+            pulumi.set(__self__, "delete", delete)
+        if update is not None:
+            pulumi.set(__self__, "update", update)
+
+    @_builtins.property
+    @pulumi.getter
+    def create(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "create")
+
+    @_builtins.property
+    @pulumi.getter
+    def delete(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "delete")
+
+    @_builtins.property
+    @pulumi.getter
+    def update(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "update")
+
+
+@pulumi.output_type
 class GetAccountsAuthKeysKeyResult(dict):
     def __init__(__self__, *,
                  cluster_ids: Optional[Sequence[_builtins.str]] = None,
@@ -6745,5 +7253,804 @@ class GetBookingPackagesPackageResourceConfigurationResult(dict):
     @pulumi.getter
     def ram(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "ram")
+
+
+@pulumi.output_type
+class GetServerlessBackupSchedulesScheduleResult(dict):
+    def __init__(__self__, *,
+                 account_id: Optional[_builtins.str] = None,
+                 collection_name: Optional[_builtins.str] = None,
+                 created_at: Optional[_builtins.str] = None,
+                 id: Optional[_builtins.str] = None,
+                 last_fired_at: Optional[_builtins.str] = None,
+                 name: Optional[_builtins.str] = None,
+                 paused: Optional[_builtins.bool] = None,
+                 paused_at: Optional[_builtins.str] = None,
+                 retention_period: Optional[_builtins.str] = None,
+                 schedule: Optional[_builtins.str] = None,
+                 space_id: Optional[_builtins.str] = None,
+                 status: Optional[_builtins.str] = None):
+        if account_id is not None:
+            pulumi.set(__self__, "account_id", account_id)
+        if collection_name is not None:
+            pulumi.set(__self__, "collection_name", collection_name)
+        if created_at is not None:
+            pulumi.set(__self__, "created_at", created_at)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if last_fired_at is not None:
+            pulumi.set(__self__, "last_fired_at", last_fired_at)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if paused is not None:
+            pulumi.set(__self__, "paused", paused)
+        if paused_at is not None:
+            pulumi.set(__self__, "paused_at", paused_at)
+        if retention_period is not None:
+            pulumi.set(__self__, "retention_period", retention_period)
+        if schedule is not None:
+            pulumi.set(__self__, "schedule", schedule)
+        if space_id is not None:
+            pulumi.set(__self__, "space_id", space_id)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "account_id")
+
+    @_builtins.property
+    @pulumi.getter(name="collectionName")
+    def collection_name(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "collection_name")
+
+    @_builtins.property
+    @pulumi.getter(name="createdAt")
+    def created_at(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "created_at")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lastFiredAt")
+    def last_fired_at(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "last_fired_at")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def paused(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "paused")
+
+    @_builtins.property
+    @pulumi.getter(name="pausedAt")
+    def paused_at(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "paused_at")
+
+    @_builtins.property
+    @pulumi.getter(name="retentionPeriod")
+    def retention_period(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "retention_period")
+
+    @_builtins.property
+    @pulumi.getter
+    def schedule(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "schedule")
+
+    @_builtins.property
+    @pulumi.getter(name="spaceId")
+    def space_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "space_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetServerlessBackupsBackupResult(dict):
+    def __init__(__self__, *,
+                 account_id: Optional[_builtins.str] = None,
+                 backup_schedule_id: Optional[_builtins.str] = None,
+                 collection_name: Optional[_builtins.str] = None,
+                 created_at: Optional[_builtins.str] = None,
+                 id: Optional[_builtins.str] = None,
+                 name: Optional[_builtins.str] = None,
+                 retention_period: Optional[_builtins.str] = None,
+                 space_id: Optional[_builtins.str] = None,
+                 stats: Optional[Sequence['outputs.GetServerlessBackupsBackupStatResult']] = None,
+                 status: Optional[_builtins.str] = None):
+        if account_id is not None:
+            pulumi.set(__self__, "account_id", account_id)
+        if backup_schedule_id is not None:
+            pulumi.set(__self__, "backup_schedule_id", backup_schedule_id)
+        if collection_name is not None:
+            pulumi.set(__self__, "collection_name", collection_name)
+        if created_at is not None:
+            pulumi.set(__self__, "created_at", created_at)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if retention_period is not None:
+            pulumi.set(__self__, "retention_period", retention_period)
+        if space_id is not None:
+            pulumi.set(__self__, "space_id", space_id)
+        if stats is not None:
+            pulumi.set(__self__, "stats", stats)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "account_id")
+
+    @_builtins.property
+    @pulumi.getter(name="backupScheduleId")
+    def backup_schedule_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "backup_schedule_id")
+
+    @_builtins.property
+    @pulumi.getter(name="collectionName")
+    def collection_name(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "collection_name")
+
+    @_builtins.property
+    @pulumi.getter(name="createdAt")
+    def created_at(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "created_at")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="retentionPeriod")
+    def retention_period(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "retention_period")
+
+    @_builtins.property
+    @pulumi.getter(name="spaceId")
+    def space_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "space_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def stats(self) -> Optional[Sequence['outputs.GetServerlessBackupsBackupStatResult']]:
+        return pulumi.get(self, "stats")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetServerlessBackupsBackupStatResult(dict):
+    def __init__(__self__, *,
+                 collection_count: Optional[_builtins.float] = None,
+                 duration: Optional[_builtins.str] = None,
+                 size_bytes: Optional[_builtins.float] = None,
+                 total_points: Optional[_builtins.float] = None):
+        if collection_count is not None:
+            pulumi.set(__self__, "collection_count", collection_count)
+        if duration is not None:
+            pulumi.set(__self__, "duration", duration)
+        if size_bytes is not None:
+            pulumi.set(__self__, "size_bytes", size_bytes)
+        if total_points is not None:
+            pulumi.set(__self__, "total_points", total_points)
+
+    @_builtins.property
+    @pulumi.getter(name="collectionCount")
+    def collection_count(self) -> Optional[_builtins.float]:
+        return pulumi.get(self, "collection_count")
+
+    @_builtins.property
+    @pulumi.getter
+    def duration(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "duration")
+
+    @_builtins.property
+    @pulumi.getter(name="sizeBytes")
+    def size_bytes(self) -> Optional[_builtins.float]:
+        return pulumi.get(self, "size_bytes")
+
+    @_builtins.property
+    @pulumi.getter(name="totalPoints")
+    def total_points(self) -> Optional[_builtins.float]:
+        return pulumi.get(self, "total_points")
+
+
+@pulumi.output_type
+class GetServerlessCloudRegionsRegionResult(dict):
+    def __init__(__self__, *,
+                 available: Optional[_builtins.bool] = None,
+                 country_iso_code: Optional[_builtins.str] = None,
+                 geographical_sub_region: Optional[_builtins.str] = None,
+                 id: Optional[_builtins.str] = None,
+                 name: Optional[_builtins.str] = None):
+        if available is not None:
+            pulumi.set(__self__, "available", available)
+        if country_iso_code is not None:
+            pulumi.set(__self__, "country_iso_code", country_iso_code)
+        if geographical_sub_region is not None:
+            pulumi.set(__self__, "geographical_sub_region", geographical_sub_region)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def available(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "available")
+
+    @_builtins.property
+    @pulumi.getter(name="countryIsoCode")
+    def country_iso_code(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "country_iso_code")
+
+    @_builtins.property
+    @pulumi.getter(name="geographicalSubRegion")
+    def geographical_sub_region(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "geographical_sub_region")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetServerlessSpaceApiKeysKeyResult(dict):
+    def __init__(__self__, *,
+                 account_id: Optional[_builtins.str] = None,
+                 collection_access_rules: Optional[Sequence['outputs.GetServerlessSpaceApiKeysKeyCollectionAccessRuleResult']] = None,
+                 created_at: Optional[_builtins.str] = None,
+                 expires_at: Optional[_builtins.str] = None,
+                 global_access_rules: Optional[Sequence['outputs.GetServerlessSpaceApiKeysKeyGlobalAccessRuleResult']] = None,
+                 id: Optional[_builtins.str] = None,
+                 name: Optional[_builtins.str] = None,
+                 postfix: Optional[_builtins.str] = None,
+                 space_id: Optional[_builtins.str] = None,
+                 states: Optional[Sequence['outputs.GetServerlessSpaceApiKeysKeyStateResult']] = None):
+        if account_id is not None:
+            pulumi.set(__self__, "account_id", account_id)
+        if collection_access_rules is not None:
+            pulumi.set(__self__, "collection_access_rules", collection_access_rules)
+        if created_at is not None:
+            pulumi.set(__self__, "created_at", created_at)
+        if expires_at is not None:
+            pulumi.set(__self__, "expires_at", expires_at)
+        if global_access_rules is not None:
+            pulumi.set(__self__, "global_access_rules", global_access_rules)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if postfix is not None:
+            pulumi.set(__self__, "postfix", postfix)
+        if space_id is not None:
+            pulumi.set(__self__, "space_id", space_id)
+        if states is not None:
+            pulumi.set(__self__, "states", states)
+
+    @_builtins.property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "account_id")
+
+    @_builtins.property
+    @pulumi.getter(name="collectionAccessRules")
+    def collection_access_rules(self) -> Optional[Sequence['outputs.GetServerlessSpaceApiKeysKeyCollectionAccessRuleResult']]:
+        return pulumi.get(self, "collection_access_rules")
+
+    @_builtins.property
+    @pulumi.getter(name="createdAt")
+    def created_at(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "created_at")
+
+    @_builtins.property
+    @pulumi.getter(name="expiresAt")
+    def expires_at(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "expires_at")
+
+    @_builtins.property
+    @pulumi.getter(name="globalAccessRules")
+    def global_access_rules(self) -> Optional[Sequence['outputs.GetServerlessSpaceApiKeysKeyGlobalAccessRuleResult']]:
+        return pulumi.get(self, "global_access_rules")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def postfix(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "postfix")
+
+    @_builtins.property
+    @pulumi.getter(name="spaceId")
+    def space_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "space_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def states(self) -> Optional[Sequence['outputs.GetServerlessSpaceApiKeysKeyStateResult']]:
+        return pulumi.get(self, "states")
+
+
+@pulumi.output_type
+class GetServerlessSpaceApiKeysKeyCollectionAccessRuleResult(dict):
+    def __init__(__self__, *,
+                 access_type: Optional[_builtins.str] = None,
+                 collection_name: Optional[_builtins.str] = None):
+        if access_type is not None:
+            pulumi.set(__self__, "access_type", access_type)
+        if collection_name is not None:
+            pulumi.set(__self__, "collection_name", collection_name)
+
+    @_builtins.property
+    @pulumi.getter(name="accessType")
+    def access_type(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "access_type")
+
+    @_builtins.property
+    @pulumi.getter(name="collectionName")
+    def collection_name(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "collection_name")
+
+
+@pulumi.output_type
+class GetServerlessSpaceApiKeysKeyGlobalAccessRuleResult(dict):
+    def __init__(__self__, *,
+                 access_type: Optional[_builtins.str] = None):
+        if access_type is not None:
+            pulumi.set(__self__, "access_type", access_type)
+
+    @_builtins.property
+    @pulumi.getter(name="accessType")
+    def access_type(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "access_type")
+
+
+@pulumi.output_type
+class GetServerlessSpaceApiKeysKeyStateResult(dict):
+    def __init__(__self__, *,
+                 phase: Optional[_builtins.str] = None,
+                 reason: Optional[_builtins.str] = None):
+        if phase is not None:
+            pulumi.set(__self__, "phase", phase)
+        if reason is not None:
+            pulumi.set(__self__, "reason", reason)
+
+    @_builtins.property
+    @pulumi.getter
+    def phase(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "phase")
+
+    @_builtins.property
+    @pulumi.getter
+    def reason(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "reason")
+
+
+@pulumi.output_type
+class GetServerlessSpaceConfigurationResult(dict):
+    def __init__(__self__, *,
+                 allowed_ip_source_ranges: Optional[Sequence[_builtins.str]] = None,
+                 allowed_origins: Optional[Sequence[_builtins.str]] = None,
+                 collection_settings: Optional[Sequence['outputs.GetServerlessSpaceConfigurationCollectionSettingResult']] = None,
+                 last_modified_at: Optional[_builtins.str] = None,
+                 max_collections_per_space: Optional[_builtins.float] = None,
+                 searcher_settings: Optional[Sequence['outputs.GetServerlessSpaceConfigurationSearcherSettingResult']] = None):
+        if allowed_ip_source_ranges is not None:
+            pulumi.set(__self__, "allowed_ip_source_ranges", allowed_ip_source_ranges)
+        if allowed_origins is not None:
+            pulumi.set(__self__, "allowed_origins", allowed_origins)
+        if collection_settings is not None:
+            pulumi.set(__self__, "collection_settings", collection_settings)
+        if last_modified_at is not None:
+            pulumi.set(__self__, "last_modified_at", last_modified_at)
+        if max_collections_per_space is not None:
+            pulumi.set(__self__, "max_collections_per_space", max_collections_per_space)
+        if searcher_settings is not None:
+            pulumi.set(__self__, "searcher_settings", searcher_settings)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedIpSourceRanges")
+    def allowed_ip_source_ranges(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "allowed_ip_source_ranges")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedOrigins")
+    def allowed_origins(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "allowed_origins")
+
+    @_builtins.property
+    @pulumi.getter(name="collectionSettings")
+    def collection_settings(self) -> Optional[Sequence['outputs.GetServerlessSpaceConfigurationCollectionSettingResult']]:
+        return pulumi.get(self, "collection_settings")
+
+    @_builtins.property
+    @pulumi.getter(name="lastModifiedAt")
+    def last_modified_at(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "last_modified_at")
+
+    @_builtins.property
+    @pulumi.getter(name="maxCollectionsPerSpace")
+    def max_collections_per_space(self) -> Optional[_builtins.float]:
+        return pulumi.get(self, "max_collections_per_space")
+
+    @_builtins.property
+    @pulumi.getter(name="searcherSettings")
+    def searcher_settings(self) -> Optional[Sequence['outputs.GetServerlessSpaceConfigurationSearcherSettingResult']]:
+        return pulumi.get(self, "searcher_settings")
+
+
+@pulumi.output_type
+class GetServerlessSpaceConfigurationCollectionSettingResult(dict):
+    def __init__(__self__, *,
+                 max_size: Optional[_builtins.float] = None,
+                 platform_max_size: Optional[_builtins.float] = None):
+        if max_size is not None:
+            pulumi.set(__self__, "max_size", max_size)
+        if platform_max_size is not None:
+            pulumi.set(__self__, "platform_max_size", platform_max_size)
+
+    @_builtins.property
+    @pulumi.getter(name="maxSize")
+    def max_size(self) -> Optional[_builtins.float]:
+        return pulumi.get(self, "max_size")
+
+    @_builtins.property
+    @pulumi.getter(name="platformMaxSize")
+    def platform_max_size(self) -> Optional[_builtins.float]:
+        return pulumi.get(self, "platform_max_size")
+
+
+@pulumi.output_type
+class GetServerlessSpaceConfigurationSearcherSettingResult(dict):
+    def __init__(__self__, *,
+                 idle_timeout: Optional[_builtins.str] = None,
+                 max_workers: Optional[_builtins.float] = None,
+                 platform_max_workers: Optional[_builtins.float] = None):
+        if idle_timeout is not None:
+            pulumi.set(__self__, "idle_timeout", idle_timeout)
+        if max_workers is not None:
+            pulumi.set(__self__, "max_workers", max_workers)
+        if platform_max_workers is not None:
+            pulumi.set(__self__, "platform_max_workers", platform_max_workers)
+
+    @_builtins.property
+    @pulumi.getter(name="idleTimeout")
+    def idle_timeout(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "idle_timeout")
+
+    @_builtins.property
+    @pulumi.getter(name="maxWorkers")
+    def max_workers(self) -> Optional[_builtins.float]:
+        return pulumi.get(self, "max_workers")
+
+    @_builtins.property
+    @pulumi.getter(name="platformMaxWorkers")
+    def platform_max_workers(self) -> Optional[_builtins.float]:
+        return pulumi.get(self, "platform_max_workers")
+
+
+@pulumi.output_type
+class GetServerlessSpaceLabelResult(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetServerlessSpaceStateResult(dict):
+    def __init__(__self__, *,
+                 phase: Optional[_builtins.str] = None,
+                 reason: Optional[_builtins.str] = None):
+        if phase is not None:
+            pulumi.set(__self__, "phase", phase)
+        if reason is not None:
+            pulumi.set(__self__, "reason", reason)
+
+    @_builtins.property
+    @pulumi.getter
+    def phase(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "phase")
+
+    @_builtins.property
+    @pulumi.getter
+    def reason(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "reason")
+
+
+@pulumi.output_type
+class GetServerlessSpacesSpaceResult(dict):
+    def __init__(__self__, *,
+                 account_id: Optional[_builtins.str] = None,
+                 cloud_region_id: Optional[_builtins.str] = None,
+                 configurations: Optional[Sequence['outputs.GetServerlessSpacesSpaceConfigurationResult']] = None,
+                 cost_allocation_label: Optional[_builtins.str] = None,
+                 created_at: Optional[_builtins.str] = None,
+                 grpc_port: Optional[_builtins.float] = None,
+                 id: Optional[_builtins.str] = None,
+                 labels: Optional[Sequence['outputs.GetServerlessSpacesSpaceLabelResult']] = None,
+                 name: Optional[_builtins.str] = None,
+                 rest_port: Optional[_builtins.float] = None,
+                 states: Optional[Sequence['outputs.GetServerlessSpacesSpaceStateResult']] = None,
+                 url: Optional[_builtins.str] = None):
+        if account_id is not None:
+            pulumi.set(__self__, "account_id", account_id)
+        if cloud_region_id is not None:
+            pulumi.set(__self__, "cloud_region_id", cloud_region_id)
+        if configurations is not None:
+            pulumi.set(__self__, "configurations", configurations)
+        if cost_allocation_label is not None:
+            pulumi.set(__self__, "cost_allocation_label", cost_allocation_label)
+        if created_at is not None:
+            pulumi.set(__self__, "created_at", created_at)
+        if grpc_port is not None:
+            pulumi.set(__self__, "grpc_port", grpc_port)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if rest_port is not None:
+            pulumi.set(__self__, "rest_port", rest_port)
+        if states is not None:
+            pulumi.set(__self__, "states", states)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "account_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudRegionId")
+    def cloud_region_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "cloud_region_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def configurations(self) -> Optional[Sequence['outputs.GetServerlessSpacesSpaceConfigurationResult']]:
+        return pulumi.get(self, "configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="costAllocationLabel")
+    def cost_allocation_label(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "cost_allocation_label")
+
+    @_builtins.property
+    @pulumi.getter(name="createdAt")
+    def created_at(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "created_at")
+
+    @_builtins.property
+    @pulumi.getter(name="grpcPort")
+    def grpc_port(self) -> Optional[_builtins.float]:
+        return pulumi.get(self, "grpc_port")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def labels(self) -> Optional[Sequence['outputs.GetServerlessSpacesSpaceLabelResult']]:
+        return pulumi.get(self, "labels")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="restPort")
+    def rest_port(self) -> Optional[_builtins.float]:
+        return pulumi.get(self, "rest_port")
+
+    @_builtins.property
+    @pulumi.getter
+    def states(self) -> Optional[Sequence['outputs.GetServerlessSpacesSpaceStateResult']]:
+        return pulumi.get(self, "states")
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class GetServerlessSpacesSpaceConfigurationResult(dict):
+    def __init__(__self__, *,
+                 allowed_ip_source_ranges: Optional[Sequence[_builtins.str]] = None,
+                 allowed_origins: Optional[Sequence[_builtins.str]] = None,
+                 collection_settings: Optional[Sequence['outputs.GetServerlessSpacesSpaceConfigurationCollectionSettingResult']] = None,
+                 last_modified_at: Optional[_builtins.str] = None,
+                 max_collections_per_space: Optional[_builtins.float] = None,
+                 searcher_settings: Optional[Sequence['outputs.GetServerlessSpacesSpaceConfigurationSearcherSettingResult']] = None):
+        if allowed_ip_source_ranges is not None:
+            pulumi.set(__self__, "allowed_ip_source_ranges", allowed_ip_source_ranges)
+        if allowed_origins is not None:
+            pulumi.set(__self__, "allowed_origins", allowed_origins)
+        if collection_settings is not None:
+            pulumi.set(__self__, "collection_settings", collection_settings)
+        if last_modified_at is not None:
+            pulumi.set(__self__, "last_modified_at", last_modified_at)
+        if max_collections_per_space is not None:
+            pulumi.set(__self__, "max_collections_per_space", max_collections_per_space)
+        if searcher_settings is not None:
+            pulumi.set(__self__, "searcher_settings", searcher_settings)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedIpSourceRanges")
+    def allowed_ip_source_ranges(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "allowed_ip_source_ranges")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedOrigins")
+    def allowed_origins(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "allowed_origins")
+
+    @_builtins.property
+    @pulumi.getter(name="collectionSettings")
+    def collection_settings(self) -> Optional[Sequence['outputs.GetServerlessSpacesSpaceConfigurationCollectionSettingResult']]:
+        return pulumi.get(self, "collection_settings")
+
+    @_builtins.property
+    @pulumi.getter(name="lastModifiedAt")
+    def last_modified_at(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "last_modified_at")
+
+    @_builtins.property
+    @pulumi.getter(name="maxCollectionsPerSpace")
+    def max_collections_per_space(self) -> Optional[_builtins.float]:
+        return pulumi.get(self, "max_collections_per_space")
+
+    @_builtins.property
+    @pulumi.getter(name="searcherSettings")
+    def searcher_settings(self) -> Optional[Sequence['outputs.GetServerlessSpacesSpaceConfigurationSearcherSettingResult']]:
+        return pulumi.get(self, "searcher_settings")
+
+
+@pulumi.output_type
+class GetServerlessSpacesSpaceConfigurationCollectionSettingResult(dict):
+    def __init__(__self__, *,
+                 max_size: Optional[_builtins.float] = None,
+                 platform_max_size: Optional[_builtins.float] = None):
+        if max_size is not None:
+            pulumi.set(__self__, "max_size", max_size)
+        if platform_max_size is not None:
+            pulumi.set(__self__, "platform_max_size", platform_max_size)
+
+    @_builtins.property
+    @pulumi.getter(name="maxSize")
+    def max_size(self) -> Optional[_builtins.float]:
+        return pulumi.get(self, "max_size")
+
+    @_builtins.property
+    @pulumi.getter(name="platformMaxSize")
+    def platform_max_size(self) -> Optional[_builtins.float]:
+        return pulumi.get(self, "platform_max_size")
+
+
+@pulumi.output_type
+class GetServerlessSpacesSpaceConfigurationSearcherSettingResult(dict):
+    def __init__(__self__, *,
+                 idle_timeout: Optional[_builtins.str] = None,
+                 max_workers: Optional[_builtins.float] = None,
+                 platform_max_workers: Optional[_builtins.float] = None):
+        if idle_timeout is not None:
+            pulumi.set(__self__, "idle_timeout", idle_timeout)
+        if max_workers is not None:
+            pulumi.set(__self__, "max_workers", max_workers)
+        if platform_max_workers is not None:
+            pulumi.set(__self__, "platform_max_workers", platform_max_workers)
+
+    @_builtins.property
+    @pulumi.getter(name="idleTimeout")
+    def idle_timeout(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "idle_timeout")
+
+    @_builtins.property
+    @pulumi.getter(name="maxWorkers")
+    def max_workers(self) -> Optional[_builtins.float]:
+        return pulumi.get(self, "max_workers")
+
+    @_builtins.property
+    @pulumi.getter(name="platformMaxWorkers")
+    def platform_max_workers(self) -> Optional[_builtins.float]:
+        return pulumi.get(self, "platform_max_workers")
+
+
+@pulumi.output_type
+class GetServerlessSpacesSpaceLabelResult(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetServerlessSpacesSpaceStateResult(dict):
+    def __init__(__self__, *,
+                 phase: Optional[_builtins.str] = None,
+                 reason: Optional[_builtins.str] = None):
+        if phase is not None:
+            pulumi.set(__self__, "phase", phase)
+        if reason is not None:
+            pulumi.set(__self__, "reason", reason)
+
+    @_builtins.property
+    @pulumi.getter
+    def phase(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "phase")
+
+    @_builtins.property
+    @pulumi.getter
+    def reason(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "reason")
 
 

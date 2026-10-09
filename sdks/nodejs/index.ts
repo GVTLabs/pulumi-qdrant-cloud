@@ -90,8 +90,63 @@ export const getBookingPackages: typeof import("./getBookingPackages").getBookin
 export const getBookingPackagesOutput: typeof import("./getBookingPackages").getBookingPackagesOutput = null as any;
 utilities.lazyLoad(exports, ["getBookingPackages","getBookingPackagesOutput"], () => require("./getBookingPackages"));
 
+export { GetServerlessBackupScheduleArgs, GetServerlessBackupScheduleResult, GetServerlessBackupScheduleOutputArgs } from "./getServerlessBackupSchedule";
+export const getServerlessBackupSchedule: typeof import("./getServerlessBackupSchedule").getServerlessBackupSchedule = null as any;
+export const getServerlessBackupScheduleOutput: typeof import("./getServerlessBackupSchedule").getServerlessBackupScheduleOutput = null as any;
+utilities.lazyLoad(exports, ["getServerlessBackupSchedule","getServerlessBackupScheduleOutput"], () => require("./getServerlessBackupSchedule"));
+
+export { GetServerlessBackupSchedulesArgs, GetServerlessBackupSchedulesResult, GetServerlessBackupSchedulesOutputArgs } from "./getServerlessBackupSchedules";
+export const getServerlessBackupSchedules: typeof import("./getServerlessBackupSchedules").getServerlessBackupSchedules = null as any;
+export const getServerlessBackupSchedulesOutput: typeof import("./getServerlessBackupSchedules").getServerlessBackupSchedulesOutput = null as any;
+utilities.lazyLoad(exports, ["getServerlessBackupSchedules","getServerlessBackupSchedulesOutput"], () => require("./getServerlessBackupSchedules"));
+
+export { GetServerlessBackupsArgs, GetServerlessBackupsResult, GetServerlessBackupsOutputArgs } from "./getServerlessBackups";
+export const getServerlessBackups: typeof import("./getServerlessBackups").getServerlessBackups = null as any;
+export const getServerlessBackupsOutput: typeof import("./getServerlessBackups").getServerlessBackupsOutput = null as any;
+utilities.lazyLoad(exports, ["getServerlessBackups","getServerlessBackupsOutput"], () => require("./getServerlessBackups"));
+
+export { GetServerlessCloudRegionsArgs, GetServerlessCloudRegionsResult, GetServerlessCloudRegionsOutputArgs } from "./getServerlessCloudRegions";
+export const getServerlessCloudRegions: typeof import("./getServerlessCloudRegions").getServerlessCloudRegions = null as any;
+export const getServerlessCloudRegionsOutput: typeof import("./getServerlessCloudRegions").getServerlessCloudRegionsOutput = null as any;
+utilities.lazyLoad(exports, ["getServerlessCloudRegions","getServerlessCloudRegionsOutput"], () => require("./getServerlessCloudRegions"));
+
+export { GetServerlessSpaceArgs, GetServerlessSpaceResult, GetServerlessSpaceOutputArgs } from "./getServerlessSpace";
+export const getServerlessSpace: typeof import("./getServerlessSpace").getServerlessSpace = null as any;
+export const getServerlessSpaceOutput: typeof import("./getServerlessSpace").getServerlessSpaceOutput = null as any;
+utilities.lazyLoad(exports, ["getServerlessSpace","getServerlessSpaceOutput"], () => require("./getServerlessSpace"));
+
+export { GetServerlessSpaceApiKeysArgs, GetServerlessSpaceApiKeysResult, GetServerlessSpaceApiKeysOutputArgs } from "./getServerlessSpaceApiKeys";
+export const getServerlessSpaceApiKeys: typeof import("./getServerlessSpaceApiKeys").getServerlessSpaceApiKeys = null as any;
+export const getServerlessSpaceApiKeysOutput: typeof import("./getServerlessSpaceApiKeys").getServerlessSpaceApiKeysOutput = null as any;
+utilities.lazyLoad(exports, ["getServerlessSpaceApiKeys","getServerlessSpaceApiKeysOutput"], () => require("./getServerlessSpaceApiKeys"));
+
+export { GetServerlessSpacesArgs, GetServerlessSpacesResult, GetServerlessSpacesOutputArgs } from "./getServerlessSpaces";
+export const getServerlessSpaces: typeof import("./getServerlessSpaces").getServerlessSpaces = null as any;
+export const getServerlessSpacesOutput: typeof import("./getServerlessSpaces").getServerlessSpacesOutput = null as any;
+utilities.lazyLoad(exports, ["getServerlessSpaces","getServerlessSpacesOutput"], () => require("./getServerlessSpaces"));
+
 export * from "./provider";
 import { Provider } from "./provider";
+
+export { ServerlessBackupArgs, ServerlessBackupState } from "./serverlessBackup";
+export type ServerlessBackup = import("./serverlessBackup").ServerlessBackup;
+export const ServerlessBackup: typeof import("./serverlessBackup").ServerlessBackup = null as any;
+utilities.lazyLoad(exports, ["ServerlessBackup"], () => require("./serverlessBackup"));
+
+export { ServerlessBackupScheduleArgs, ServerlessBackupScheduleState } from "./serverlessBackupSchedule";
+export type ServerlessBackupSchedule = import("./serverlessBackupSchedule").ServerlessBackupSchedule;
+export const ServerlessBackupSchedule: typeof import("./serverlessBackupSchedule").ServerlessBackupSchedule = null as any;
+utilities.lazyLoad(exports, ["ServerlessBackupSchedule"], () => require("./serverlessBackupSchedule"));
+
+export { ServerlessSpaceArgs, ServerlessSpaceState } from "./serverlessSpace";
+export type ServerlessSpace = import("./serverlessSpace").ServerlessSpace;
+export const ServerlessSpace: typeof import("./serverlessSpace").ServerlessSpace = null as any;
+utilities.lazyLoad(exports, ["ServerlessSpace"], () => require("./serverlessSpace"));
+
+export { ServerlessSpaceApiKeyArgs, ServerlessSpaceApiKeyState } from "./serverlessSpaceApiKey";
+export type ServerlessSpaceApiKey = import("./serverlessSpaceApiKey").ServerlessSpaceApiKey;
+export const ServerlessSpaceApiKey: typeof import("./serverlessSpaceApiKey").ServerlessSpaceApiKey = null as any;
+utilities.lazyLoad(exports, ["ServerlessSpaceApiKey"], () => require("./serverlessSpaceApiKey"));
 
 
 // Export sub-modules:
@@ -123,6 +178,14 @@ const _module = {
                 return new AccountsRole(name, <any>undefined, { urn })
             case "qdrant-cloud:index/accountsUserRoles:AccountsUserRoles":
                 return new AccountsUserRoles(name, <any>undefined, { urn })
+            case "qdrant-cloud:index/serverlessBackup:ServerlessBackup":
+                return new ServerlessBackup(name, <any>undefined, { urn })
+            case "qdrant-cloud:index/serverlessBackupSchedule:ServerlessBackupSchedule":
+                return new ServerlessBackupSchedule(name, <any>undefined, { urn })
+            case "qdrant-cloud:index/serverlessSpace:ServerlessSpace":
+                return new ServerlessSpace(name, <any>undefined, { urn })
+            case "qdrant-cloud:index/serverlessSpaceApiKey:ServerlessSpaceApiKey":
+                return new ServerlessSpaceApiKey(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -136,6 +199,10 @@ pulumi.runtime.registerResourceModule("qdrant-cloud", "index/accountsHybridCloud
 pulumi.runtime.registerResourceModule("qdrant-cloud", "index/accountsManualBackup", _module)
 pulumi.runtime.registerResourceModule("qdrant-cloud", "index/accountsRole", _module)
 pulumi.runtime.registerResourceModule("qdrant-cloud", "index/accountsUserRoles", _module)
+pulumi.runtime.registerResourceModule("qdrant-cloud", "index/serverlessBackup", _module)
+pulumi.runtime.registerResourceModule("qdrant-cloud", "index/serverlessBackupSchedule", _module)
+pulumi.runtime.registerResourceModule("qdrant-cloud", "index/serverlessSpace", _module)
+pulumi.runtime.registerResourceModule("qdrant-cloud", "index/serverlessSpaceApiKey", _module)
 pulumi.runtime.registerResourcePackage("qdrant-cloud", {
     version: utilities.getVersion(),
     constructProvider: (name: string, type: string, urn: string): pulumi.ProviderResource => {

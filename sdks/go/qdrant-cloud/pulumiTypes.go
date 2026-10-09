@@ -10006,6 +10006,1657 @@ func (o AccountsRolePermissionArrayOutput) Index(i pulumi.IntInput) AccountsRole
 	}).(AccountsRolePermissionOutput)
 }
 
+type ServerlessBackupStat struct {
+	CollectionCount *float64 `pulumi:"collectionCount"`
+	Duration        *string  `pulumi:"duration"`
+	SizeBytes       *float64 `pulumi:"sizeBytes"`
+	TotalPoints     *float64 `pulumi:"totalPoints"`
+}
+
+// ServerlessBackupStatInput is an input type that accepts ServerlessBackupStatArgs and ServerlessBackupStatOutput values.
+// You can construct a concrete instance of `ServerlessBackupStatInput` via:
+//
+//	ServerlessBackupStatArgs{...}
+type ServerlessBackupStatInput interface {
+	pulumi.Input
+
+	ToServerlessBackupStatOutput() ServerlessBackupStatOutput
+	ToServerlessBackupStatOutputWithContext(context.Context) ServerlessBackupStatOutput
+}
+
+type ServerlessBackupStatArgs struct {
+	CollectionCount pulumi.Float64PtrInput `pulumi:"collectionCount"`
+	Duration        pulumi.StringPtrInput  `pulumi:"duration"`
+	SizeBytes       pulumi.Float64PtrInput `pulumi:"sizeBytes"`
+	TotalPoints     pulumi.Float64PtrInput `pulumi:"totalPoints"`
+}
+
+func (ServerlessBackupStatArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessBackupStat)(nil)).Elem()
+}
+
+func (i ServerlessBackupStatArgs) ToServerlessBackupStatOutput() ServerlessBackupStatOutput {
+	return i.ToServerlessBackupStatOutputWithContext(context.Background())
+}
+
+func (i ServerlessBackupStatArgs) ToServerlessBackupStatOutputWithContext(ctx context.Context) ServerlessBackupStatOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessBackupStatOutput)
+}
+
+// ServerlessBackupStatArrayInput is an input type that accepts ServerlessBackupStatArray and ServerlessBackupStatArrayOutput values.
+// You can construct a concrete instance of `ServerlessBackupStatArrayInput` via:
+//
+//	ServerlessBackupStatArray{ ServerlessBackupStatArgs{...} }
+type ServerlessBackupStatArrayInput interface {
+	pulumi.Input
+
+	ToServerlessBackupStatArrayOutput() ServerlessBackupStatArrayOutput
+	ToServerlessBackupStatArrayOutputWithContext(context.Context) ServerlessBackupStatArrayOutput
+}
+
+type ServerlessBackupStatArray []ServerlessBackupStatInput
+
+func (ServerlessBackupStatArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerlessBackupStat)(nil)).Elem()
+}
+
+func (i ServerlessBackupStatArray) ToServerlessBackupStatArrayOutput() ServerlessBackupStatArrayOutput {
+	return i.ToServerlessBackupStatArrayOutputWithContext(context.Background())
+}
+
+func (i ServerlessBackupStatArray) ToServerlessBackupStatArrayOutputWithContext(ctx context.Context) ServerlessBackupStatArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessBackupStatArrayOutput)
+}
+
+type ServerlessBackupStatOutput struct{ *pulumi.OutputState }
+
+func (ServerlessBackupStatOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessBackupStat)(nil)).Elem()
+}
+
+func (o ServerlessBackupStatOutput) ToServerlessBackupStatOutput() ServerlessBackupStatOutput {
+	return o
+}
+
+func (o ServerlessBackupStatOutput) ToServerlessBackupStatOutputWithContext(ctx context.Context) ServerlessBackupStatOutput {
+	return o
+}
+
+func (o ServerlessBackupStatOutput) CollectionCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ServerlessBackupStat) *float64 { return v.CollectionCount }).(pulumi.Float64PtrOutput)
+}
+
+func (o ServerlessBackupStatOutput) Duration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerlessBackupStat) *string { return v.Duration }).(pulumi.StringPtrOutput)
+}
+
+func (o ServerlessBackupStatOutput) SizeBytes() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ServerlessBackupStat) *float64 { return v.SizeBytes }).(pulumi.Float64PtrOutput)
+}
+
+func (o ServerlessBackupStatOutput) TotalPoints() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ServerlessBackupStat) *float64 { return v.TotalPoints }).(pulumi.Float64PtrOutput)
+}
+
+type ServerlessBackupStatArrayOutput struct{ *pulumi.OutputState }
+
+func (ServerlessBackupStatArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerlessBackupStat)(nil)).Elem()
+}
+
+func (o ServerlessBackupStatArrayOutput) ToServerlessBackupStatArrayOutput() ServerlessBackupStatArrayOutput {
+	return o
+}
+
+func (o ServerlessBackupStatArrayOutput) ToServerlessBackupStatArrayOutputWithContext(ctx context.Context) ServerlessBackupStatArrayOutput {
+	return o
+}
+
+func (o ServerlessBackupStatArrayOutput) Index(i pulumi.IntInput) ServerlessBackupStatOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServerlessBackupStat {
+		return vs[0].([]ServerlessBackupStat)[vs[1].(int)]
+	}).(ServerlessBackupStatOutput)
+}
+
+type ServerlessBackupTimeouts struct {
+	Create *string `pulumi:"create"`
+}
+
+// ServerlessBackupTimeoutsInput is an input type that accepts ServerlessBackupTimeoutsArgs and ServerlessBackupTimeoutsOutput values.
+// You can construct a concrete instance of `ServerlessBackupTimeoutsInput` via:
+//
+//	ServerlessBackupTimeoutsArgs{...}
+type ServerlessBackupTimeoutsInput interface {
+	pulumi.Input
+
+	ToServerlessBackupTimeoutsOutput() ServerlessBackupTimeoutsOutput
+	ToServerlessBackupTimeoutsOutputWithContext(context.Context) ServerlessBackupTimeoutsOutput
+}
+
+type ServerlessBackupTimeoutsArgs struct {
+	Create pulumi.StringPtrInput `pulumi:"create"`
+}
+
+func (ServerlessBackupTimeoutsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessBackupTimeouts)(nil)).Elem()
+}
+
+func (i ServerlessBackupTimeoutsArgs) ToServerlessBackupTimeoutsOutput() ServerlessBackupTimeoutsOutput {
+	return i.ToServerlessBackupTimeoutsOutputWithContext(context.Background())
+}
+
+func (i ServerlessBackupTimeoutsArgs) ToServerlessBackupTimeoutsOutputWithContext(ctx context.Context) ServerlessBackupTimeoutsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessBackupTimeoutsOutput)
+}
+
+func (i ServerlessBackupTimeoutsArgs) ToServerlessBackupTimeoutsPtrOutput() ServerlessBackupTimeoutsPtrOutput {
+	return i.ToServerlessBackupTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (i ServerlessBackupTimeoutsArgs) ToServerlessBackupTimeoutsPtrOutputWithContext(ctx context.Context) ServerlessBackupTimeoutsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessBackupTimeoutsOutput).ToServerlessBackupTimeoutsPtrOutputWithContext(ctx)
+}
+
+// ServerlessBackupTimeoutsPtrInput is an input type that accepts ServerlessBackupTimeoutsArgs, ServerlessBackupTimeoutsPtr and ServerlessBackupTimeoutsPtrOutput values.
+// You can construct a concrete instance of `ServerlessBackupTimeoutsPtrInput` via:
+//
+//	        ServerlessBackupTimeoutsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServerlessBackupTimeoutsPtrInput interface {
+	pulumi.Input
+
+	ToServerlessBackupTimeoutsPtrOutput() ServerlessBackupTimeoutsPtrOutput
+	ToServerlessBackupTimeoutsPtrOutputWithContext(context.Context) ServerlessBackupTimeoutsPtrOutput
+}
+
+type serverlessBackupTimeoutsPtrType ServerlessBackupTimeoutsArgs
+
+func ServerlessBackupTimeoutsPtr(v *ServerlessBackupTimeoutsArgs) ServerlessBackupTimeoutsPtrInput {
+	return (*serverlessBackupTimeoutsPtrType)(v)
+}
+
+func (*serverlessBackupTimeoutsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServerlessBackupTimeouts)(nil)).Elem()
+}
+
+func (i *serverlessBackupTimeoutsPtrType) ToServerlessBackupTimeoutsPtrOutput() ServerlessBackupTimeoutsPtrOutput {
+	return i.ToServerlessBackupTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (i *serverlessBackupTimeoutsPtrType) ToServerlessBackupTimeoutsPtrOutputWithContext(ctx context.Context) ServerlessBackupTimeoutsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessBackupTimeoutsPtrOutput)
+}
+
+type ServerlessBackupTimeoutsOutput struct{ *pulumi.OutputState }
+
+func (ServerlessBackupTimeoutsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessBackupTimeouts)(nil)).Elem()
+}
+
+func (o ServerlessBackupTimeoutsOutput) ToServerlessBackupTimeoutsOutput() ServerlessBackupTimeoutsOutput {
+	return o
+}
+
+func (o ServerlessBackupTimeoutsOutput) ToServerlessBackupTimeoutsOutputWithContext(ctx context.Context) ServerlessBackupTimeoutsOutput {
+	return o
+}
+
+func (o ServerlessBackupTimeoutsOutput) ToServerlessBackupTimeoutsPtrOutput() ServerlessBackupTimeoutsPtrOutput {
+	return o.ToServerlessBackupTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (o ServerlessBackupTimeoutsOutput) ToServerlessBackupTimeoutsPtrOutputWithContext(ctx context.Context) ServerlessBackupTimeoutsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServerlessBackupTimeouts) *ServerlessBackupTimeouts {
+		return &v
+	}).(ServerlessBackupTimeoutsPtrOutput)
+}
+
+func (o ServerlessBackupTimeoutsOutput) Create() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerlessBackupTimeouts) *string { return v.Create }).(pulumi.StringPtrOutput)
+}
+
+type ServerlessBackupTimeoutsPtrOutput struct{ *pulumi.OutputState }
+
+func (ServerlessBackupTimeoutsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServerlessBackupTimeouts)(nil)).Elem()
+}
+
+func (o ServerlessBackupTimeoutsPtrOutput) ToServerlessBackupTimeoutsPtrOutput() ServerlessBackupTimeoutsPtrOutput {
+	return o
+}
+
+func (o ServerlessBackupTimeoutsPtrOutput) ToServerlessBackupTimeoutsPtrOutputWithContext(ctx context.Context) ServerlessBackupTimeoutsPtrOutput {
+	return o
+}
+
+func (o ServerlessBackupTimeoutsPtrOutput) Elem() ServerlessBackupTimeoutsOutput {
+	return o.ApplyT(func(v *ServerlessBackupTimeouts) ServerlessBackupTimeouts {
+		if v != nil {
+			return *v
+		}
+		var ret ServerlessBackupTimeouts
+		return ret
+	}).(ServerlessBackupTimeoutsOutput)
+}
+
+func (o ServerlessBackupTimeoutsPtrOutput) Create() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServerlessBackupTimeouts) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Create
+	}).(pulumi.StringPtrOutput)
+}
+
+type ServerlessSpaceApiKeyCollectionAccessRule struct {
+	// Access type for the collection. Must be one of: COLLECTION_ACCESS_RULE_ACCESS_TYPE_READ_ONLY, COLLECTION_ACCESS_RULE_ACCESS_TYPE_READ_WRITE.
+	AccessType string `pulumi:"accessType"`
+	// Name of the collection.
+	CollectionName string `pulumi:"collectionName"`
+}
+
+// ServerlessSpaceApiKeyCollectionAccessRuleInput is an input type that accepts ServerlessSpaceApiKeyCollectionAccessRuleArgs and ServerlessSpaceApiKeyCollectionAccessRuleOutput values.
+// You can construct a concrete instance of `ServerlessSpaceApiKeyCollectionAccessRuleInput` via:
+//
+//	ServerlessSpaceApiKeyCollectionAccessRuleArgs{...}
+type ServerlessSpaceApiKeyCollectionAccessRuleInput interface {
+	pulumi.Input
+
+	ToServerlessSpaceApiKeyCollectionAccessRuleOutput() ServerlessSpaceApiKeyCollectionAccessRuleOutput
+	ToServerlessSpaceApiKeyCollectionAccessRuleOutputWithContext(context.Context) ServerlessSpaceApiKeyCollectionAccessRuleOutput
+}
+
+type ServerlessSpaceApiKeyCollectionAccessRuleArgs struct {
+	// Access type for the collection. Must be one of: COLLECTION_ACCESS_RULE_ACCESS_TYPE_READ_ONLY, COLLECTION_ACCESS_RULE_ACCESS_TYPE_READ_WRITE.
+	AccessType pulumi.StringInput `pulumi:"accessType"`
+	// Name of the collection.
+	CollectionName pulumi.StringInput `pulumi:"collectionName"`
+}
+
+func (ServerlessSpaceApiKeyCollectionAccessRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessSpaceApiKeyCollectionAccessRule)(nil)).Elem()
+}
+
+func (i ServerlessSpaceApiKeyCollectionAccessRuleArgs) ToServerlessSpaceApiKeyCollectionAccessRuleOutput() ServerlessSpaceApiKeyCollectionAccessRuleOutput {
+	return i.ToServerlessSpaceApiKeyCollectionAccessRuleOutputWithContext(context.Background())
+}
+
+func (i ServerlessSpaceApiKeyCollectionAccessRuleArgs) ToServerlessSpaceApiKeyCollectionAccessRuleOutputWithContext(ctx context.Context) ServerlessSpaceApiKeyCollectionAccessRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceApiKeyCollectionAccessRuleOutput)
+}
+
+// ServerlessSpaceApiKeyCollectionAccessRuleArrayInput is an input type that accepts ServerlessSpaceApiKeyCollectionAccessRuleArray and ServerlessSpaceApiKeyCollectionAccessRuleArrayOutput values.
+// You can construct a concrete instance of `ServerlessSpaceApiKeyCollectionAccessRuleArrayInput` via:
+//
+//	ServerlessSpaceApiKeyCollectionAccessRuleArray{ ServerlessSpaceApiKeyCollectionAccessRuleArgs{...} }
+type ServerlessSpaceApiKeyCollectionAccessRuleArrayInput interface {
+	pulumi.Input
+
+	ToServerlessSpaceApiKeyCollectionAccessRuleArrayOutput() ServerlessSpaceApiKeyCollectionAccessRuleArrayOutput
+	ToServerlessSpaceApiKeyCollectionAccessRuleArrayOutputWithContext(context.Context) ServerlessSpaceApiKeyCollectionAccessRuleArrayOutput
+}
+
+type ServerlessSpaceApiKeyCollectionAccessRuleArray []ServerlessSpaceApiKeyCollectionAccessRuleInput
+
+func (ServerlessSpaceApiKeyCollectionAccessRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerlessSpaceApiKeyCollectionAccessRule)(nil)).Elem()
+}
+
+func (i ServerlessSpaceApiKeyCollectionAccessRuleArray) ToServerlessSpaceApiKeyCollectionAccessRuleArrayOutput() ServerlessSpaceApiKeyCollectionAccessRuleArrayOutput {
+	return i.ToServerlessSpaceApiKeyCollectionAccessRuleArrayOutputWithContext(context.Background())
+}
+
+func (i ServerlessSpaceApiKeyCollectionAccessRuleArray) ToServerlessSpaceApiKeyCollectionAccessRuleArrayOutputWithContext(ctx context.Context) ServerlessSpaceApiKeyCollectionAccessRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceApiKeyCollectionAccessRuleArrayOutput)
+}
+
+type ServerlessSpaceApiKeyCollectionAccessRuleOutput struct{ *pulumi.OutputState }
+
+func (ServerlessSpaceApiKeyCollectionAccessRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessSpaceApiKeyCollectionAccessRule)(nil)).Elem()
+}
+
+func (o ServerlessSpaceApiKeyCollectionAccessRuleOutput) ToServerlessSpaceApiKeyCollectionAccessRuleOutput() ServerlessSpaceApiKeyCollectionAccessRuleOutput {
+	return o
+}
+
+func (o ServerlessSpaceApiKeyCollectionAccessRuleOutput) ToServerlessSpaceApiKeyCollectionAccessRuleOutputWithContext(ctx context.Context) ServerlessSpaceApiKeyCollectionAccessRuleOutput {
+	return o
+}
+
+// Access type for the collection. Must be one of: COLLECTION_ACCESS_RULE_ACCESS_TYPE_READ_ONLY, COLLECTION_ACCESS_RULE_ACCESS_TYPE_READ_WRITE.
+func (o ServerlessSpaceApiKeyCollectionAccessRuleOutput) AccessType() pulumi.StringOutput {
+	return o.ApplyT(func(v ServerlessSpaceApiKeyCollectionAccessRule) string { return v.AccessType }).(pulumi.StringOutput)
+}
+
+// Name of the collection.
+func (o ServerlessSpaceApiKeyCollectionAccessRuleOutput) CollectionName() pulumi.StringOutput {
+	return o.ApplyT(func(v ServerlessSpaceApiKeyCollectionAccessRule) string { return v.CollectionName }).(pulumi.StringOutput)
+}
+
+type ServerlessSpaceApiKeyCollectionAccessRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (ServerlessSpaceApiKeyCollectionAccessRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerlessSpaceApiKeyCollectionAccessRule)(nil)).Elem()
+}
+
+func (o ServerlessSpaceApiKeyCollectionAccessRuleArrayOutput) ToServerlessSpaceApiKeyCollectionAccessRuleArrayOutput() ServerlessSpaceApiKeyCollectionAccessRuleArrayOutput {
+	return o
+}
+
+func (o ServerlessSpaceApiKeyCollectionAccessRuleArrayOutput) ToServerlessSpaceApiKeyCollectionAccessRuleArrayOutputWithContext(ctx context.Context) ServerlessSpaceApiKeyCollectionAccessRuleArrayOutput {
+	return o
+}
+
+func (o ServerlessSpaceApiKeyCollectionAccessRuleArrayOutput) Index(i pulumi.IntInput) ServerlessSpaceApiKeyCollectionAccessRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServerlessSpaceApiKeyCollectionAccessRule {
+		return vs[0].([]ServerlessSpaceApiKeyCollectionAccessRule)[vs[1].(int)]
+	}).(ServerlessSpaceApiKeyCollectionAccessRuleOutput)
+}
+
+type ServerlessSpaceApiKeyGlobalAccessRule struct {
+	// Access type for the entire space. Must be one of: GLOBAL_ACCESS_RULE_ACCESS_TYPE_MANAGE, GLOBAL_ACCESS_RULE_ACCESS_TYPE_METRICS_READ_ONLY, GLOBAL_ACCESS_RULE_ACCESS_TYPE_READ_ONLY.
+	AccessType string `pulumi:"accessType"`
+}
+
+// ServerlessSpaceApiKeyGlobalAccessRuleInput is an input type that accepts ServerlessSpaceApiKeyGlobalAccessRuleArgs and ServerlessSpaceApiKeyGlobalAccessRuleOutput values.
+// You can construct a concrete instance of `ServerlessSpaceApiKeyGlobalAccessRuleInput` via:
+//
+//	ServerlessSpaceApiKeyGlobalAccessRuleArgs{...}
+type ServerlessSpaceApiKeyGlobalAccessRuleInput interface {
+	pulumi.Input
+
+	ToServerlessSpaceApiKeyGlobalAccessRuleOutput() ServerlessSpaceApiKeyGlobalAccessRuleOutput
+	ToServerlessSpaceApiKeyGlobalAccessRuleOutputWithContext(context.Context) ServerlessSpaceApiKeyGlobalAccessRuleOutput
+}
+
+type ServerlessSpaceApiKeyGlobalAccessRuleArgs struct {
+	// Access type for the entire space. Must be one of: GLOBAL_ACCESS_RULE_ACCESS_TYPE_MANAGE, GLOBAL_ACCESS_RULE_ACCESS_TYPE_METRICS_READ_ONLY, GLOBAL_ACCESS_RULE_ACCESS_TYPE_READ_ONLY.
+	AccessType pulumi.StringInput `pulumi:"accessType"`
+}
+
+func (ServerlessSpaceApiKeyGlobalAccessRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessSpaceApiKeyGlobalAccessRule)(nil)).Elem()
+}
+
+func (i ServerlessSpaceApiKeyGlobalAccessRuleArgs) ToServerlessSpaceApiKeyGlobalAccessRuleOutput() ServerlessSpaceApiKeyGlobalAccessRuleOutput {
+	return i.ToServerlessSpaceApiKeyGlobalAccessRuleOutputWithContext(context.Background())
+}
+
+func (i ServerlessSpaceApiKeyGlobalAccessRuleArgs) ToServerlessSpaceApiKeyGlobalAccessRuleOutputWithContext(ctx context.Context) ServerlessSpaceApiKeyGlobalAccessRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceApiKeyGlobalAccessRuleOutput)
+}
+
+func (i ServerlessSpaceApiKeyGlobalAccessRuleArgs) ToServerlessSpaceApiKeyGlobalAccessRulePtrOutput() ServerlessSpaceApiKeyGlobalAccessRulePtrOutput {
+	return i.ToServerlessSpaceApiKeyGlobalAccessRulePtrOutputWithContext(context.Background())
+}
+
+func (i ServerlessSpaceApiKeyGlobalAccessRuleArgs) ToServerlessSpaceApiKeyGlobalAccessRulePtrOutputWithContext(ctx context.Context) ServerlessSpaceApiKeyGlobalAccessRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceApiKeyGlobalAccessRuleOutput).ToServerlessSpaceApiKeyGlobalAccessRulePtrOutputWithContext(ctx)
+}
+
+// ServerlessSpaceApiKeyGlobalAccessRulePtrInput is an input type that accepts ServerlessSpaceApiKeyGlobalAccessRuleArgs, ServerlessSpaceApiKeyGlobalAccessRulePtr and ServerlessSpaceApiKeyGlobalAccessRulePtrOutput values.
+// You can construct a concrete instance of `ServerlessSpaceApiKeyGlobalAccessRulePtrInput` via:
+//
+//	        ServerlessSpaceApiKeyGlobalAccessRuleArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServerlessSpaceApiKeyGlobalAccessRulePtrInput interface {
+	pulumi.Input
+
+	ToServerlessSpaceApiKeyGlobalAccessRulePtrOutput() ServerlessSpaceApiKeyGlobalAccessRulePtrOutput
+	ToServerlessSpaceApiKeyGlobalAccessRulePtrOutputWithContext(context.Context) ServerlessSpaceApiKeyGlobalAccessRulePtrOutput
+}
+
+type serverlessSpaceApiKeyGlobalAccessRulePtrType ServerlessSpaceApiKeyGlobalAccessRuleArgs
+
+func ServerlessSpaceApiKeyGlobalAccessRulePtr(v *ServerlessSpaceApiKeyGlobalAccessRuleArgs) ServerlessSpaceApiKeyGlobalAccessRulePtrInput {
+	return (*serverlessSpaceApiKeyGlobalAccessRulePtrType)(v)
+}
+
+func (*serverlessSpaceApiKeyGlobalAccessRulePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServerlessSpaceApiKeyGlobalAccessRule)(nil)).Elem()
+}
+
+func (i *serverlessSpaceApiKeyGlobalAccessRulePtrType) ToServerlessSpaceApiKeyGlobalAccessRulePtrOutput() ServerlessSpaceApiKeyGlobalAccessRulePtrOutput {
+	return i.ToServerlessSpaceApiKeyGlobalAccessRulePtrOutputWithContext(context.Background())
+}
+
+func (i *serverlessSpaceApiKeyGlobalAccessRulePtrType) ToServerlessSpaceApiKeyGlobalAccessRulePtrOutputWithContext(ctx context.Context) ServerlessSpaceApiKeyGlobalAccessRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceApiKeyGlobalAccessRulePtrOutput)
+}
+
+type ServerlessSpaceApiKeyGlobalAccessRuleOutput struct{ *pulumi.OutputState }
+
+func (ServerlessSpaceApiKeyGlobalAccessRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessSpaceApiKeyGlobalAccessRule)(nil)).Elem()
+}
+
+func (o ServerlessSpaceApiKeyGlobalAccessRuleOutput) ToServerlessSpaceApiKeyGlobalAccessRuleOutput() ServerlessSpaceApiKeyGlobalAccessRuleOutput {
+	return o
+}
+
+func (o ServerlessSpaceApiKeyGlobalAccessRuleOutput) ToServerlessSpaceApiKeyGlobalAccessRuleOutputWithContext(ctx context.Context) ServerlessSpaceApiKeyGlobalAccessRuleOutput {
+	return o
+}
+
+func (o ServerlessSpaceApiKeyGlobalAccessRuleOutput) ToServerlessSpaceApiKeyGlobalAccessRulePtrOutput() ServerlessSpaceApiKeyGlobalAccessRulePtrOutput {
+	return o.ToServerlessSpaceApiKeyGlobalAccessRulePtrOutputWithContext(context.Background())
+}
+
+func (o ServerlessSpaceApiKeyGlobalAccessRuleOutput) ToServerlessSpaceApiKeyGlobalAccessRulePtrOutputWithContext(ctx context.Context) ServerlessSpaceApiKeyGlobalAccessRulePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServerlessSpaceApiKeyGlobalAccessRule) *ServerlessSpaceApiKeyGlobalAccessRule {
+		return &v
+	}).(ServerlessSpaceApiKeyGlobalAccessRulePtrOutput)
+}
+
+// Access type for the entire space. Must be one of: GLOBAL_ACCESS_RULE_ACCESS_TYPE_MANAGE, GLOBAL_ACCESS_RULE_ACCESS_TYPE_METRICS_READ_ONLY, GLOBAL_ACCESS_RULE_ACCESS_TYPE_READ_ONLY.
+func (o ServerlessSpaceApiKeyGlobalAccessRuleOutput) AccessType() pulumi.StringOutput {
+	return o.ApplyT(func(v ServerlessSpaceApiKeyGlobalAccessRule) string { return v.AccessType }).(pulumi.StringOutput)
+}
+
+type ServerlessSpaceApiKeyGlobalAccessRulePtrOutput struct{ *pulumi.OutputState }
+
+func (ServerlessSpaceApiKeyGlobalAccessRulePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServerlessSpaceApiKeyGlobalAccessRule)(nil)).Elem()
+}
+
+func (o ServerlessSpaceApiKeyGlobalAccessRulePtrOutput) ToServerlessSpaceApiKeyGlobalAccessRulePtrOutput() ServerlessSpaceApiKeyGlobalAccessRulePtrOutput {
+	return o
+}
+
+func (o ServerlessSpaceApiKeyGlobalAccessRulePtrOutput) ToServerlessSpaceApiKeyGlobalAccessRulePtrOutputWithContext(ctx context.Context) ServerlessSpaceApiKeyGlobalAccessRulePtrOutput {
+	return o
+}
+
+func (o ServerlessSpaceApiKeyGlobalAccessRulePtrOutput) Elem() ServerlessSpaceApiKeyGlobalAccessRuleOutput {
+	return o.ApplyT(func(v *ServerlessSpaceApiKeyGlobalAccessRule) ServerlessSpaceApiKeyGlobalAccessRule {
+		if v != nil {
+			return *v
+		}
+		var ret ServerlessSpaceApiKeyGlobalAccessRule
+		return ret
+	}).(ServerlessSpaceApiKeyGlobalAccessRuleOutput)
+}
+
+// Access type for the entire space. Must be one of: GLOBAL_ACCESS_RULE_ACCESS_TYPE_MANAGE, GLOBAL_ACCESS_RULE_ACCESS_TYPE_METRICS_READ_ONLY, GLOBAL_ACCESS_RULE_ACCESS_TYPE_READ_ONLY.
+func (o ServerlessSpaceApiKeyGlobalAccessRulePtrOutput) AccessType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServerlessSpaceApiKeyGlobalAccessRule) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.AccessType
+	}).(pulumi.StringPtrOutput)
+}
+
+type ServerlessSpaceApiKeyStateType struct {
+	Phase  *string `pulumi:"phase"`
+	Reason *string `pulumi:"reason"`
+}
+
+// ServerlessSpaceApiKeyStateTypeInput is an input type that accepts ServerlessSpaceApiKeyStateTypeArgs and ServerlessSpaceApiKeyStateTypeOutput values.
+// You can construct a concrete instance of `ServerlessSpaceApiKeyStateTypeInput` via:
+//
+//	ServerlessSpaceApiKeyStateTypeArgs{...}
+type ServerlessSpaceApiKeyStateTypeInput interface {
+	pulumi.Input
+
+	ToServerlessSpaceApiKeyStateTypeOutput() ServerlessSpaceApiKeyStateTypeOutput
+	ToServerlessSpaceApiKeyStateTypeOutputWithContext(context.Context) ServerlessSpaceApiKeyStateTypeOutput
+}
+
+type ServerlessSpaceApiKeyStateTypeArgs struct {
+	Phase  pulumi.StringPtrInput `pulumi:"phase"`
+	Reason pulumi.StringPtrInput `pulumi:"reason"`
+}
+
+func (ServerlessSpaceApiKeyStateTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessSpaceApiKeyStateType)(nil)).Elem()
+}
+
+func (i ServerlessSpaceApiKeyStateTypeArgs) ToServerlessSpaceApiKeyStateTypeOutput() ServerlessSpaceApiKeyStateTypeOutput {
+	return i.ToServerlessSpaceApiKeyStateTypeOutputWithContext(context.Background())
+}
+
+func (i ServerlessSpaceApiKeyStateTypeArgs) ToServerlessSpaceApiKeyStateTypeOutputWithContext(ctx context.Context) ServerlessSpaceApiKeyStateTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceApiKeyStateTypeOutput)
+}
+
+// ServerlessSpaceApiKeyStateTypeArrayInput is an input type that accepts ServerlessSpaceApiKeyStateTypeArray and ServerlessSpaceApiKeyStateTypeArrayOutput values.
+// You can construct a concrete instance of `ServerlessSpaceApiKeyStateTypeArrayInput` via:
+//
+//	ServerlessSpaceApiKeyStateTypeArray{ ServerlessSpaceApiKeyStateTypeArgs{...} }
+type ServerlessSpaceApiKeyStateTypeArrayInput interface {
+	pulumi.Input
+
+	ToServerlessSpaceApiKeyStateTypeArrayOutput() ServerlessSpaceApiKeyStateTypeArrayOutput
+	ToServerlessSpaceApiKeyStateTypeArrayOutputWithContext(context.Context) ServerlessSpaceApiKeyStateTypeArrayOutput
+}
+
+type ServerlessSpaceApiKeyStateTypeArray []ServerlessSpaceApiKeyStateTypeInput
+
+func (ServerlessSpaceApiKeyStateTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerlessSpaceApiKeyStateType)(nil)).Elem()
+}
+
+func (i ServerlessSpaceApiKeyStateTypeArray) ToServerlessSpaceApiKeyStateTypeArrayOutput() ServerlessSpaceApiKeyStateTypeArrayOutput {
+	return i.ToServerlessSpaceApiKeyStateTypeArrayOutputWithContext(context.Background())
+}
+
+func (i ServerlessSpaceApiKeyStateTypeArray) ToServerlessSpaceApiKeyStateTypeArrayOutputWithContext(ctx context.Context) ServerlessSpaceApiKeyStateTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceApiKeyStateTypeArrayOutput)
+}
+
+type ServerlessSpaceApiKeyStateTypeOutput struct{ *pulumi.OutputState }
+
+func (ServerlessSpaceApiKeyStateTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessSpaceApiKeyStateType)(nil)).Elem()
+}
+
+func (o ServerlessSpaceApiKeyStateTypeOutput) ToServerlessSpaceApiKeyStateTypeOutput() ServerlessSpaceApiKeyStateTypeOutput {
+	return o
+}
+
+func (o ServerlessSpaceApiKeyStateTypeOutput) ToServerlessSpaceApiKeyStateTypeOutputWithContext(ctx context.Context) ServerlessSpaceApiKeyStateTypeOutput {
+	return o
+}
+
+func (o ServerlessSpaceApiKeyStateTypeOutput) Phase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerlessSpaceApiKeyStateType) *string { return v.Phase }).(pulumi.StringPtrOutput)
+}
+
+func (o ServerlessSpaceApiKeyStateTypeOutput) Reason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerlessSpaceApiKeyStateType) *string { return v.Reason }).(pulumi.StringPtrOutput)
+}
+
+type ServerlessSpaceApiKeyStateTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (ServerlessSpaceApiKeyStateTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerlessSpaceApiKeyStateType)(nil)).Elem()
+}
+
+func (o ServerlessSpaceApiKeyStateTypeArrayOutput) ToServerlessSpaceApiKeyStateTypeArrayOutput() ServerlessSpaceApiKeyStateTypeArrayOutput {
+	return o
+}
+
+func (o ServerlessSpaceApiKeyStateTypeArrayOutput) ToServerlessSpaceApiKeyStateTypeArrayOutputWithContext(ctx context.Context) ServerlessSpaceApiKeyStateTypeArrayOutput {
+	return o
+}
+
+func (o ServerlessSpaceApiKeyStateTypeArrayOutput) Index(i pulumi.IntInput) ServerlessSpaceApiKeyStateTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServerlessSpaceApiKeyStateType {
+		return vs[0].([]ServerlessSpaceApiKeyStateType)[vs[1].(int)]
+	}).(ServerlessSpaceApiKeyStateTypeOutput)
+}
+
+type ServerlessSpaceApiKeyTimeouts struct {
+	Create *string `pulumi:"create"`
+}
+
+// ServerlessSpaceApiKeyTimeoutsInput is an input type that accepts ServerlessSpaceApiKeyTimeoutsArgs and ServerlessSpaceApiKeyTimeoutsOutput values.
+// You can construct a concrete instance of `ServerlessSpaceApiKeyTimeoutsInput` via:
+//
+//	ServerlessSpaceApiKeyTimeoutsArgs{...}
+type ServerlessSpaceApiKeyTimeoutsInput interface {
+	pulumi.Input
+
+	ToServerlessSpaceApiKeyTimeoutsOutput() ServerlessSpaceApiKeyTimeoutsOutput
+	ToServerlessSpaceApiKeyTimeoutsOutputWithContext(context.Context) ServerlessSpaceApiKeyTimeoutsOutput
+}
+
+type ServerlessSpaceApiKeyTimeoutsArgs struct {
+	Create pulumi.StringPtrInput `pulumi:"create"`
+}
+
+func (ServerlessSpaceApiKeyTimeoutsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessSpaceApiKeyTimeouts)(nil)).Elem()
+}
+
+func (i ServerlessSpaceApiKeyTimeoutsArgs) ToServerlessSpaceApiKeyTimeoutsOutput() ServerlessSpaceApiKeyTimeoutsOutput {
+	return i.ToServerlessSpaceApiKeyTimeoutsOutputWithContext(context.Background())
+}
+
+func (i ServerlessSpaceApiKeyTimeoutsArgs) ToServerlessSpaceApiKeyTimeoutsOutputWithContext(ctx context.Context) ServerlessSpaceApiKeyTimeoutsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceApiKeyTimeoutsOutput)
+}
+
+func (i ServerlessSpaceApiKeyTimeoutsArgs) ToServerlessSpaceApiKeyTimeoutsPtrOutput() ServerlessSpaceApiKeyTimeoutsPtrOutput {
+	return i.ToServerlessSpaceApiKeyTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (i ServerlessSpaceApiKeyTimeoutsArgs) ToServerlessSpaceApiKeyTimeoutsPtrOutputWithContext(ctx context.Context) ServerlessSpaceApiKeyTimeoutsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceApiKeyTimeoutsOutput).ToServerlessSpaceApiKeyTimeoutsPtrOutputWithContext(ctx)
+}
+
+// ServerlessSpaceApiKeyTimeoutsPtrInput is an input type that accepts ServerlessSpaceApiKeyTimeoutsArgs, ServerlessSpaceApiKeyTimeoutsPtr and ServerlessSpaceApiKeyTimeoutsPtrOutput values.
+// You can construct a concrete instance of `ServerlessSpaceApiKeyTimeoutsPtrInput` via:
+//
+//	        ServerlessSpaceApiKeyTimeoutsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServerlessSpaceApiKeyTimeoutsPtrInput interface {
+	pulumi.Input
+
+	ToServerlessSpaceApiKeyTimeoutsPtrOutput() ServerlessSpaceApiKeyTimeoutsPtrOutput
+	ToServerlessSpaceApiKeyTimeoutsPtrOutputWithContext(context.Context) ServerlessSpaceApiKeyTimeoutsPtrOutput
+}
+
+type serverlessSpaceApiKeyTimeoutsPtrType ServerlessSpaceApiKeyTimeoutsArgs
+
+func ServerlessSpaceApiKeyTimeoutsPtr(v *ServerlessSpaceApiKeyTimeoutsArgs) ServerlessSpaceApiKeyTimeoutsPtrInput {
+	return (*serverlessSpaceApiKeyTimeoutsPtrType)(v)
+}
+
+func (*serverlessSpaceApiKeyTimeoutsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServerlessSpaceApiKeyTimeouts)(nil)).Elem()
+}
+
+func (i *serverlessSpaceApiKeyTimeoutsPtrType) ToServerlessSpaceApiKeyTimeoutsPtrOutput() ServerlessSpaceApiKeyTimeoutsPtrOutput {
+	return i.ToServerlessSpaceApiKeyTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (i *serverlessSpaceApiKeyTimeoutsPtrType) ToServerlessSpaceApiKeyTimeoutsPtrOutputWithContext(ctx context.Context) ServerlessSpaceApiKeyTimeoutsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceApiKeyTimeoutsPtrOutput)
+}
+
+type ServerlessSpaceApiKeyTimeoutsOutput struct{ *pulumi.OutputState }
+
+func (ServerlessSpaceApiKeyTimeoutsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessSpaceApiKeyTimeouts)(nil)).Elem()
+}
+
+func (o ServerlessSpaceApiKeyTimeoutsOutput) ToServerlessSpaceApiKeyTimeoutsOutput() ServerlessSpaceApiKeyTimeoutsOutput {
+	return o
+}
+
+func (o ServerlessSpaceApiKeyTimeoutsOutput) ToServerlessSpaceApiKeyTimeoutsOutputWithContext(ctx context.Context) ServerlessSpaceApiKeyTimeoutsOutput {
+	return o
+}
+
+func (o ServerlessSpaceApiKeyTimeoutsOutput) ToServerlessSpaceApiKeyTimeoutsPtrOutput() ServerlessSpaceApiKeyTimeoutsPtrOutput {
+	return o.ToServerlessSpaceApiKeyTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (o ServerlessSpaceApiKeyTimeoutsOutput) ToServerlessSpaceApiKeyTimeoutsPtrOutputWithContext(ctx context.Context) ServerlessSpaceApiKeyTimeoutsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServerlessSpaceApiKeyTimeouts) *ServerlessSpaceApiKeyTimeouts {
+		return &v
+	}).(ServerlessSpaceApiKeyTimeoutsPtrOutput)
+}
+
+func (o ServerlessSpaceApiKeyTimeoutsOutput) Create() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerlessSpaceApiKeyTimeouts) *string { return v.Create }).(pulumi.StringPtrOutput)
+}
+
+type ServerlessSpaceApiKeyTimeoutsPtrOutput struct{ *pulumi.OutputState }
+
+func (ServerlessSpaceApiKeyTimeoutsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServerlessSpaceApiKeyTimeouts)(nil)).Elem()
+}
+
+func (o ServerlessSpaceApiKeyTimeoutsPtrOutput) ToServerlessSpaceApiKeyTimeoutsPtrOutput() ServerlessSpaceApiKeyTimeoutsPtrOutput {
+	return o
+}
+
+func (o ServerlessSpaceApiKeyTimeoutsPtrOutput) ToServerlessSpaceApiKeyTimeoutsPtrOutputWithContext(ctx context.Context) ServerlessSpaceApiKeyTimeoutsPtrOutput {
+	return o
+}
+
+func (o ServerlessSpaceApiKeyTimeoutsPtrOutput) Elem() ServerlessSpaceApiKeyTimeoutsOutput {
+	return o.ApplyT(func(v *ServerlessSpaceApiKeyTimeouts) ServerlessSpaceApiKeyTimeouts {
+		if v != nil {
+			return *v
+		}
+		var ret ServerlessSpaceApiKeyTimeouts
+		return ret
+	}).(ServerlessSpaceApiKeyTimeoutsOutput)
+}
+
+func (o ServerlessSpaceApiKeyTimeoutsPtrOutput) Create() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServerlessSpaceApiKeyTimeouts) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Create
+	}).(pulumi.StringPtrOutput)
+}
+
+type ServerlessSpaceConfiguration struct {
+	// List of allowed IPv4 source ranges (CIDR) for this space (max 40).
+	AllowedIpSourceRanges []string `pulumi:"allowedIpSourceRanges"`
+	// List of origins (scheme + host + optional port, e.g. `https://app.example.com`) from which browser-based clients are allowed to call the space via CORS (max 10).
+	AllowedOrigins []string `pulumi:"allowedOrigins"`
+	// Per-collection size limits for this space.
+	CollectionSettings *ServerlessSpaceConfigurationCollectionSettings `pulumi:"collectionSettings"`
+	// Time when the configuration was last updated.
+	LastModifiedAt *string `pulumi:"lastModifiedAt"`
+	// Platform-enforced limit on the number of collections for this space (0 means unlimited).
+	MaxCollectionsPerSpace *float64 `pulumi:"maxCollectionsPerSpace"`
+	// Search-worker settings for this space.
+	SearcherSettings *ServerlessSpaceConfigurationSearcherSettings `pulumi:"searcherSettings"`
+}
+
+// ServerlessSpaceConfigurationInput is an input type that accepts ServerlessSpaceConfigurationArgs and ServerlessSpaceConfigurationOutput values.
+// You can construct a concrete instance of `ServerlessSpaceConfigurationInput` via:
+//
+//	ServerlessSpaceConfigurationArgs{...}
+type ServerlessSpaceConfigurationInput interface {
+	pulumi.Input
+
+	ToServerlessSpaceConfigurationOutput() ServerlessSpaceConfigurationOutput
+	ToServerlessSpaceConfigurationOutputWithContext(context.Context) ServerlessSpaceConfigurationOutput
+}
+
+type ServerlessSpaceConfigurationArgs struct {
+	// List of allowed IPv4 source ranges (CIDR) for this space (max 40).
+	AllowedIpSourceRanges pulumi.StringArrayInput `pulumi:"allowedIpSourceRanges"`
+	// List of origins (scheme + host + optional port, e.g. `https://app.example.com`) from which browser-based clients are allowed to call the space via CORS (max 10).
+	AllowedOrigins pulumi.StringArrayInput `pulumi:"allowedOrigins"`
+	// Per-collection size limits for this space.
+	CollectionSettings ServerlessSpaceConfigurationCollectionSettingsPtrInput `pulumi:"collectionSettings"`
+	// Time when the configuration was last updated.
+	LastModifiedAt pulumi.StringPtrInput `pulumi:"lastModifiedAt"`
+	// Platform-enforced limit on the number of collections for this space (0 means unlimited).
+	MaxCollectionsPerSpace pulumi.Float64PtrInput `pulumi:"maxCollectionsPerSpace"`
+	// Search-worker settings for this space.
+	SearcherSettings ServerlessSpaceConfigurationSearcherSettingsPtrInput `pulumi:"searcherSettings"`
+}
+
+func (ServerlessSpaceConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessSpaceConfiguration)(nil)).Elem()
+}
+
+func (i ServerlessSpaceConfigurationArgs) ToServerlessSpaceConfigurationOutput() ServerlessSpaceConfigurationOutput {
+	return i.ToServerlessSpaceConfigurationOutputWithContext(context.Background())
+}
+
+func (i ServerlessSpaceConfigurationArgs) ToServerlessSpaceConfigurationOutputWithContext(ctx context.Context) ServerlessSpaceConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceConfigurationOutput)
+}
+
+func (i ServerlessSpaceConfigurationArgs) ToServerlessSpaceConfigurationPtrOutput() ServerlessSpaceConfigurationPtrOutput {
+	return i.ToServerlessSpaceConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i ServerlessSpaceConfigurationArgs) ToServerlessSpaceConfigurationPtrOutputWithContext(ctx context.Context) ServerlessSpaceConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceConfigurationOutput).ToServerlessSpaceConfigurationPtrOutputWithContext(ctx)
+}
+
+// ServerlessSpaceConfigurationPtrInput is an input type that accepts ServerlessSpaceConfigurationArgs, ServerlessSpaceConfigurationPtr and ServerlessSpaceConfigurationPtrOutput values.
+// You can construct a concrete instance of `ServerlessSpaceConfigurationPtrInput` via:
+//
+//	        ServerlessSpaceConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServerlessSpaceConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToServerlessSpaceConfigurationPtrOutput() ServerlessSpaceConfigurationPtrOutput
+	ToServerlessSpaceConfigurationPtrOutputWithContext(context.Context) ServerlessSpaceConfigurationPtrOutput
+}
+
+type serverlessSpaceConfigurationPtrType ServerlessSpaceConfigurationArgs
+
+func ServerlessSpaceConfigurationPtr(v *ServerlessSpaceConfigurationArgs) ServerlessSpaceConfigurationPtrInput {
+	return (*serverlessSpaceConfigurationPtrType)(v)
+}
+
+func (*serverlessSpaceConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServerlessSpaceConfiguration)(nil)).Elem()
+}
+
+func (i *serverlessSpaceConfigurationPtrType) ToServerlessSpaceConfigurationPtrOutput() ServerlessSpaceConfigurationPtrOutput {
+	return i.ToServerlessSpaceConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *serverlessSpaceConfigurationPtrType) ToServerlessSpaceConfigurationPtrOutputWithContext(ctx context.Context) ServerlessSpaceConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceConfigurationPtrOutput)
+}
+
+type ServerlessSpaceConfigurationOutput struct{ *pulumi.OutputState }
+
+func (ServerlessSpaceConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessSpaceConfiguration)(nil)).Elem()
+}
+
+func (o ServerlessSpaceConfigurationOutput) ToServerlessSpaceConfigurationOutput() ServerlessSpaceConfigurationOutput {
+	return o
+}
+
+func (o ServerlessSpaceConfigurationOutput) ToServerlessSpaceConfigurationOutputWithContext(ctx context.Context) ServerlessSpaceConfigurationOutput {
+	return o
+}
+
+func (o ServerlessSpaceConfigurationOutput) ToServerlessSpaceConfigurationPtrOutput() ServerlessSpaceConfigurationPtrOutput {
+	return o.ToServerlessSpaceConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o ServerlessSpaceConfigurationOutput) ToServerlessSpaceConfigurationPtrOutputWithContext(ctx context.Context) ServerlessSpaceConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServerlessSpaceConfiguration) *ServerlessSpaceConfiguration {
+		return &v
+	}).(ServerlessSpaceConfigurationPtrOutput)
+}
+
+// List of allowed IPv4 source ranges (CIDR) for this space (max 40).
+func (o ServerlessSpaceConfigurationOutput) AllowedIpSourceRanges() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ServerlessSpaceConfiguration) []string { return v.AllowedIpSourceRanges }).(pulumi.StringArrayOutput)
+}
+
+// List of origins (scheme + host + optional port, e.g. `https://app.example.com`) from which browser-based clients are allowed to call the space via CORS (max 10).
+func (o ServerlessSpaceConfigurationOutput) AllowedOrigins() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ServerlessSpaceConfiguration) []string { return v.AllowedOrigins }).(pulumi.StringArrayOutput)
+}
+
+// Per-collection size limits for this space.
+func (o ServerlessSpaceConfigurationOutput) CollectionSettings() ServerlessSpaceConfigurationCollectionSettingsPtrOutput {
+	return o.ApplyT(func(v ServerlessSpaceConfiguration) *ServerlessSpaceConfigurationCollectionSettings {
+		return v.CollectionSettings
+	}).(ServerlessSpaceConfigurationCollectionSettingsPtrOutput)
+}
+
+// Time when the configuration was last updated.
+func (o ServerlessSpaceConfigurationOutput) LastModifiedAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerlessSpaceConfiguration) *string { return v.LastModifiedAt }).(pulumi.StringPtrOutput)
+}
+
+// Platform-enforced limit on the number of collections for this space (0 means unlimited).
+func (o ServerlessSpaceConfigurationOutput) MaxCollectionsPerSpace() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ServerlessSpaceConfiguration) *float64 { return v.MaxCollectionsPerSpace }).(pulumi.Float64PtrOutput)
+}
+
+// Search-worker settings for this space.
+func (o ServerlessSpaceConfigurationOutput) SearcherSettings() ServerlessSpaceConfigurationSearcherSettingsPtrOutput {
+	return o.ApplyT(func(v ServerlessSpaceConfiguration) *ServerlessSpaceConfigurationSearcherSettings {
+		return v.SearcherSettings
+	}).(ServerlessSpaceConfigurationSearcherSettingsPtrOutput)
+}
+
+type ServerlessSpaceConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (ServerlessSpaceConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServerlessSpaceConfiguration)(nil)).Elem()
+}
+
+func (o ServerlessSpaceConfigurationPtrOutput) ToServerlessSpaceConfigurationPtrOutput() ServerlessSpaceConfigurationPtrOutput {
+	return o
+}
+
+func (o ServerlessSpaceConfigurationPtrOutput) ToServerlessSpaceConfigurationPtrOutputWithContext(ctx context.Context) ServerlessSpaceConfigurationPtrOutput {
+	return o
+}
+
+func (o ServerlessSpaceConfigurationPtrOutput) Elem() ServerlessSpaceConfigurationOutput {
+	return o.ApplyT(func(v *ServerlessSpaceConfiguration) ServerlessSpaceConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret ServerlessSpaceConfiguration
+		return ret
+	}).(ServerlessSpaceConfigurationOutput)
+}
+
+// List of allowed IPv4 source ranges (CIDR) for this space (max 40).
+func (o ServerlessSpaceConfigurationPtrOutput) AllowedIpSourceRanges() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ServerlessSpaceConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.AllowedIpSourceRanges
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of origins (scheme + host + optional port, e.g. `https://app.example.com`) from which browser-based clients are allowed to call the space via CORS (max 10).
+func (o ServerlessSpaceConfigurationPtrOutput) AllowedOrigins() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ServerlessSpaceConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.AllowedOrigins
+	}).(pulumi.StringArrayOutput)
+}
+
+// Per-collection size limits for this space.
+func (o ServerlessSpaceConfigurationPtrOutput) CollectionSettings() ServerlessSpaceConfigurationCollectionSettingsPtrOutput {
+	return o.ApplyT(func(v *ServerlessSpaceConfiguration) *ServerlessSpaceConfigurationCollectionSettings {
+		if v == nil {
+			return nil
+		}
+		return v.CollectionSettings
+	}).(ServerlessSpaceConfigurationCollectionSettingsPtrOutput)
+}
+
+// Time when the configuration was last updated.
+func (o ServerlessSpaceConfigurationPtrOutput) LastModifiedAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServerlessSpaceConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LastModifiedAt
+	}).(pulumi.StringPtrOutput)
+}
+
+// Platform-enforced limit on the number of collections for this space (0 means unlimited).
+func (o ServerlessSpaceConfigurationPtrOutput) MaxCollectionsPerSpace() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ServerlessSpaceConfiguration) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.MaxCollectionsPerSpace
+	}).(pulumi.Float64PtrOutput)
+}
+
+// Search-worker settings for this space.
+func (o ServerlessSpaceConfigurationPtrOutput) SearcherSettings() ServerlessSpaceConfigurationSearcherSettingsPtrOutput {
+	return o.ApplyT(func(v *ServerlessSpaceConfiguration) *ServerlessSpaceConfigurationSearcherSettings {
+		if v == nil {
+			return nil
+		}
+		return v.SearcherSettings
+	}).(ServerlessSpaceConfigurationSearcherSettingsPtrOutput)
+}
+
+type ServerlessSpaceConfigurationCollectionSettings struct {
+	// Customer-defined maximum size in bytes per collection, used for cost control. Must not exceed <span pulumi-lang-nodejs="`platformMaxSize`" pulumi-lang-dotnet="`PlatformMaxSize`" pulumi-lang-go="`platformMaxSize`" pulumi-lang-python="`platform_max_size`" pulumi-lang-yaml="`platformMaxSize`" pulumi-lang-java="`platformMaxSize`" pulumi-lang-hcl="`platform_max_size`">`platformMaxSize`</span>.
+	MaxSize *float64 `pulumi:"maxSize"`
+	// Platform-enforced maximum size in bytes per collection (0 means unlimited).
+	PlatformMaxSize *float64 `pulumi:"platformMaxSize"`
+}
+
+// ServerlessSpaceConfigurationCollectionSettingsInput is an input type that accepts ServerlessSpaceConfigurationCollectionSettingsArgs and ServerlessSpaceConfigurationCollectionSettingsOutput values.
+// You can construct a concrete instance of `ServerlessSpaceConfigurationCollectionSettingsInput` via:
+//
+//	ServerlessSpaceConfigurationCollectionSettingsArgs{...}
+type ServerlessSpaceConfigurationCollectionSettingsInput interface {
+	pulumi.Input
+
+	ToServerlessSpaceConfigurationCollectionSettingsOutput() ServerlessSpaceConfigurationCollectionSettingsOutput
+	ToServerlessSpaceConfigurationCollectionSettingsOutputWithContext(context.Context) ServerlessSpaceConfigurationCollectionSettingsOutput
+}
+
+type ServerlessSpaceConfigurationCollectionSettingsArgs struct {
+	// Customer-defined maximum size in bytes per collection, used for cost control. Must not exceed <span pulumi-lang-nodejs="`platformMaxSize`" pulumi-lang-dotnet="`PlatformMaxSize`" pulumi-lang-go="`platformMaxSize`" pulumi-lang-python="`platform_max_size`" pulumi-lang-yaml="`platformMaxSize`" pulumi-lang-java="`platformMaxSize`" pulumi-lang-hcl="`platform_max_size`">`platformMaxSize`</span>.
+	MaxSize pulumi.Float64PtrInput `pulumi:"maxSize"`
+	// Platform-enforced maximum size in bytes per collection (0 means unlimited).
+	PlatformMaxSize pulumi.Float64PtrInput `pulumi:"platformMaxSize"`
+}
+
+func (ServerlessSpaceConfigurationCollectionSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessSpaceConfigurationCollectionSettings)(nil)).Elem()
+}
+
+func (i ServerlessSpaceConfigurationCollectionSettingsArgs) ToServerlessSpaceConfigurationCollectionSettingsOutput() ServerlessSpaceConfigurationCollectionSettingsOutput {
+	return i.ToServerlessSpaceConfigurationCollectionSettingsOutputWithContext(context.Background())
+}
+
+func (i ServerlessSpaceConfigurationCollectionSettingsArgs) ToServerlessSpaceConfigurationCollectionSettingsOutputWithContext(ctx context.Context) ServerlessSpaceConfigurationCollectionSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceConfigurationCollectionSettingsOutput)
+}
+
+func (i ServerlessSpaceConfigurationCollectionSettingsArgs) ToServerlessSpaceConfigurationCollectionSettingsPtrOutput() ServerlessSpaceConfigurationCollectionSettingsPtrOutput {
+	return i.ToServerlessSpaceConfigurationCollectionSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i ServerlessSpaceConfigurationCollectionSettingsArgs) ToServerlessSpaceConfigurationCollectionSettingsPtrOutputWithContext(ctx context.Context) ServerlessSpaceConfigurationCollectionSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceConfigurationCollectionSettingsOutput).ToServerlessSpaceConfigurationCollectionSettingsPtrOutputWithContext(ctx)
+}
+
+// ServerlessSpaceConfigurationCollectionSettingsPtrInput is an input type that accepts ServerlessSpaceConfigurationCollectionSettingsArgs, ServerlessSpaceConfigurationCollectionSettingsPtr and ServerlessSpaceConfigurationCollectionSettingsPtrOutput values.
+// You can construct a concrete instance of `ServerlessSpaceConfigurationCollectionSettingsPtrInput` via:
+//
+//	        ServerlessSpaceConfigurationCollectionSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServerlessSpaceConfigurationCollectionSettingsPtrInput interface {
+	pulumi.Input
+
+	ToServerlessSpaceConfigurationCollectionSettingsPtrOutput() ServerlessSpaceConfigurationCollectionSettingsPtrOutput
+	ToServerlessSpaceConfigurationCollectionSettingsPtrOutputWithContext(context.Context) ServerlessSpaceConfigurationCollectionSettingsPtrOutput
+}
+
+type serverlessSpaceConfigurationCollectionSettingsPtrType ServerlessSpaceConfigurationCollectionSettingsArgs
+
+func ServerlessSpaceConfigurationCollectionSettingsPtr(v *ServerlessSpaceConfigurationCollectionSettingsArgs) ServerlessSpaceConfigurationCollectionSettingsPtrInput {
+	return (*serverlessSpaceConfigurationCollectionSettingsPtrType)(v)
+}
+
+func (*serverlessSpaceConfigurationCollectionSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServerlessSpaceConfigurationCollectionSettings)(nil)).Elem()
+}
+
+func (i *serverlessSpaceConfigurationCollectionSettingsPtrType) ToServerlessSpaceConfigurationCollectionSettingsPtrOutput() ServerlessSpaceConfigurationCollectionSettingsPtrOutput {
+	return i.ToServerlessSpaceConfigurationCollectionSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *serverlessSpaceConfigurationCollectionSettingsPtrType) ToServerlessSpaceConfigurationCollectionSettingsPtrOutputWithContext(ctx context.Context) ServerlessSpaceConfigurationCollectionSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceConfigurationCollectionSettingsPtrOutput)
+}
+
+type ServerlessSpaceConfigurationCollectionSettingsOutput struct{ *pulumi.OutputState }
+
+func (ServerlessSpaceConfigurationCollectionSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessSpaceConfigurationCollectionSettings)(nil)).Elem()
+}
+
+func (o ServerlessSpaceConfigurationCollectionSettingsOutput) ToServerlessSpaceConfigurationCollectionSettingsOutput() ServerlessSpaceConfigurationCollectionSettingsOutput {
+	return o
+}
+
+func (o ServerlessSpaceConfigurationCollectionSettingsOutput) ToServerlessSpaceConfigurationCollectionSettingsOutputWithContext(ctx context.Context) ServerlessSpaceConfigurationCollectionSettingsOutput {
+	return o
+}
+
+func (o ServerlessSpaceConfigurationCollectionSettingsOutput) ToServerlessSpaceConfigurationCollectionSettingsPtrOutput() ServerlessSpaceConfigurationCollectionSettingsPtrOutput {
+	return o.ToServerlessSpaceConfigurationCollectionSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o ServerlessSpaceConfigurationCollectionSettingsOutput) ToServerlessSpaceConfigurationCollectionSettingsPtrOutputWithContext(ctx context.Context) ServerlessSpaceConfigurationCollectionSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServerlessSpaceConfigurationCollectionSettings) *ServerlessSpaceConfigurationCollectionSettings {
+		return &v
+	}).(ServerlessSpaceConfigurationCollectionSettingsPtrOutput)
+}
+
+// Customer-defined maximum size in bytes per collection, used for cost control. Must not exceed <span pulumi-lang-nodejs="`platformMaxSize`" pulumi-lang-dotnet="`PlatformMaxSize`" pulumi-lang-go="`platformMaxSize`" pulumi-lang-python="`platform_max_size`" pulumi-lang-yaml="`platformMaxSize`" pulumi-lang-java="`platformMaxSize`" pulumi-lang-hcl="`platform_max_size`">`platformMaxSize`</span>.
+func (o ServerlessSpaceConfigurationCollectionSettingsOutput) MaxSize() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ServerlessSpaceConfigurationCollectionSettings) *float64 { return v.MaxSize }).(pulumi.Float64PtrOutput)
+}
+
+// Platform-enforced maximum size in bytes per collection (0 means unlimited).
+func (o ServerlessSpaceConfigurationCollectionSettingsOutput) PlatformMaxSize() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ServerlessSpaceConfigurationCollectionSettings) *float64 { return v.PlatformMaxSize }).(pulumi.Float64PtrOutput)
+}
+
+type ServerlessSpaceConfigurationCollectionSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (ServerlessSpaceConfigurationCollectionSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServerlessSpaceConfigurationCollectionSettings)(nil)).Elem()
+}
+
+func (o ServerlessSpaceConfigurationCollectionSettingsPtrOutput) ToServerlessSpaceConfigurationCollectionSettingsPtrOutput() ServerlessSpaceConfigurationCollectionSettingsPtrOutput {
+	return o
+}
+
+func (o ServerlessSpaceConfigurationCollectionSettingsPtrOutput) ToServerlessSpaceConfigurationCollectionSettingsPtrOutputWithContext(ctx context.Context) ServerlessSpaceConfigurationCollectionSettingsPtrOutput {
+	return o
+}
+
+func (o ServerlessSpaceConfigurationCollectionSettingsPtrOutput) Elem() ServerlessSpaceConfigurationCollectionSettingsOutput {
+	return o.ApplyT(func(v *ServerlessSpaceConfigurationCollectionSettings) ServerlessSpaceConfigurationCollectionSettings {
+		if v != nil {
+			return *v
+		}
+		var ret ServerlessSpaceConfigurationCollectionSettings
+		return ret
+	}).(ServerlessSpaceConfigurationCollectionSettingsOutput)
+}
+
+// Customer-defined maximum size in bytes per collection, used for cost control. Must not exceed <span pulumi-lang-nodejs="`platformMaxSize`" pulumi-lang-dotnet="`PlatformMaxSize`" pulumi-lang-go="`platformMaxSize`" pulumi-lang-python="`platform_max_size`" pulumi-lang-yaml="`platformMaxSize`" pulumi-lang-java="`platformMaxSize`" pulumi-lang-hcl="`platform_max_size`">`platformMaxSize`</span>.
+func (o ServerlessSpaceConfigurationCollectionSettingsPtrOutput) MaxSize() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ServerlessSpaceConfigurationCollectionSettings) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.MaxSize
+	}).(pulumi.Float64PtrOutput)
+}
+
+// Platform-enforced maximum size in bytes per collection (0 means unlimited).
+func (o ServerlessSpaceConfigurationCollectionSettingsPtrOutput) PlatformMaxSize() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ServerlessSpaceConfigurationCollectionSettings) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.PlatformMaxSize
+	}).(pulumi.Float64PtrOutput)
+}
+
+type ServerlessSpaceConfigurationSearcherSettings struct {
+	// Idle timeout after which idle search workers may be scaled down, as a Go duration string (between "1m" and "15m", defaults to "5m").
+	IdleTimeout *string `pulumi:"idleTimeout"`
+	// Maximum number of search workers per collection in this space (defaults to 2).
+	MaxWorkers *float64 `pulumi:"maxWorkers"`
+	// Platform-enforced maximum number of search workers per collection (0 means unlimited).
+	PlatformMaxWorkers *float64 `pulumi:"platformMaxWorkers"`
+}
+
+// ServerlessSpaceConfigurationSearcherSettingsInput is an input type that accepts ServerlessSpaceConfigurationSearcherSettingsArgs and ServerlessSpaceConfigurationSearcherSettingsOutput values.
+// You can construct a concrete instance of `ServerlessSpaceConfigurationSearcherSettingsInput` via:
+//
+//	ServerlessSpaceConfigurationSearcherSettingsArgs{...}
+type ServerlessSpaceConfigurationSearcherSettingsInput interface {
+	pulumi.Input
+
+	ToServerlessSpaceConfigurationSearcherSettingsOutput() ServerlessSpaceConfigurationSearcherSettingsOutput
+	ToServerlessSpaceConfigurationSearcherSettingsOutputWithContext(context.Context) ServerlessSpaceConfigurationSearcherSettingsOutput
+}
+
+type ServerlessSpaceConfigurationSearcherSettingsArgs struct {
+	// Idle timeout after which idle search workers may be scaled down, as a Go duration string (between "1m" and "15m", defaults to "5m").
+	IdleTimeout pulumi.StringPtrInput `pulumi:"idleTimeout"`
+	// Maximum number of search workers per collection in this space (defaults to 2).
+	MaxWorkers pulumi.Float64PtrInput `pulumi:"maxWorkers"`
+	// Platform-enforced maximum number of search workers per collection (0 means unlimited).
+	PlatformMaxWorkers pulumi.Float64PtrInput `pulumi:"platformMaxWorkers"`
+}
+
+func (ServerlessSpaceConfigurationSearcherSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessSpaceConfigurationSearcherSettings)(nil)).Elem()
+}
+
+func (i ServerlessSpaceConfigurationSearcherSettingsArgs) ToServerlessSpaceConfigurationSearcherSettingsOutput() ServerlessSpaceConfigurationSearcherSettingsOutput {
+	return i.ToServerlessSpaceConfigurationSearcherSettingsOutputWithContext(context.Background())
+}
+
+func (i ServerlessSpaceConfigurationSearcherSettingsArgs) ToServerlessSpaceConfigurationSearcherSettingsOutputWithContext(ctx context.Context) ServerlessSpaceConfigurationSearcherSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceConfigurationSearcherSettingsOutput)
+}
+
+func (i ServerlessSpaceConfigurationSearcherSettingsArgs) ToServerlessSpaceConfigurationSearcherSettingsPtrOutput() ServerlessSpaceConfigurationSearcherSettingsPtrOutput {
+	return i.ToServerlessSpaceConfigurationSearcherSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i ServerlessSpaceConfigurationSearcherSettingsArgs) ToServerlessSpaceConfigurationSearcherSettingsPtrOutputWithContext(ctx context.Context) ServerlessSpaceConfigurationSearcherSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceConfigurationSearcherSettingsOutput).ToServerlessSpaceConfigurationSearcherSettingsPtrOutputWithContext(ctx)
+}
+
+// ServerlessSpaceConfigurationSearcherSettingsPtrInput is an input type that accepts ServerlessSpaceConfigurationSearcherSettingsArgs, ServerlessSpaceConfigurationSearcherSettingsPtr and ServerlessSpaceConfigurationSearcherSettingsPtrOutput values.
+// You can construct a concrete instance of `ServerlessSpaceConfigurationSearcherSettingsPtrInput` via:
+//
+//	        ServerlessSpaceConfigurationSearcherSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServerlessSpaceConfigurationSearcherSettingsPtrInput interface {
+	pulumi.Input
+
+	ToServerlessSpaceConfigurationSearcherSettingsPtrOutput() ServerlessSpaceConfigurationSearcherSettingsPtrOutput
+	ToServerlessSpaceConfigurationSearcherSettingsPtrOutputWithContext(context.Context) ServerlessSpaceConfigurationSearcherSettingsPtrOutput
+}
+
+type serverlessSpaceConfigurationSearcherSettingsPtrType ServerlessSpaceConfigurationSearcherSettingsArgs
+
+func ServerlessSpaceConfigurationSearcherSettingsPtr(v *ServerlessSpaceConfigurationSearcherSettingsArgs) ServerlessSpaceConfigurationSearcherSettingsPtrInput {
+	return (*serverlessSpaceConfigurationSearcherSettingsPtrType)(v)
+}
+
+func (*serverlessSpaceConfigurationSearcherSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServerlessSpaceConfigurationSearcherSettings)(nil)).Elem()
+}
+
+func (i *serverlessSpaceConfigurationSearcherSettingsPtrType) ToServerlessSpaceConfigurationSearcherSettingsPtrOutput() ServerlessSpaceConfigurationSearcherSettingsPtrOutput {
+	return i.ToServerlessSpaceConfigurationSearcherSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *serverlessSpaceConfigurationSearcherSettingsPtrType) ToServerlessSpaceConfigurationSearcherSettingsPtrOutputWithContext(ctx context.Context) ServerlessSpaceConfigurationSearcherSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceConfigurationSearcherSettingsPtrOutput)
+}
+
+type ServerlessSpaceConfigurationSearcherSettingsOutput struct{ *pulumi.OutputState }
+
+func (ServerlessSpaceConfigurationSearcherSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessSpaceConfigurationSearcherSettings)(nil)).Elem()
+}
+
+func (o ServerlessSpaceConfigurationSearcherSettingsOutput) ToServerlessSpaceConfigurationSearcherSettingsOutput() ServerlessSpaceConfigurationSearcherSettingsOutput {
+	return o
+}
+
+func (o ServerlessSpaceConfigurationSearcherSettingsOutput) ToServerlessSpaceConfigurationSearcherSettingsOutputWithContext(ctx context.Context) ServerlessSpaceConfigurationSearcherSettingsOutput {
+	return o
+}
+
+func (o ServerlessSpaceConfigurationSearcherSettingsOutput) ToServerlessSpaceConfigurationSearcherSettingsPtrOutput() ServerlessSpaceConfigurationSearcherSettingsPtrOutput {
+	return o.ToServerlessSpaceConfigurationSearcherSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o ServerlessSpaceConfigurationSearcherSettingsOutput) ToServerlessSpaceConfigurationSearcherSettingsPtrOutputWithContext(ctx context.Context) ServerlessSpaceConfigurationSearcherSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServerlessSpaceConfigurationSearcherSettings) *ServerlessSpaceConfigurationSearcherSettings {
+		return &v
+	}).(ServerlessSpaceConfigurationSearcherSettingsPtrOutput)
+}
+
+// Idle timeout after which idle search workers may be scaled down, as a Go duration string (between "1m" and "15m", defaults to "5m").
+func (o ServerlessSpaceConfigurationSearcherSettingsOutput) IdleTimeout() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerlessSpaceConfigurationSearcherSettings) *string { return v.IdleTimeout }).(pulumi.StringPtrOutput)
+}
+
+// Maximum number of search workers per collection in this space (defaults to 2).
+func (o ServerlessSpaceConfigurationSearcherSettingsOutput) MaxWorkers() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ServerlessSpaceConfigurationSearcherSettings) *float64 { return v.MaxWorkers }).(pulumi.Float64PtrOutput)
+}
+
+// Platform-enforced maximum number of search workers per collection (0 means unlimited).
+func (o ServerlessSpaceConfigurationSearcherSettingsOutput) PlatformMaxWorkers() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ServerlessSpaceConfigurationSearcherSettings) *float64 { return v.PlatformMaxWorkers }).(pulumi.Float64PtrOutput)
+}
+
+type ServerlessSpaceConfigurationSearcherSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (ServerlessSpaceConfigurationSearcherSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServerlessSpaceConfigurationSearcherSettings)(nil)).Elem()
+}
+
+func (o ServerlessSpaceConfigurationSearcherSettingsPtrOutput) ToServerlessSpaceConfigurationSearcherSettingsPtrOutput() ServerlessSpaceConfigurationSearcherSettingsPtrOutput {
+	return o
+}
+
+func (o ServerlessSpaceConfigurationSearcherSettingsPtrOutput) ToServerlessSpaceConfigurationSearcherSettingsPtrOutputWithContext(ctx context.Context) ServerlessSpaceConfigurationSearcherSettingsPtrOutput {
+	return o
+}
+
+func (o ServerlessSpaceConfigurationSearcherSettingsPtrOutput) Elem() ServerlessSpaceConfigurationSearcherSettingsOutput {
+	return o.ApplyT(func(v *ServerlessSpaceConfigurationSearcherSettings) ServerlessSpaceConfigurationSearcherSettings {
+		if v != nil {
+			return *v
+		}
+		var ret ServerlessSpaceConfigurationSearcherSettings
+		return ret
+	}).(ServerlessSpaceConfigurationSearcherSettingsOutput)
+}
+
+// Idle timeout after which idle search workers may be scaled down, as a Go duration string (between "1m" and "15m", defaults to "5m").
+func (o ServerlessSpaceConfigurationSearcherSettingsPtrOutput) IdleTimeout() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServerlessSpaceConfigurationSearcherSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IdleTimeout
+	}).(pulumi.StringPtrOutput)
+}
+
+// Maximum number of search workers per collection in this space (defaults to 2).
+func (o ServerlessSpaceConfigurationSearcherSettingsPtrOutput) MaxWorkers() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ServerlessSpaceConfigurationSearcherSettings) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.MaxWorkers
+	}).(pulumi.Float64PtrOutput)
+}
+
+// Platform-enforced maximum number of search workers per collection (0 means unlimited).
+func (o ServerlessSpaceConfigurationSearcherSettingsPtrOutput) PlatformMaxWorkers() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ServerlessSpaceConfigurationSearcherSettings) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.PlatformMaxWorkers
+	}).(pulumi.Float64PtrOutput)
+}
+
+type ServerlessSpaceLabel struct {
+	Key   string `pulumi:"key"`
+	Value string `pulumi:"value"`
+}
+
+// ServerlessSpaceLabelInput is an input type that accepts ServerlessSpaceLabelArgs and ServerlessSpaceLabelOutput values.
+// You can construct a concrete instance of `ServerlessSpaceLabelInput` via:
+//
+//	ServerlessSpaceLabelArgs{...}
+type ServerlessSpaceLabelInput interface {
+	pulumi.Input
+
+	ToServerlessSpaceLabelOutput() ServerlessSpaceLabelOutput
+	ToServerlessSpaceLabelOutputWithContext(context.Context) ServerlessSpaceLabelOutput
+}
+
+type ServerlessSpaceLabelArgs struct {
+	Key   pulumi.StringInput `pulumi:"key"`
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (ServerlessSpaceLabelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessSpaceLabel)(nil)).Elem()
+}
+
+func (i ServerlessSpaceLabelArgs) ToServerlessSpaceLabelOutput() ServerlessSpaceLabelOutput {
+	return i.ToServerlessSpaceLabelOutputWithContext(context.Background())
+}
+
+func (i ServerlessSpaceLabelArgs) ToServerlessSpaceLabelOutputWithContext(ctx context.Context) ServerlessSpaceLabelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceLabelOutput)
+}
+
+// ServerlessSpaceLabelArrayInput is an input type that accepts ServerlessSpaceLabelArray and ServerlessSpaceLabelArrayOutput values.
+// You can construct a concrete instance of `ServerlessSpaceLabelArrayInput` via:
+//
+//	ServerlessSpaceLabelArray{ ServerlessSpaceLabelArgs{...} }
+type ServerlessSpaceLabelArrayInput interface {
+	pulumi.Input
+
+	ToServerlessSpaceLabelArrayOutput() ServerlessSpaceLabelArrayOutput
+	ToServerlessSpaceLabelArrayOutputWithContext(context.Context) ServerlessSpaceLabelArrayOutput
+}
+
+type ServerlessSpaceLabelArray []ServerlessSpaceLabelInput
+
+func (ServerlessSpaceLabelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerlessSpaceLabel)(nil)).Elem()
+}
+
+func (i ServerlessSpaceLabelArray) ToServerlessSpaceLabelArrayOutput() ServerlessSpaceLabelArrayOutput {
+	return i.ToServerlessSpaceLabelArrayOutputWithContext(context.Background())
+}
+
+func (i ServerlessSpaceLabelArray) ToServerlessSpaceLabelArrayOutputWithContext(ctx context.Context) ServerlessSpaceLabelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceLabelArrayOutput)
+}
+
+type ServerlessSpaceLabelOutput struct{ *pulumi.OutputState }
+
+func (ServerlessSpaceLabelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessSpaceLabel)(nil)).Elem()
+}
+
+func (o ServerlessSpaceLabelOutput) ToServerlessSpaceLabelOutput() ServerlessSpaceLabelOutput {
+	return o
+}
+
+func (o ServerlessSpaceLabelOutput) ToServerlessSpaceLabelOutputWithContext(ctx context.Context) ServerlessSpaceLabelOutput {
+	return o
+}
+
+func (o ServerlessSpaceLabelOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v ServerlessSpaceLabel) string { return v.Key }).(pulumi.StringOutput)
+}
+
+func (o ServerlessSpaceLabelOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v ServerlessSpaceLabel) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type ServerlessSpaceLabelArrayOutput struct{ *pulumi.OutputState }
+
+func (ServerlessSpaceLabelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerlessSpaceLabel)(nil)).Elem()
+}
+
+func (o ServerlessSpaceLabelArrayOutput) ToServerlessSpaceLabelArrayOutput() ServerlessSpaceLabelArrayOutput {
+	return o
+}
+
+func (o ServerlessSpaceLabelArrayOutput) ToServerlessSpaceLabelArrayOutputWithContext(ctx context.Context) ServerlessSpaceLabelArrayOutput {
+	return o
+}
+
+func (o ServerlessSpaceLabelArrayOutput) Index(i pulumi.IntInput) ServerlessSpaceLabelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServerlessSpaceLabel {
+		return vs[0].([]ServerlessSpaceLabel)[vs[1].(int)]
+	}).(ServerlessSpaceLabelOutput)
+}
+
+type ServerlessSpaceStateType struct {
+	Phase  *string `pulumi:"phase"`
+	Reason *string `pulumi:"reason"`
+}
+
+// ServerlessSpaceStateTypeInput is an input type that accepts ServerlessSpaceStateTypeArgs and ServerlessSpaceStateTypeOutput values.
+// You can construct a concrete instance of `ServerlessSpaceStateTypeInput` via:
+//
+//	ServerlessSpaceStateTypeArgs{...}
+type ServerlessSpaceStateTypeInput interface {
+	pulumi.Input
+
+	ToServerlessSpaceStateTypeOutput() ServerlessSpaceStateTypeOutput
+	ToServerlessSpaceStateTypeOutputWithContext(context.Context) ServerlessSpaceStateTypeOutput
+}
+
+type ServerlessSpaceStateTypeArgs struct {
+	Phase  pulumi.StringPtrInput `pulumi:"phase"`
+	Reason pulumi.StringPtrInput `pulumi:"reason"`
+}
+
+func (ServerlessSpaceStateTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessSpaceStateType)(nil)).Elem()
+}
+
+func (i ServerlessSpaceStateTypeArgs) ToServerlessSpaceStateTypeOutput() ServerlessSpaceStateTypeOutput {
+	return i.ToServerlessSpaceStateTypeOutputWithContext(context.Background())
+}
+
+func (i ServerlessSpaceStateTypeArgs) ToServerlessSpaceStateTypeOutputWithContext(ctx context.Context) ServerlessSpaceStateTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceStateTypeOutput)
+}
+
+// ServerlessSpaceStateTypeArrayInput is an input type that accepts ServerlessSpaceStateTypeArray and ServerlessSpaceStateTypeArrayOutput values.
+// You can construct a concrete instance of `ServerlessSpaceStateTypeArrayInput` via:
+//
+//	ServerlessSpaceStateTypeArray{ ServerlessSpaceStateTypeArgs{...} }
+type ServerlessSpaceStateTypeArrayInput interface {
+	pulumi.Input
+
+	ToServerlessSpaceStateTypeArrayOutput() ServerlessSpaceStateTypeArrayOutput
+	ToServerlessSpaceStateTypeArrayOutputWithContext(context.Context) ServerlessSpaceStateTypeArrayOutput
+}
+
+type ServerlessSpaceStateTypeArray []ServerlessSpaceStateTypeInput
+
+func (ServerlessSpaceStateTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerlessSpaceStateType)(nil)).Elem()
+}
+
+func (i ServerlessSpaceStateTypeArray) ToServerlessSpaceStateTypeArrayOutput() ServerlessSpaceStateTypeArrayOutput {
+	return i.ToServerlessSpaceStateTypeArrayOutputWithContext(context.Background())
+}
+
+func (i ServerlessSpaceStateTypeArray) ToServerlessSpaceStateTypeArrayOutputWithContext(ctx context.Context) ServerlessSpaceStateTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceStateTypeArrayOutput)
+}
+
+type ServerlessSpaceStateTypeOutput struct{ *pulumi.OutputState }
+
+func (ServerlessSpaceStateTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessSpaceStateType)(nil)).Elem()
+}
+
+func (o ServerlessSpaceStateTypeOutput) ToServerlessSpaceStateTypeOutput() ServerlessSpaceStateTypeOutput {
+	return o
+}
+
+func (o ServerlessSpaceStateTypeOutput) ToServerlessSpaceStateTypeOutputWithContext(ctx context.Context) ServerlessSpaceStateTypeOutput {
+	return o
+}
+
+func (o ServerlessSpaceStateTypeOutput) Phase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerlessSpaceStateType) *string { return v.Phase }).(pulumi.StringPtrOutput)
+}
+
+func (o ServerlessSpaceStateTypeOutput) Reason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerlessSpaceStateType) *string { return v.Reason }).(pulumi.StringPtrOutput)
+}
+
+type ServerlessSpaceStateTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (ServerlessSpaceStateTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerlessSpaceStateType)(nil)).Elem()
+}
+
+func (o ServerlessSpaceStateTypeArrayOutput) ToServerlessSpaceStateTypeArrayOutput() ServerlessSpaceStateTypeArrayOutput {
+	return o
+}
+
+func (o ServerlessSpaceStateTypeArrayOutput) ToServerlessSpaceStateTypeArrayOutputWithContext(ctx context.Context) ServerlessSpaceStateTypeArrayOutput {
+	return o
+}
+
+func (o ServerlessSpaceStateTypeArrayOutput) Index(i pulumi.IntInput) ServerlessSpaceStateTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServerlessSpaceStateType {
+		return vs[0].([]ServerlessSpaceStateType)[vs[1].(int)]
+	}).(ServerlessSpaceStateTypeOutput)
+}
+
+type ServerlessSpaceTimeouts struct {
+	Create *string `pulumi:"create"`
+	Delete *string `pulumi:"delete"`
+	Update *string `pulumi:"update"`
+}
+
+// ServerlessSpaceTimeoutsInput is an input type that accepts ServerlessSpaceTimeoutsArgs and ServerlessSpaceTimeoutsOutput values.
+// You can construct a concrete instance of `ServerlessSpaceTimeoutsInput` via:
+//
+//	ServerlessSpaceTimeoutsArgs{...}
+type ServerlessSpaceTimeoutsInput interface {
+	pulumi.Input
+
+	ToServerlessSpaceTimeoutsOutput() ServerlessSpaceTimeoutsOutput
+	ToServerlessSpaceTimeoutsOutputWithContext(context.Context) ServerlessSpaceTimeoutsOutput
+}
+
+type ServerlessSpaceTimeoutsArgs struct {
+	Create pulumi.StringPtrInput `pulumi:"create"`
+	Delete pulumi.StringPtrInput `pulumi:"delete"`
+	Update pulumi.StringPtrInput `pulumi:"update"`
+}
+
+func (ServerlessSpaceTimeoutsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessSpaceTimeouts)(nil)).Elem()
+}
+
+func (i ServerlessSpaceTimeoutsArgs) ToServerlessSpaceTimeoutsOutput() ServerlessSpaceTimeoutsOutput {
+	return i.ToServerlessSpaceTimeoutsOutputWithContext(context.Background())
+}
+
+func (i ServerlessSpaceTimeoutsArgs) ToServerlessSpaceTimeoutsOutputWithContext(ctx context.Context) ServerlessSpaceTimeoutsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceTimeoutsOutput)
+}
+
+func (i ServerlessSpaceTimeoutsArgs) ToServerlessSpaceTimeoutsPtrOutput() ServerlessSpaceTimeoutsPtrOutput {
+	return i.ToServerlessSpaceTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (i ServerlessSpaceTimeoutsArgs) ToServerlessSpaceTimeoutsPtrOutputWithContext(ctx context.Context) ServerlessSpaceTimeoutsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceTimeoutsOutput).ToServerlessSpaceTimeoutsPtrOutputWithContext(ctx)
+}
+
+// ServerlessSpaceTimeoutsPtrInput is an input type that accepts ServerlessSpaceTimeoutsArgs, ServerlessSpaceTimeoutsPtr and ServerlessSpaceTimeoutsPtrOutput values.
+// You can construct a concrete instance of `ServerlessSpaceTimeoutsPtrInput` via:
+//
+//	        ServerlessSpaceTimeoutsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServerlessSpaceTimeoutsPtrInput interface {
+	pulumi.Input
+
+	ToServerlessSpaceTimeoutsPtrOutput() ServerlessSpaceTimeoutsPtrOutput
+	ToServerlessSpaceTimeoutsPtrOutputWithContext(context.Context) ServerlessSpaceTimeoutsPtrOutput
+}
+
+type serverlessSpaceTimeoutsPtrType ServerlessSpaceTimeoutsArgs
+
+func ServerlessSpaceTimeoutsPtr(v *ServerlessSpaceTimeoutsArgs) ServerlessSpaceTimeoutsPtrInput {
+	return (*serverlessSpaceTimeoutsPtrType)(v)
+}
+
+func (*serverlessSpaceTimeoutsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServerlessSpaceTimeouts)(nil)).Elem()
+}
+
+func (i *serverlessSpaceTimeoutsPtrType) ToServerlessSpaceTimeoutsPtrOutput() ServerlessSpaceTimeoutsPtrOutput {
+	return i.ToServerlessSpaceTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (i *serverlessSpaceTimeoutsPtrType) ToServerlessSpaceTimeoutsPtrOutputWithContext(ctx context.Context) ServerlessSpaceTimeoutsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerlessSpaceTimeoutsPtrOutput)
+}
+
+type ServerlessSpaceTimeoutsOutput struct{ *pulumi.OutputState }
+
+func (ServerlessSpaceTimeoutsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerlessSpaceTimeouts)(nil)).Elem()
+}
+
+func (o ServerlessSpaceTimeoutsOutput) ToServerlessSpaceTimeoutsOutput() ServerlessSpaceTimeoutsOutput {
+	return o
+}
+
+func (o ServerlessSpaceTimeoutsOutput) ToServerlessSpaceTimeoutsOutputWithContext(ctx context.Context) ServerlessSpaceTimeoutsOutput {
+	return o
+}
+
+func (o ServerlessSpaceTimeoutsOutput) ToServerlessSpaceTimeoutsPtrOutput() ServerlessSpaceTimeoutsPtrOutput {
+	return o.ToServerlessSpaceTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (o ServerlessSpaceTimeoutsOutput) ToServerlessSpaceTimeoutsPtrOutputWithContext(ctx context.Context) ServerlessSpaceTimeoutsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServerlessSpaceTimeouts) *ServerlessSpaceTimeouts {
+		return &v
+	}).(ServerlessSpaceTimeoutsPtrOutput)
+}
+
+func (o ServerlessSpaceTimeoutsOutput) Create() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerlessSpaceTimeouts) *string { return v.Create }).(pulumi.StringPtrOutput)
+}
+
+func (o ServerlessSpaceTimeoutsOutput) Delete() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerlessSpaceTimeouts) *string { return v.Delete }).(pulumi.StringPtrOutput)
+}
+
+func (o ServerlessSpaceTimeoutsOutput) Update() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerlessSpaceTimeouts) *string { return v.Update }).(pulumi.StringPtrOutput)
+}
+
+type ServerlessSpaceTimeoutsPtrOutput struct{ *pulumi.OutputState }
+
+func (ServerlessSpaceTimeoutsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServerlessSpaceTimeouts)(nil)).Elem()
+}
+
+func (o ServerlessSpaceTimeoutsPtrOutput) ToServerlessSpaceTimeoutsPtrOutput() ServerlessSpaceTimeoutsPtrOutput {
+	return o
+}
+
+func (o ServerlessSpaceTimeoutsPtrOutput) ToServerlessSpaceTimeoutsPtrOutputWithContext(ctx context.Context) ServerlessSpaceTimeoutsPtrOutput {
+	return o
+}
+
+func (o ServerlessSpaceTimeoutsPtrOutput) Elem() ServerlessSpaceTimeoutsOutput {
+	return o.ApplyT(func(v *ServerlessSpaceTimeouts) ServerlessSpaceTimeouts {
+		if v != nil {
+			return *v
+		}
+		var ret ServerlessSpaceTimeouts
+		return ret
+	}).(ServerlessSpaceTimeoutsOutput)
+}
+
+func (o ServerlessSpaceTimeoutsPtrOutput) Create() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServerlessSpaceTimeouts) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Create
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ServerlessSpaceTimeoutsPtrOutput) Delete() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServerlessSpaceTimeouts) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Delete
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ServerlessSpaceTimeoutsPtrOutput) Update() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServerlessSpaceTimeouts) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Update
+	}).(pulumi.StringPtrOutput)
+}
+
 type GetAccountsAuthKeysKey struct {
 	ClusterIds []string `pulumi:"clusterIds"`
 	CreatedAt  *string  `pulumi:"createdAt"`
@@ -19054,6 +20705,2218 @@ func (o GetBookingPackagesPackageResourceConfigurationArrayOutput) Index(i pulum
 	}).(GetBookingPackagesPackageResourceConfigurationOutput)
 }
 
+type GetServerlessBackupSchedulesSchedule struct {
+	AccountId       *string `pulumi:"accountId"`
+	CollectionName  *string `pulumi:"collectionName"`
+	CreatedAt       *string `pulumi:"createdAt"`
+	Id              *string `pulumi:"id"`
+	LastFiredAt     *string `pulumi:"lastFiredAt"`
+	Name            *string `pulumi:"name"`
+	Paused          *bool   `pulumi:"paused"`
+	PausedAt        *string `pulumi:"pausedAt"`
+	RetentionPeriod *string `pulumi:"retentionPeriod"`
+	Schedule        *string `pulumi:"schedule"`
+	SpaceId         *string `pulumi:"spaceId"`
+	Status          *string `pulumi:"status"`
+}
+
+// GetServerlessBackupSchedulesScheduleInput is an input type that accepts GetServerlessBackupSchedulesScheduleArgs and GetServerlessBackupSchedulesScheduleOutput values.
+// You can construct a concrete instance of `GetServerlessBackupSchedulesScheduleInput` via:
+//
+//	GetServerlessBackupSchedulesScheduleArgs{...}
+type GetServerlessBackupSchedulesScheduleInput interface {
+	pulumi.Input
+
+	ToGetServerlessBackupSchedulesScheduleOutput() GetServerlessBackupSchedulesScheduleOutput
+	ToGetServerlessBackupSchedulesScheduleOutputWithContext(context.Context) GetServerlessBackupSchedulesScheduleOutput
+}
+
+type GetServerlessBackupSchedulesScheduleArgs struct {
+	AccountId       pulumi.StringPtrInput `pulumi:"accountId"`
+	CollectionName  pulumi.StringPtrInput `pulumi:"collectionName"`
+	CreatedAt       pulumi.StringPtrInput `pulumi:"createdAt"`
+	Id              pulumi.StringPtrInput `pulumi:"id"`
+	LastFiredAt     pulumi.StringPtrInput `pulumi:"lastFiredAt"`
+	Name            pulumi.StringPtrInput `pulumi:"name"`
+	Paused          pulumi.BoolPtrInput   `pulumi:"paused"`
+	PausedAt        pulumi.StringPtrInput `pulumi:"pausedAt"`
+	RetentionPeriod pulumi.StringPtrInput `pulumi:"retentionPeriod"`
+	Schedule        pulumi.StringPtrInput `pulumi:"schedule"`
+	SpaceId         pulumi.StringPtrInput `pulumi:"spaceId"`
+	Status          pulumi.StringPtrInput `pulumi:"status"`
+}
+
+func (GetServerlessBackupSchedulesScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessBackupSchedulesSchedule)(nil)).Elem()
+}
+
+func (i GetServerlessBackupSchedulesScheduleArgs) ToGetServerlessBackupSchedulesScheduleOutput() GetServerlessBackupSchedulesScheduleOutput {
+	return i.ToGetServerlessBackupSchedulesScheduleOutputWithContext(context.Background())
+}
+
+func (i GetServerlessBackupSchedulesScheduleArgs) ToGetServerlessBackupSchedulesScheduleOutputWithContext(ctx context.Context) GetServerlessBackupSchedulesScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessBackupSchedulesScheduleOutput)
+}
+
+// GetServerlessBackupSchedulesScheduleArrayInput is an input type that accepts GetServerlessBackupSchedulesScheduleArray and GetServerlessBackupSchedulesScheduleArrayOutput values.
+// You can construct a concrete instance of `GetServerlessBackupSchedulesScheduleArrayInput` via:
+//
+//	GetServerlessBackupSchedulesScheduleArray{ GetServerlessBackupSchedulesScheduleArgs{...} }
+type GetServerlessBackupSchedulesScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetServerlessBackupSchedulesScheduleArrayOutput() GetServerlessBackupSchedulesScheduleArrayOutput
+	ToGetServerlessBackupSchedulesScheduleArrayOutputWithContext(context.Context) GetServerlessBackupSchedulesScheduleArrayOutput
+}
+
+type GetServerlessBackupSchedulesScheduleArray []GetServerlessBackupSchedulesScheduleInput
+
+func (GetServerlessBackupSchedulesScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessBackupSchedulesSchedule)(nil)).Elem()
+}
+
+func (i GetServerlessBackupSchedulesScheduleArray) ToGetServerlessBackupSchedulesScheduleArrayOutput() GetServerlessBackupSchedulesScheduleArrayOutput {
+	return i.ToGetServerlessBackupSchedulesScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerlessBackupSchedulesScheduleArray) ToGetServerlessBackupSchedulesScheduleArrayOutputWithContext(ctx context.Context) GetServerlessBackupSchedulesScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessBackupSchedulesScheduleArrayOutput)
+}
+
+type GetServerlessBackupSchedulesScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessBackupSchedulesScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessBackupSchedulesSchedule)(nil)).Elem()
+}
+
+func (o GetServerlessBackupSchedulesScheduleOutput) ToGetServerlessBackupSchedulesScheduleOutput() GetServerlessBackupSchedulesScheduleOutput {
+	return o
+}
+
+func (o GetServerlessBackupSchedulesScheduleOutput) ToGetServerlessBackupSchedulesScheduleOutputWithContext(ctx context.Context) GetServerlessBackupSchedulesScheduleOutput {
+	return o
+}
+
+func (o GetServerlessBackupSchedulesScheduleOutput) AccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupSchedulesSchedule) *string { return v.AccountId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessBackupSchedulesScheduleOutput) CollectionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupSchedulesSchedule) *string { return v.CollectionName }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessBackupSchedulesScheduleOutput) CreatedAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupSchedulesSchedule) *string { return v.CreatedAt }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessBackupSchedulesScheduleOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupSchedulesSchedule) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessBackupSchedulesScheduleOutput) LastFiredAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupSchedulesSchedule) *string { return v.LastFiredAt }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessBackupSchedulesScheduleOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupSchedulesSchedule) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessBackupSchedulesScheduleOutput) Paused() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupSchedulesSchedule) *bool { return v.Paused }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetServerlessBackupSchedulesScheduleOutput) PausedAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupSchedulesSchedule) *string { return v.PausedAt }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessBackupSchedulesScheduleOutput) RetentionPeriod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupSchedulesSchedule) *string { return v.RetentionPeriod }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessBackupSchedulesScheduleOutput) Schedule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupSchedulesSchedule) *string { return v.Schedule }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessBackupSchedulesScheduleOutput) SpaceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupSchedulesSchedule) *string { return v.SpaceId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessBackupSchedulesScheduleOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupSchedulesSchedule) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+type GetServerlessBackupSchedulesScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessBackupSchedulesScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessBackupSchedulesSchedule)(nil)).Elem()
+}
+
+func (o GetServerlessBackupSchedulesScheduleArrayOutput) ToGetServerlessBackupSchedulesScheduleArrayOutput() GetServerlessBackupSchedulesScheduleArrayOutput {
+	return o
+}
+
+func (o GetServerlessBackupSchedulesScheduleArrayOutput) ToGetServerlessBackupSchedulesScheduleArrayOutputWithContext(ctx context.Context) GetServerlessBackupSchedulesScheduleArrayOutput {
+	return o
+}
+
+func (o GetServerlessBackupSchedulesScheduleArrayOutput) Index(i pulumi.IntInput) GetServerlessBackupSchedulesScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerlessBackupSchedulesSchedule {
+		return vs[0].([]GetServerlessBackupSchedulesSchedule)[vs[1].(int)]
+	}).(GetServerlessBackupSchedulesScheduleOutput)
+}
+
+type GetServerlessBackupsBackup struct {
+	AccountId        *string                          `pulumi:"accountId"`
+	BackupScheduleId *string                          `pulumi:"backupScheduleId"`
+	CollectionName   *string                          `pulumi:"collectionName"`
+	CreatedAt        *string                          `pulumi:"createdAt"`
+	Id               *string                          `pulumi:"id"`
+	Name             *string                          `pulumi:"name"`
+	RetentionPeriod  *string                          `pulumi:"retentionPeriod"`
+	SpaceId          *string                          `pulumi:"spaceId"`
+	Stats            []GetServerlessBackupsBackupStat `pulumi:"stats"`
+	Status           *string                          `pulumi:"status"`
+}
+
+// GetServerlessBackupsBackupInput is an input type that accepts GetServerlessBackupsBackupArgs and GetServerlessBackupsBackupOutput values.
+// You can construct a concrete instance of `GetServerlessBackupsBackupInput` via:
+//
+//	GetServerlessBackupsBackupArgs{...}
+type GetServerlessBackupsBackupInput interface {
+	pulumi.Input
+
+	ToGetServerlessBackupsBackupOutput() GetServerlessBackupsBackupOutput
+	ToGetServerlessBackupsBackupOutputWithContext(context.Context) GetServerlessBackupsBackupOutput
+}
+
+type GetServerlessBackupsBackupArgs struct {
+	AccountId        pulumi.StringPtrInput                    `pulumi:"accountId"`
+	BackupScheduleId pulumi.StringPtrInput                    `pulumi:"backupScheduleId"`
+	CollectionName   pulumi.StringPtrInput                    `pulumi:"collectionName"`
+	CreatedAt        pulumi.StringPtrInput                    `pulumi:"createdAt"`
+	Id               pulumi.StringPtrInput                    `pulumi:"id"`
+	Name             pulumi.StringPtrInput                    `pulumi:"name"`
+	RetentionPeriod  pulumi.StringPtrInput                    `pulumi:"retentionPeriod"`
+	SpaceId          pulumi.StringPtrInput                    `pulumi:"spaceId"`
+	Stats            GetServerlessBackupsBackupStatArrayInput `pulumi:"stats"`
+	Status           pulumi.StringPtrInput                    `pulumi:"status"`
+}
+
+func (GetServerlessBackupsBackupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessBackupsBackup)(nil)).Elem()
+}
+
+func (i GetServerlessBackupsBackupArgs) ToGetServerlessBackupsBackupOutput() GetServerlessBackupsBackupOutput {
+	return i.ToGetServerlessBackupsBackupOutputWithContext(context.Background())
+}
+
+func (i GetServerlessBackupsBackupArgs) ToGetServerlessBackupsBackupOutputWithContext(ctx context.Context) GetServerlessBackupsBackupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessBackupsBackupOutput)
+}
+
+// GetServerlessBackupsBackupArrayInput is an input type that accepts GetServerlessBackupsBackupArray and GetServerlessBackupsBackupArrayOutput values.
+// You can construct a concrete instance of `GetServerlessBackupsBackupArrayInput` via:
+//
+//	GetServerlessBackupsBackupArray{ GetServerlessBackupsBackupArgs{...} }
+type GetServerlessBackupsBackupArrayInput interface {
+	pulumi.Input
+
+	ToGetServerlessBackupsBackupArrayOutput() GetServerlessBackupsBackupArrayOutput
+	ToGetServerlessBackupsBackupArrayOutputWithContext(context.Context) GetServerlessBackupsBackupArrayOutput
+}
+
+type GetServerlessBackupsBackupArray []GetServerlessBackupsBackupInput
+
+func (GetServerlessBackupsBackupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessBackupsBackup)(nil)).Elem()
+}
+
+func (i GetServerlessBackupsBackupArray) ToGetServerlessBackupsBackupArrayOutput() GetServerlessBackupsBackupArrayOutput {
+	return i.ToGetServerlessBackupsBackupArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerlessBackupsBackupArray) ToGetServerlessBackupsBackupArrayOutputWithContext(ctx context.Context) GetServerlessBackupsBackupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessBackupsBackupArrayOutput)
+}
+
+type GetServerlessBackupsBackupOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessBackupsBackupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessBackupsBackup)(nil)).Elem()
+}
+
+func (o GetServerlessBackupsBackupOutput) ToGetServerlessBackupsBackupOutput() GetServerlessBackupsBackupOutput {
+	return o
+}
+
+func (o GetServerlessBackupsBackupOutput) ToGetServerlessBackupsBackupOutputWithContext(ctx context.Context) GetServerlessBackupsBackupOutput {
+	return o
+}
+
+func (o GetServerlessBackupsBackupOutput) AccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupsBackup) *string { return v.AccountId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessBackupsBackupOutput) BackupScheduleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupsBackup) *string { return v.BackupScheduleId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessBackupsBackupOutput) CollectionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupsBackup) *string { return v.CollectionName }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessBackupsBackupOutput) CreatedAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupsBackup) *string { return v.CreatedAt }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessBackupsBackupOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupsBackup) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessBackupsBackupOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupsBackup) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessBackupsBackupOutput) RetentionPeriod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupsBackup) *string { return v.RetentionPeriod }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessBackupsBackupOutput) SpaceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupsBackup) *string { return v.SpaceId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessBackupsBackupOutput) Stats() GetServerlessBackupsBackupStatArrayOutput {
+	return o.ApplyT(func(v GetServerlessBackupsBackup) []GetServerlessBackupsBackupStat { return v.Stats }).(GetServerlessBackupsBackupStatArrayOutput)
+}
+
+func (o GetServerlessBackupsBackupOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupsBackup) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+type GetServerlessBackupsBackupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessBackupsBackupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessBackupsBackup)(nil)).Elem()
+}
+
+func (o GetServerlessBackupsBackupArrayOutput) ToGetServerlessBackupsBackupArrayOutput() GetServerlessBackupsBackupArrayOutput {
+	return o
+}
+
+func (o GetServerlessBackupsBackupArrayOutput) ToGetServerlessBackupsBackupArrayOutputWithContext(ctx context.Context) GetServerlessBackupsBackupArrayOutput {
+	return o
+}
+
+func (o GetServerlessBackupsBackupArrayOutput) Index(i pulumi.IntInput) GetServerlessBackupsBackupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerlessBackupsBackup {
+		return vs[0].([]GetServerlessBackupsBackup)[vs[1].(int)]
+	}).(GetServerlessBackupsBackupOutput)
+}
+
+type GetServerlessBackupsBackupStat struct {
+	CollectionCount *float64 `pulumi:"collectionCount"`
+	Duration        *string  `pulumi:"duration"`
+	SizeBytes       *float64 `pulumi:"sizeBytes"`
+	TotalPoints     *float64 `pulumi:"totalPoints"`
+}
+
+// GetServerlessBackupsBackupStatInput is an input type that accepts GetServerlessBackupsBackupStatArgs and GetServerlessBackupsBackupStatOutput values.
+// You can construct a concrete instance of `GetServerlessBackupsBackupStatInput` via:
+//
+//	GetServerlessBackupsBackupStatArgs{...}
+type GetServerlessBackupsBackupStatInput interface {
+	pulumi.Input
+
+	ToGetServerlessBackupsBackupStatOutput() GetServerlessBackupsBackupStatOutput
+	ToGetServerlessBackupsBackupStatOutputWithContext(context.Context) GetServerlessBackupsBackupStatOutput
+}
+
+type GetServerlessBackupsBackupStatArgs struct {
+	CollectionCount pulumi.Float64PtrInput `pulumi:"collectionCount"`
+	Duration        pulumi.StringPtrInput  `pulumi:"duration"`
+	SizeBytes       pulumi.Float64PtrInput `pulumi:"sizeBytes"`
+	TotalPoints     pulumi.Float64PtrInput `pulumi:"totalPoints"`
+}
+
+func (GetServerlessBackupsBackupStatArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessBackupsBackupStat)(nil)).Elem()
+}
+
+func (i GetServerlessBackupsBackupStatArgs) ToGetServerlessBackupsBackupStatOutput() GetServerlessBackupsBackupStatOutput {
+	return i.ToGetServerlessBackupsBackupStatOutputWithContext(context.Background())
+}
+
+func (i GetServerlessBackupsBackupStatArgs) ToGetServerlessBackupsBackupStatOutputWithContext(ctx context.Context) GetServerlessBackupsBackupStatOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessBackupsBackupStatOutput)
+}
+
+// GetServerlessBackupsBackupStatArrayInput is an input type that accepts GetServerlessBackupsBackupStatArray and GetServerlessBackupsBackupStatArrayOutput values.
+// You can construct a concrete instance of `GetServerlessBackupsBackupStatArrayInput` via:
+//
+//	GetServerlessBackupsBackupStatArray{ GetServerlessBackupsBackupStatArgs{...} }
+type GetServerlessBackupsBackupStatArrayInput interface {
+	pulumi.Input
+
+	ToGetServerlessBackupsBackupStatArrayOutput() GetServerlessBackupsBackupStatArrayOutput
+	ToGetServerlessBackupsBackupStatArrayOutputWithContext(context.Context) GetServerlessBackupsBackupStatArrayOutput
+}
+
+type GetServerlessBackupsBackupStatArray []GetServerlessBackupsBackupStatInput
+
+func (GetServerlessBackupsBackupStatArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessBackupsBackupStat)(nil)).Elem()
+}
+
+func (i GetServerlessBackupsBackupStatArray) ToGetServerlessBackupsBackupStatArrayOutput() GetServerlessBackupsBackupStatArrayOutput {
+	return i.ToGetServerlessBackupsBackupStatArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerlessBackupsBackupStatArray) ToGetServerlessBackupsBackupStatArrayOutputWithContext(ctx context.Context) GetServerlessBackupsBackupStatArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessBackupsBackupStatArrayOutput)
+}
+
+type GetServerlessBackupsBackupStatOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessBackupsBackupStatOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessBackupsBackupStat)(nil)).Elem()
+}
+
+func (o GetServerlessBackupsBackupStatOutput) ToGetServerlessBackupsBackupStatOutput() GetServerlessBackupsBackupStatOutput {
+	return o
+}
+
+func (o GetServerlessBackupsBackupStatOutput) ToGetServerlessBackupsBackupStatOutputWithContext(ctx context.Context) GetServerlessBackupsBackupStatOutput {
+	return o
+}
+
+func (o GetServerlessBackupsBackupStatOutput) CollectionCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupsBackupStat) *float64 { return v.CollectionCount }).(pulumi.Float64PtrOutput)
+}
+
+func (o GetServerlessBackupsBackupStatOutput) Duration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupsBackupStat) *string { return v.Duration }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessBackupsBackupStatOutput) SizeBytes() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupsBackupStat) *float64 { return v.SizeBytes }).(pulumi.Float64PtrOutput)
+}
+
+func (o GetServerlessBackupsBackupStatOutput) TotalPoints() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetServerlessBackupsBackupStat) *float64 { return v.TotalPoints }).(pulumi.Float64PtrOutput)
+}
+
+type GetServerlessBackupsBackupStatArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessBackupsBackupStatArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessBackupsBackupStat)(nil)).Elem()
+}
+
+func (o GetServerlessBackupsBackupStatArrayOutput) ToGetServerlessBackupsBackupStatArrayOutput() GetServerlessBackupsBackupStatArrayOutput {
+	return o
+}
+
+func (o GetServerlessBackupsBackupStatArrayOutput) ToGetServerlessBackupsBackupStatArrayOutputWithContext(ctx context.Context) GetServerlessBackupsBackupStatArrayOutput {
+	return o
+}
+
+func (o GetServerlessBackupsBackupStatArrayOutput) Index(i pulumi.IntInput) GetServerlessBackupsBackupStatOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerlessBackupsBackupStat {
+		return vs[0].([]GetServerlessBackupsBackupStat)[vs[1].(int)]
+	}).(GetServerlessBackupsBackupStatOutput)
+}
+
+type GetServerlessCloudRegionsRegion struct {
+	Available             *bool   `pulumi:"available"`
+	CountryIsoCode        *string `pulumi:"countryIsoCode"`
+	GeographicalSubRegion *string `pulumi:"geographicalSubRegion"`
+	Id                    *string `pulumi:"id"`
+	Name                  *string `pulumi:"name"`
+}
+
+// GetServerlessCloudRegionsRegionInput is an input type that accepts GetServerlessCloudRegionsRegionArgs and GetServerlessCloudRegionsRegionOutput values.
+// You can construct a concrete instance of `GetServerlessCloudRegionsRegionInput` via:
+//
+//	GetServerlessCloudRegionsRegionArgs{...}
+type GetServerlessCloudRegionsRegionInput interface {
+	pulumi.Input
+
+	ToGetServerlessCloudRegionsRegionOutput() GetServerlessCloudRegionsRegionOutput
+	ToGetServerlessCloudRegionsRegionOutputWithContext(context.Context) GetServerlessCloudRegionsRegionOutput
+}
+
+type GetServerlessCloudRegionsRegionArgs struct {
+	Available             pulumi.BoolPtrInput   `pulumi:"available"`
+	CountryIsoCode        pulumi.StringPtrInput `pulumi:"countryIsoCode"`
+	GeographicalSubRegion pulumi.StringPtrInput `pulumi:"geographicalSubRegion"`
+	Id                    pulumi.StringPtrInput `pulumi:"id"`
+	Name                  pulumi.StringPtrInput `pulumi:"name"`
+}
+
+func (GetServerlessCloudRegionsRegionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessCloudRegionsRegion)(nil)).Elem()
+}
+
+func (i GetServerlessCloudRegionsRegionArgs) ToGetServerlessCloudRegionsRegionOutput() GetServerlessCloudRegionsRegionOutput {
+	return i.ToGetServerlessCloudRegionsRegionOutputWithContext(context.Background())
+}
+
+func (i GetServerlessCloudRegionsRegionArgs) ToGetServerlessCloudRegionsRegionOutputWithContext(ctx context.Context) GetServerlessCloudRegionsRegionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessCloudRegionsRegionOutput)
+}
+
+// GetServerlessCloudRegionsRegionArrayInput is an input type that accepts GetServerlessCloudRegionsRegionArray and GetServerlessCloudRegionsRegionArrayOutput values.
+// You can construct a concrete instance of `GetServerlessCloudRegionsRegionArrayInput` via:
+//
+//	GetServerlessCloudRegionsRegionArray{ GetServerlessCloudRegionsRegionArgs{...} }
+type GetServerlessCloudRegionsRegionArrayInput interface {
+	pulumi.Input
+
+	ToGetServerlessCloudRegionsRegionArrayOutput() GetServerlessCloudRegionsRegionArrayOutput
+	ToGetServerlessCloudRegionsRegionArrayOutputWithContext(context.Context) GetServerlessCloudRegionsRegionArrayOutput
+}
+
+type GetServerlessCloudRegionsRegionArray []GetServerlessCloudRegionsRegionInput
+
+func (GetServerlessCloudRegionsRegionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessCloudRegionsRegion)(nil)).Elem()
+}
+
+func (i GetServerlessCloudRegionsRegionArray) ToGetServerlessCloudRegionsRegionArrayOutput() GetServerlessCloudRegionsRegionArrayOutput {
+	return i.ToGetServerlessCloudRegionsRegionArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerlessCloudRegionsRegionArray) ToGetServerlessCloudRegionsRegionArrayOutputWithContext(ctx context.Context) GetServerlessCloudRegionsRegionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessCloudRegionsRegionArrayOutput)
+}
+
+type GetServerlessCloudRegionsRegionOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessCloudRegionsRegionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessCloudRegionsRegion)(nil)).Elem()
+}
+
+func (o GetServerlessCloudRegionsRegionOutput) ToGetServerlessCloudRegionsRegionOutput() GetServerlessCloudRegionsRegionOutput {
+	return o
+}
+
+func (o GetServerlessCloudRegionsRegionOutput) ToGetServerlessCloudRegionsRegionOutputWithContext(ctx context.Context) GetServerlessCloudRegionsRegionOutput {
+	return o
+}
+
+func (o GetServerlessCloudRegionsRegionOutput) Available() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetServerlessCloudRegionsRegion) *bool { return v.Available }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetServerlessCloudRegionsRegionOutput) CountryIsoCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessCloudRegionsRegion) *string { return v.CountryIsoCode }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessCloudRegionsRegionOutput) GeographicalSubRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessCloudRegionsRegion) *string { return v.GeographicalSubRegion }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessCloudRegionsRegionOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessCloudRegionsRegion) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessCloudRegionsRegionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessCloudRegionsRegion) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+type GetServerlessCloudRegionsRegionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessCloudRegionsRegionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessCloudRegionsRegion)(nil)).Elem()
+}
+
+func (o GetServerlessCloudRegionsRegionArrayOutput) ToGetServerlessCloudRegionsRegionArrayOutput() GetServerlessCloudRegionsRegionArrayOutput {
+	return o
+}
+
+func (o GetServerlessCloudRegionsRegionArrayOutput) ToGetServerlessCloudRegionsRegionArrayOutputWithContext(ctx context.Context) GetServerlessCloudRegionsRegionArrayOutput {
+	return o
+}
+
+func (o GetServerlessCloudRegionsRegionArrayOutput) Index(i pulumi.IntInput) GetServerlessCloudRegionsRegionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerlessCloudRegionsRegion {
+		return vs[0].([]GetServerlessCloudRegionsRegion)[vs[1].(int)]
+	}).(GetServerlessCloudRegionsRegionOutput)
+}
+
+type GetServerlessSpaceApiKeysKey struct {
+	AccountId             *string                                            `pulumi:"accountId"`
+	CollectionAccessRules []GetServerlessSpaceApiKeysKeyCollectionAccessRule `pulumi:"collectionAccessRules"`
+	CreatedAt             *string                                            `pulumi:"createdAt"`
+	ExpiresAt             *string                                            `pulumi:"expiresAt"`
+	GlobalAccessRules     []GetServerlessSpaceApiKeysKeyGlobalAccessRule     `pulumi:"globalAccessRules"`
+	Id                    *string                                            `pulumi:"id"`
+	Name                  *string                                            `pulumi:"name"`
+	Postfix               *string                                            `pulumi:"postfix"`
+	SpaceId               *string                                            `pulumi:"spaceId"`
+	States                []GetServerlessSpaceApiKeysKeyState                `pulumi:"states"`
+}
+
+// GetServerlessSpaceApiKeysKeyInput is an input type that accepts GetServerlessSpaceApiKeysKeyArgs and GetServerlessSpaceApiKeysKeyOutput values.
+// You can construct a concrete instance of `GetServerlessSpaceApiKeysKeyInput` via:
+//
+//	GetServerlessSpaceApiKeysKeyArgs{...}
+type GetServerlessSpaceApiKeysKeyInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpaceApiKeysKeyOutput() GetServerlessSpaceApiKeysKeyOutput
+	ToGetServerlessSpaceApiKeysKeyOutputWithContext(context.Context) GetServerlessSpaceApiKeysKeyOutput
+}
+
+type GetServerlessSpaceApiKeysKeyArgs struct {
+	AccountId             pulumi.StringPtrInput                                      `pulumi:"accountId"`
+	CollectionAccessRules GetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayInput `pulumi:"collectionAccessRules"`
+	CreatedAt             pulumi.StringPtrInput                                      `pulumi:"createdAt"`
+	ExpiresAt             pulumi.StringPtrInput                                      `pulumi:"expiresAt"`
+	GlobalAccessRules     GetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayInput     `pulumi:"globalAccessRules"`
+	Id                    pulumi.StringPtrInput                                      `pulumi:"id"`
+	Name                  pulumi.StringPtrInput                                      `pulumi:"name"`
+	Postfix               pulumi.StringPtrInput                                      `pulumi:"postfix"`
+	SpaceId               pulumi.StringPtrInput                                      `pulumi:"spaceId"`
+	States                GetServerlessSpaceApiKeysKeyStateArrayInput                `pulumi:"states"`
+}
+
+func (GetServerlessSpaceApiKeysKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpaceApiKeysKey)(nil)).Elem()
+}
+
+func (i GetServerlessSpaceApiKeysKeyArgs) ToGetServerlessSpaceApiKeysKeyOutput() GetServerlessSpaceApiKeysKeyOutput {
+	return i.ToGetServerlessSpaceApiKeysKeyOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpaceApiKeysKeyArgs) ToGetServerlessSpaceApiKeysKeyOutputWithContext(ctx context.Context) GetServerlessSpaceApiKeysKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpaceApiKeysKeyOutput)
+}
+
+// GetServerlessSpaceApiKeysKeyArrayInput is an input type that accepts GetServerlessSpaceApiKeysKeyArray and GetServerlessSpaceApiKeysKeyArrayOutput values.
+// You can construct a concrete instance of `GetServerlessSpaceApiKeysKeyArrayInput` via:
+//
+//	GetServerlessSpaceApiKeysKeyArray{ GetServerlessSpaceApiKeysKeyArgs{...} }
+type GetServerlessSpaceApiKeysKeyArrayInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpaceApiKeysKeyArrayOutput() GetServerlessSpaceApiKeysKeyArrayOutput
+	ToGetServerlessSpaceApiKeysKeyArrayOutputWithContext(context.Context) GetServerlessSpaceApiKeysKeyArrayOutput
+}
+
+type GetServerlessSpaceApiKeysKeyArray []GetServerlessSpaceApiKeysKeyInput
+
+func (GetServerlessSpaceApiKeysKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpaceApiKeysKey)(nil)).Elem()
+}
+
+func (i GetServerlessSpaceApiKeysKeyArray) ToGetServerlessSpaceApiKeysKeyArrayOutput() GetServerlessSpaceApiKeysKeyArrayOutput {
+	return i.ToGetServerlessSpaceApiKeysKeyArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpaceApiKeysKeyArray) ToGetServerlessSpaceApiKeysKeyArrayOutputWithContext(ctx context.Context) GetServerlessSpaceApiKeysKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpaceApiKeysKeyArrayOutput)
+}
+
+type GetServerlessSpaceApiKeysKeyOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpaceApiKeysKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpaceApiKeysKey)(nil)).Elem()
+}
+
+func (o GetServerlessSpaceApiKeysKeyOutput) ToGetServerlessSpaceApiKeysKeyOutput() GetServerlessSpaceApiKeysKeyOutput {
+	return o
+}
+
+func (o GetServerlessSpaceApiKeysKeyOutput) ToGetServerlessSpaceApiKeysKeyOutputWithContext(ctx context.Context) GetServerlessSpaceApiKeysKeyOutput {
+	return o
+}
+
+func (o GetServerlessSpaceApiKeysKeyOutput) AccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceApiKeysKey) *string { return v.AccountId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpaceApiKeysKeyOutput) CollectionAccessRules() GetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutput {
+	return o.ApplyT(func(v GetServerlessSpaceApiKeysKey) []GetServerlessSpaceApiKeysKeyCollectionAccessRule {
+		return v.CollectionAccessRules
+	}).(GetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutput)
+}
+
+func (o GetServerlessSpaceApiKeysKeyOutput) CreatedAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceApiKeysKey) *string { return v.CreatedAt }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpaceApiKeysKeyOutput) ExpiresAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceApiKeysKey) *string { return v.ExpiresAt }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpaceApiKeysKeyOutput) GlobalAccessRules() GetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutput {
+	return o.ApplyT(func(v GetServerlessSpaceApiKeysKey) []GetServerlessSpaceApiKeysKeyGlobalAccessRule {
+		return v.GlobalAccessRules
+	}).(GetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutput)
+}
+
+func (o GetServerlessSpaceApiKeysKeyOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceApiKeysKey) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpaceApiKeysKeyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceApiKeysKey) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpaceApiKeysKeyOutput) Postfix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceApiKeysKey) *string { return v.Postfix }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpaceApiKeysKeyOutput) SpaceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceApiKeysKey) *string { return v.SpaceId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpaceApiKeysKeyOutput) States() GetServerlessSpaceApiKeysKeyStateArrayOutput {
+	return o.ApplyT(func(v GetServerlessSpaceApiKeysKey) []GetServerlessSpaceApiKeysKeyState { return v.States }).(GetServerlessSpaceApiKeysKeyStateArrayOutput)
+}
+
+type GetServerlessSpaceApiKeysKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpaceApiKeysKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpaceApiKeysKey)(nil)).Elem()
+}
+
+func (o GetServerlessSpaceApiKeysKeyArrayOutput) ToGetServerlessSpaceApiKeysKeyArrayOutput() GetServerlessSpaceApiKeysKeyArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpaceApiKeysKeyArrayOutput) ToGetServerlessSpaceApiKeysKeyArrayOutputWithContext(ctx context.Context) GetServerlessSpaceApiKeysKeyArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpaceApiKeysKeyArrayOutput) Index(i pulumi.IntInput) GetServerlessSpaceApiKeysKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerlessSpaceApiKeysKey {
+		return vs[0].([]GetServerlessSpaceApiKeysKey)[vs[1].(int)]
+	}).(GetServerlessSpaceApiKeysKeyOutput)
+}
+
+type GetServerlessSpaceApiKeysKeyCollectionAccessRule struct {
+	AccessType     *string `pulumi:"accessType"`
+	CollectionName *string `pulumi:"collectionName"`
+}
+
+// GetServerlessSpaceApiKeysKeyCollectionAccessRuleInput is an input type that accepts GetServerlessSpaceApiKeysKeyCollectionAccessRuleArgs and GetServerlessSpaceApiKeysKeyCollectionAccessRuleOutput values.
+// You can construct a concrete instance of `GetServerlessSpaceApiKeysKeyCollectionAccessRuleInput` via:
+//
+//	GetServerlessSpaceApiKeysKeyCollectionAccessRuleArgs{...}
+type GetServerlessSpaceApiKeysKeyCollectionAccessRuleInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpaceApiKeysKeyCollectionAccessRuleOutput() GetServerlessSpaceApiKeysKeyCollectionAccessRuleOutput
+	ToGetServerlessSpaceApiKeysKeyCollectionAccessRuleOutputWithContext(context.Context) GetServerlessSpaceApiKeysKeyCollectionAccessRuleOutput
+}
+
+type GetServerlessSpaceApiKeysKeyCollectionAccessRuleArgs struct {
+	AccessType     pulumi.StringPtrInput `pulumi:"accessType"`
+	CollectionName pulumi.StringPtrInput `pulumi:"collectionName"`
+}
+
+func (GetServerlessSpaceApiKeysKeyCollectionAccessRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpaceApiKeysKeyCollectionAccessRule)(nil)).Elem()
+}
+
+func (i GetServerlessSpaceApiKeysKeyCollectionAccessRuleArgs) ToGetServerlessSpaceApiKeysKeyCollectionAccessRuleOutput() GetServerlessSpaceApiKeysKeyCollectionAccessRuleOutput {
+	return i.ToGetServerlessSpaceApiKeysKeyCollectionAccessRuleOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpaceApiKeysKeyCollectionAccessRuleArgs) ToGetServerlessSpaceApiKeysKeyCollectionAccessRuleOutputWithContext(ctx context.Context) GetServerlessSpaceApiKeysKeyCollectionAccessRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpaceApiKeysKeyCollectionAccessRuleOutput)
+}
+
+// GetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayInput is an input type that accepts GetServerlessSpaceApiKeysKeyCollectionAccessRuleArray and GetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutput values.
+// You can construct a concrete instance of `GetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayInput` via:
+//
+//	GetServerlessSpaceApiKeysKeyCollectionAccessRuleArray{ GetServerlessSpaceApiKeysKeyCollectionAccessRuleArgs{...} }
+type GetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutput() GetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutput
+	ToGetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutputWithContext(context.Context) GetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutput
+}
+
+type GetServerlessSpaceApiKeysKeyCollectionAccessRuleArray []GetServerlessSpaceApiKeysKeyCollectionAccessRuleInput
+
+func (GetServerlessSpaceApiKeysKeyCollectionAccessRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpaceApiKeysKeyCollectionAccessRule)(nil)).Elem()
+}
+
+func (i GetServerlessSpaceApiKeysKeyCollectionAccessRuleArray) ToGetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutput() GetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutput {
+	return i.ToGetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpaceApiKeysKeyCollectionAccessRuleArray) ToGetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutputWithContext(ctx context.Context) GetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutput)
+}
+
+type GetServerlessSpaceApiKeysKeyCollectionAccessRuleOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpaceApiKeysKeyCollectionAccessRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpaceApiKeysKeyCollectionAccessRule)(nil)).Elem()
+}
+
+func (o GetServerlessSpaceApiKeysKeyCollectionAccessRuleOutput) ToGetServerlessSpaceApiKeysKeyCollectionAccessRuleOutput() GetServerlessSpaceApiKeysKeyCollectionAccessRuleOutput {
+	return o
+}
+
+func (o GetServerlessSpaceApiKeysKeyCollectionAccessRuleOutput) ToGetServerlessSpaceApiKeysKeyCollectionAccessRuleOutputWithContext(ctx context.Context) GetServerlessSpaceApiKeysKeyCollectionAccessRuleOutput {
+	return o
+}
+
+func (o GetServerlessSpaceApiKeysKeyCollectionAccessRuleOutput) AccessType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceApiKeysKeyCollectionAccessRule) *string { return v.AccessType }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpaceApiKeysKeyCollectionAccessRuleOutput) CollectionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceApiKeysKeyCollectionAccessRule) *string { return v.CollectionName }).(pulumi.StringPtrOutput)
+}
+
+type GetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpaceApiKeysKeyCollectionAccessRule)(nil)).Elem()
+}
+
+func (o GetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutput) ToGetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutput() GetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutput) ToGetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutputWithContext(ctx context.Context) GetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutput) Index(i pulumi.IntInput) GetServerlessSpaceApiKeysKeyCollectionAccessRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerlessSpaceApiKeysKeyCollectionAccessRule {
+		return vs[0].([]GetServerlessSpaceApiKeysKeyCollectionAccessRule)[vs[1].(int)]
+	}).(GetServerlessSpaceApiKeysKeyCollectionAccessRuleOutput)
+}
+
+type GetServerlessSpaceApiKeysKeyGlobalAccessRule struct {
+	AccessType *string `pulumi:"accessType"`
+}
+
+// GetServerlessSpaceApiKeysKeyGlobalAccessRuleInput is an input type that accepts GetServerlessSpaceApiKeysKeyGlobalAccessRuleArgs and GetServerlessSpaceApiKeysKeyGlobalAccessRuleOutput values.
+// You can construct a concrete instance of `GetServerlessSpaceApiKeysKeyGlobalAccessRuleInput` via:
+//
+//	GetServerlessSpaceApiKeysKeyGlobalAccessRuleArgs{...}
+type GetServerlessSpaceApiKeysKeyGlobalAccessRuleInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpaceApiKeysKeyGlobalAccessRuleOutput() GetServerlessSpaceApiKeysKeyGlobalAccessRuleOutput
+	ToGetServerlessSpaceApiKeysKeyGlobalAccessRuleOutputWithContext(context.Context) GetServerlessSpaceApiKeysKeyGlobalAccessRuleOutput
+}
+
+type GetServerlessSpaceApiKeysKeyGlobalAccessRuleArgs struct {
+	AccessType pulumi.StringPtrInput `pulumi:"accessType"`
+}
+
+func (GetServerlessSpaceApiKeysKeyGlobalAccessRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpaceApiKeysKeyGlobalAccessRule)(nil)).Elem()
+}
+
+func (i GetServerlessSpaceApiKeysKeyGlobalAccessRuleArgs) ToGetServerlessSpaceApiKeysKeyGlobalAccessRuleOutput() GetServerlessSpaceApiKeysKeyGlobalAccessRuleOutput {
+	return i.ToGetServerlessSpaceApiKeysKeyGlobalAccessRuleOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpaceApiKeysKeyGlobalAccessRuleArgs) ToGetServerlessSpaceApiKeysKeyGlobalAccessRuleOutputWithContext(ctx context.Context) GetServerlessSpaceApiKeysKeyGlobalAccessRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpaceApiKeysKeyGlobalAccessRuleOutput)
+}
+
+// GetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayInput is an input type that accepts GetServerlessSpaceApiKeysKeyGlobalAccessRuleArray and GetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutput values.
+// You can construct a concrete instance of `GetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayInput` via:
+//
+//	GetServerlessSpaceApiKeysKeyGlobalAccessRuleArray{ GetServerlessSpaceApiKeysKeyGlobalAccessRuleArgs{...} }
+type GetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutput() GetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutput
+	ToGetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutputWithContext(context.Context) GetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutput
+}
+
+type GetServerlessSpaceApiKeysKeyGlobalAccessRuleArray []GetServerlessSpaceApiKeysKeyGlobalAccessRuleInput
+
+func (GetServerlessSpaceApiKeysKeyGlobalAccessRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpaceApiKeysKeyGlobalAccessRule)(nil)).Elem()
+}
+
+func (i GetServerlessSpaceApiKeysKeyGlobalAccessRuleArray) ToGetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutput() GetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutput {
+	return i.ToGetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpaceApiKeysKeyGlobalAccessRuleArray) ToGetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutputWithContext(ctx context.Context) GetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutput)
+}
+
+type GetServerlessSpaceApiKeysKeyGlobalAccessRuleOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpaceApiKeysKeyGlobalAccessRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpaceApiKeysKeyGlobalAccessRule)(nil)).Elem()
+}
+
+func (o GetServerlessSpaceApiKeysKeyGlobalAccessRuleOutput) ToGetServerlessSpaceApiKeysKeyGlobalAccessRuleOutput() GetServerlessSpaceApiKeysKeyGlobalAccessRuleOutput {
+	return o
+}
+
+func (o GetServerlessSpaceApiKeysKeyGlobalAccessRuleOutput) ToGetServerlessSpaceApiKeysKeyGlobalAccessRuleOutputWithContext(ctx context.Context) GetServerlessSpaceApiKeysKeyGlobalAccessRuleOutput {
+	return o
+}
+
+func (o GetServerlessSpaceApiKeysKeyGlobalAccessRuleOutput) AccessType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceApiKeysKeyGlobalAccessRule) *string { return v.AccessType }).(pulumi.StringPtrOutput)
+}
+
+type GetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpaceApiKeysKeyGlobalAccessRule)(nil)).Elem()
+}
+
+func (o GetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutput) ToGetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutput() GetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutput) ToGetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutputWithContext(ctx context.Context) GetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutput) Index(i pulumi.IntInput) GetServerlessSpaceApiKeysKeyGlobalAccessRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerlessSpaceApiKeysKeyGlobalAccessRule {
+		return vs[0].([]GetServerlessSpaceApiKeysKeyGlobalAccessRule)[vs[1].(int)]
+	}).(GetServerlessSpaceApiKeysKeyGlobalAccessRuleOutput)
+}
+
+type GetServerlessSpaceApiKeysKeyState struct {
+	Phase  *string `pulumi:"phase"`
+	Reason *string `pulumi:"reason"`
+}
+
+// GetServerlessSpaceApiKeysKeyStateInput is an input type that accepts GetServerlessSpaceApiKeysKeyStateArgs and GetServerlessSpaceApiKeysKeyStateOutput values.
+// You can construct a concrete instance of `GetServerlessSpaceApiKeysKeyStateInput` via:
+//
+//	GetServerlessSpaceApiKeysKeyStateArgs{...}
+type GetServerlessSpaceApiKeysKeyStateInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpaceApiKeysKeyStateOutput() GetServerlessSpaceApiKeysKeyStateOutput
+	ToGetServerlessSpaceApiKeysKeyStateOutputWithContext(context.Context) GetServerlessSpaceApiKeysKeyStateOutput
+}
+
+type GetServerlessSpaceApiKeysKeyStateArgs struct {
+	Phase  pulumi.StringPtrInput `pulumi:"phase"`
+	Reason pulumi.StringPtrInput `pulumi:"reason"`
+}
+
+func (GetServerlessSpaceApiKeysKeyStateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpaceApiKeysKeyState)(nil)).Elem()
+}
+
+func (i GetServerlessSpaceApiKeysKeyStateArgs) ToGetServerlessSpaceApiKeysKeyStateOutput() GetServerlessSpaceApiKeysKeyStateOutput {
+	return i.ToGetServerlessSpaceApiKeysKeyStateOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpaceApiKeysKeyStateArgs) ToGetServerlessSpaceApiKeysKeyStateOutputWithContext(ctx context.Context) GetServerlessSpaceApiKeysKeyStateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpaceApiKeysKeyStateOutput)
+}
+
+// GetServerlessSpaceApiKeysKeyStateArrayInput is an input type that accepts GetServerlessSpaceApiKeysKeyStateArray and GetServerlessSpaceApiKeysKeyStateArrayOutput values.
+// You can construct a concrete instance of `GetServerlessSpaceApiKeysKeyStateArrayInput` via:
+//
+//	GetServerlessSpaceApiKeysKeyStateArray{ GetServerlessSpaceApiKeysKeyStateArgs{...} }
+type GetServerlessSpaceApiKeysKeyStateArrayInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpaceApiKeysKeyStateArrayOutput() GetServerlessSpaceApiKeysKeyStateArrayOutput
+	ToGetServerlessSpaceApiKeysKeyStateArrayOutputWithContext(context.Context) GetServerlessSpaceApiKeysKeyStateArrayOutput
+}
+
+type GetServerlessSpaceApiKeysKeyStateArray []GetServerlessSpaceApiKeysKeyStateInput
+
+func (GetServerlessSpaceApiKeysKeyStateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpaceApiKeysKeyState)(nil)).Elem()
+}
+
+func (i GetServerlessSpaceApiKeysKeyStateArray) ToGetServerlessSpaceApiKeysKeyStateArrayOutput() GetServerlessSpaceApiKeysKeyStateArrayOutput {
+	return i.ToGetServerlessSpaceApiKeysKeyStateArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpaceApiKeysKeyStateArray) ToGetServerlessSpaceApiKeysKeyStateArrayOutputWithContext(ctx context.Context) GetServerlessSpaceApiKeysKeyStateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpaceApiKeysKeyStateArrayOutput)
+}
+
+type GetServerlessSpaceApiKeysKeyStateOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpaceApiKeysKeyStateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpaceApiKeysKeyState)(nil)).Elem()
+}
+
+func (o GetServerlessSpaceApiKeysKeyStateOutput) ToGetServerlessSpaceApiKeysKeyStateOutput() GetServerlessSpaceApiKeysKeyStateOutput {
+	return o
+}
+
+func (o GetServerlessSpaceApiKeysKeyStateOutput) ToGetServerlessSpaceApiKeysKeyStateOutputWithContext(ctx context.Context) GetServerlessSpaceApiKeysKeyStateOutput {
+	return o
+}
+
+func (o GetServerlessSpaceApiKeysKeyStateOutput) Phase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceApiKeysKeyState) *string { return v.Phase }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpaceApiKeysKeyStateOutput) Reason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceApiKeysKeyState) *string { return v.Reason }).(pulumi.StringPtrOutput)
+}
+
+type GetServerlessSpaceApiKeysKeyStateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpaceApiKeysKeyStateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpaceApiKeysKeyState)(nil)).Elem()
+}
+
+func (o GetServerlessSpaceApiKeysKeyStateArrayOutput) ToGetServerlessSpaceApiKeysKeyStateArrayOutput() GetServerlessSpaceApiKeysKeyStateArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpaceApiKeysKeyStateArrayOutput) ToGetServerlessSpaceApiKeysKeyStateArrayOutputWithContext(ctx context.Context) GetServerlessSpaceApiKeysKeyStateArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpaceApiKeysKeyStateArrayOutput) Index(i pulumi.IntInput) GetServerlessSpaceApiKeysKeyStateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerlessSpaceApiKeysKeyState {
+		return vs[0].([]GetServerlessSpaceApiKeysKeyState)[vs[1].(int)]
+	}).(GetServerlessSpaceApiKeysKeyStateOutput)
+}
+
+type GetServerlessSpaceConfiguration struct {
+	AllowedIpSourceRanges  []string                                           `pulumi:"allowedIpSourceRanges"`
+	AllowedOrigins         []string                                           `pulumi:"allowedOrigins"`
+	CollectionSettings     []GetServerlessSpaceConfigurationCollectionSetting `pulumi:"collectionSettings"`
+	LastModifiedAt         *string                                            `pulumi:"lastModifiedAt"`
+	MaxCollectionsPerSpace *float64                                           `pulumi:"maxCollectionsPerSpace"`
+	SearcherSettings       []GetServerlessSpaceConfigurationSearcherSetting   `pulumi:"searcherSettings"`
+}
+
+// GetServerlessSpaceConfigurationInput is an input type that accepts GetServerlessSpaceConfigurationArgs and GetServerlessSpaceConfigurationOutput values.
+// You can construct a concrete instance of `GetServerlessSpaceConfigurationInput` via:
+//
+//	GetServerlessSpaceConfigurationArgs{...}
+type GetServerlessSpaceConfigurationInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpaceConfigurationOutput() GetServerlessSpaceConfigurationOutput
+	ToGetServerlessSpaceConfigurationOutputWithContext(context.Context) GetServerlessSpaceConfigurationOutput
+}
+
+type GetServerlessSpaceConfigurationArgs struct {
+	AllowedIpSourceRanges  pulumi.StringArrayInput                                    `pulumi:"allowedIpSourceRanges"`
+	AllowedOrigins         pulumi.StringArrayInput                                    `pulumi:"allowedOrigins"`
+	CollectionSettings     GetServerlessSpaceConfigurationCollectionSettingArrayInput `pulumi:"collectionSettings"`
+	LastModifiedAt         pulumi.StringPtrInput                                      `pulumi:"lastModifiedAt"`
+	MaxCollectionsPerSpace pulumi.Float64PtrInput                                     `pulumi:"maxCollectionsPerSpace"`
+	SearcherSettings       GetServerlessSpaceConfigurationSearcherSettingArrayInput   `pulumi:"searcherSettings"`
+}
+
+func (GetServerlessSpaceConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpaceConfiguration)(nil)).Elem()
+}
+
+func (i GetServerlessSpaceConfigurationArgs) ToGetServerlessSpaceConfigurationOutput() GetServerlessSpaceConfigurationOutput {
+	return i.ToGetServerlessSpaceConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpaceConfigurationArgs) ToGetServerlessSpaceConfigurationOutputWithContext(ctx context.Context) GetServerlessSpaceConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpaceConfigurationOutput)
+}
+
+// GetServerlessSpaceConfigurationArrayInput is an input type that accepts GetServerlessSpaceConfigurationArray and GetServerlessSpaceConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetServerlessSpaceConfigurationArrayInput` via:
+//
+//	GetServerlessSpaceConfigurationArray{ GetServerlessSpaceConfigurationArgs{...} }
+type GetServerlessSpaceConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpaceConfigurationArrayOutput() GetServerlessSpaceConfigurationArrayOutput
+	ToGetServerlessSpaceConfigurationArrayOutputWithContext(context.Context) GetServerlessSpaceConfigurationArrayOutput
+}
+
+type GetServerlessSpaceConfigurationArray []GetServerlessSpaceConfigurationInput
+
+func (GetServerlessSpaceConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpaceConfiguration)(nil)).Elem()
+}
+
+func (i GetServerlessSpaceConfigurationArray) ToGetServerlessSpaceConfigurationArrayOutput() GetServerlessSpaceConfigurationArrayOutput {
+	return i.ToGetServerlessSpaceConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpaceConfigurationArray) ToGetServerlessSpaceConfigurationArrayOutputWithContext(ctx context.Context) GetServerlessSpaceConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpaceConfigurationArrayOutput)
+}
+
+type GetServerlessSpaceConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpaceConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpaceConfiguration)(nil)).Elem()
+}
+
+func (o GetServerlessSpaceConfigurationOutput) ToGetServerlessSpaceConfigurationOutput() GetServerlessSpaceConfigurationOutput {
+	return o
+}
+
+func (o GetServerlessSpaceConfigurationOutput) ToGetServerlessSpaceConfigurationOutputWithContext(ctx context.Context) GetServerlessSpaceConfigurationOutput {
+	return o
+}
+
+func (o GetServerlessSpaceConfigurationOutput) AllowedIpSourceRanges() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetServerlessSpaceConfiguration) []string { return v.AllowedIpSourceRanges }).(pulumi.StringArrayOutput)
+}
+
+func (o GetServerlessSpaceConfigurationOutput) AllowedOrigins() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetServerlessSpaceConfiguration) []string { return v.AllowedOrigins }).(pulumi.StringArrayOutput)
+}
+
+func (o GetServerlessSpaceConfigurationOutput) CollectionSettings() GetServerlessSpaceConfigurationCollectionSettingArrayOutput {
+	return o.ApplyT(func(v GetServerlessSpaceConfiguration) []GetServerlessSpaceConfigurationCollectionSetting {
+		return v.CollectionSettings
+	}).(GetServerlessSpaceConfigurationCollectionSettingArrayOutput)
+}
+
+func (o GetServerlessSpaceConfigurationOutput) LastModifiedAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceConfiguration) *string { return v.LastModifiedAt }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpaceConfigurationOutput) MaxCollectionsPerSpace() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceConfiguration) *float64 { return v.MaxCollectionsPerSpace }).(pulumi.Float64PtrOutput)
+}
+
+func (o GetServerlessSpaceConfigurationOutput) SearcherSettings() GetServerlessSpaceConfigurationSearcherSettingArrayOutput {
+	return o.ApplyT(func(v GetServerlessSpaceConfiguration) []GetServerlessSpaceConfigurationSearcherSetting {
+		return v.SearcherSettings
+	}).(GetServerlessSpaceConfigurationSearcherSettingArrayOutput)
+}
+
+type GetServerlessSpaceConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpaceConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpaceConfiguration)(nil)).Elem()
+}
+
+func (o GetServerlessSpaceConfigurationArrayOutput) ToGetServerlessSpaceConfigurationArrayOutput() GetServerlessSpaceConfigurationArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpaceConfigurationArrayOutput) ToGetServerlessSpaceConfigurationArrayOutputWithContext(ctx context.Context) GetServerlessSpaceConfigurationArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpaceConfigurationArrayOutput) Index(i pulumi.IntInput) GetServerlessSpaceConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerlessSpaceConfiguration {
+		return vs[0].([]GetServerlessSpaceConfiguration)[vs[1].(int)]
+	}).(GetServerlessSpaceConfigurationOutput)
+}
+
+type GetServerlessSpaceConfigurationCollectionSetting struct {
+	MaxSize         *float64 `pulumi:"maxSize"`
+	PlatformMaxSize *float64 `pulumi:"platformMaxSize"`
+}
+
+// GetServerlessSpaceConfigurationCollectionSettingInput is an input type that accepts GetServerlessSpaceConfigurationCollectionSettingArgs and GetServerlessSpaceConfigurationCollectionSettingOutput values.
+// You can construct a concrete instance of `GetServerlessSpaceConfigurationCollectionSettingInput` via:
+//
+//	GetServerlessSpaceConfigurationCollectionSettingArgs{...}
+type GetServerlessSpaceConfigurationCollectionSettingInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpaceConfigurationCollectionSettingOutput() GetServerlessSpaceConfigurationCollectionSettingOutput
+	ToGetServerlessSpaceConfigurationCollectionSettingOutputWithContext(context.Context) GetServerlessSpaceConfigurationCollectionSettingOutput
+}
+
+type GetServerlessSpaceConfigurationCollectionSettingArgs struct {
+	MaxSize         pulumi.Float64PtrInput `pulumi:"maxSize"`
+	PlatformMaxSize pulumi.Float64PtrInput `pulumi:"platformMaxSize"`
+}
+
+func (GetServerlessSpaceConfigurationCollectionSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpaceConfigurationCollectionSetting)(nil)).Elem()
+}
+
+func (i GetServerlessSpaceConfigurationCollectionSettingArgs) ToGetServerlessSpaceConfigurationCollectionSettingOutput() GetServerlessSpaceConfigurationCollectionSettingOutput {
+	return i.ToGetServerlessSpaceConfigurationCollectionSettingOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpaceConfigurationCollectionSettingArgs) ToGetServerlessSpaceConfigurationCollectionSettingOutputWithContext(ctx context.Context) GetServerlessSpaceConfigurationCollectionSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpaceConfigurationCollectionSettingOutput)
+}
+
+// GetServerlessSpaceConfigurationCollectionSettingArrayInput is an input type that accepts GetServerlessSpaceConfigurationCollectionSettingArray and GetServerlessSpaceConfigurationCollectionSettingArrayOutput values.
+// You can construct a concrete instance of `GetServerlessSpaceConfigurationCollectionSettingArrayInput` via:
+//
+//	GetServerlessSpaceConfigurationCollectionSettingArray{ GetServerlessSpaceConfigurationCollectionSettingArgs{...} }
+type GetServerlessSpaceConfigurationCollectionSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpaceConfigurationCollectionSettingArrayOutput() GetServerlessSpaceConfigurationCollectionSettingArrayOutput
+	ToGetServerlessSpaceConfigurationCollectionSettingArrayOutputWithContext(context.Context) GetServerlessSpaceConfigurationCollectionSettingArrayOutput
+}
+
+type GetServerlessSpaceConfigurationCollectionSettingArray []GetServerlessSpaceConfigurationCollectionSettingInput
+
+func (GetServerlessSpaceConfigurationCollectionSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpaceConfigurationCollectionSetting)(nil)).Elem()
+}
+
+func (i GetServerlessSpaceConfigurationCollectionSettingArray) ToGetServerlessSpaceConfigurationCollectionSettingArrayOutput() GetServerlessSpaceConfigurationCollectionSettingArrayOutput {
+	return i.ToGetServerlessSpaceConfigurationCollectionSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpaceConfigurationCollectionSettingArray) ToGetServerlessSpaceConfigurationCollectionSettingArrayOutputWithContext(ctx context.Context) GetServerlessSpaceConfigurationCollectionSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpaceConfigurationCollectionSettingArrayOutput)
+}
+
+type GetServerlessSpaceConfigurationCollectionSettingOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpaceConfigurationCollectionSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpaceConfigurationCollectionSetting)(nil)).Elem()
+}
+
+func (o GetServerlessSpaceConfigurationCollectionSettingOutput) ToGetServerlessSpaceConfigurationCollectionSettingOutput() GetServerlessSpaceConfigurationCollectionSettingOutput {
+	return o
+}
+
+func (o GetServerlessSpaceConfigurationCollectionSettingOutput) ToGetServerlessSpaceConfigurationCollectionSettingOutputWithContext(ctx context.Context) GetServerlessSpaceConfigurationCollectionSettingOutput {
+	return o
+}
+
+func (o GetServerlessSpaceConfigurationCollectionSettingOutput) MaxSize() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceConfigurationCollectionSetting) *float64 { return v.MaxSize }).(pulumi.Float64PtrOutput)
+}
+
+func (o GetServerlessSpaceConfigurationCollectionSettingOutput) PlatformMaxSize() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceConfigurationCollectionSetting) *float64 { return v.PlatformMaxSize }).(pulumi.Float64PtrOutput)
+}
+
+type GetServerlessSpaceConfigurationCollectionSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpaceConfigurationCollectionSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpaceConfigurationCollectionSetting)(nil)).Elem()
+}
+
+func (o GetServerlessSpaceConfigurationCollectionSettingArrayOutput) ToGetServerlessSpaceConfigurationCollectionSettingArrayOutput() GetServerlessSpaceConfigurationCollectionSettingArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpaceConfigurationCollectionSettingArrayOutput) ToGetServerlessSpaceConfigurationCollectionSettingArrayOutputWithContext(ctx context.Context) GetServerlessSpaceConfigurationCollectionSettingArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpaceConfigurationCollectionSettingArrayOutput) Index(i pulumi.IntInput) GetServerlessSpaceConfigurationCollectionSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerlessSpaceConfigurationCollectionSetting {
+		return vs[0].([]GetServerlessSpaceConfigurationCollectionSetting)[vs[1].(int)]
+	}).(GetServerlessSpaceConfigurationCollectionSettingOutput)
+}
+
+type GetServerlessSpaceConfigurationSearcherSetting struct {
+	IdleTimeout        *string  `pulumi:"idleTimeout"`
+	MaxWorkers         *float64 `pulumi:"maxWorkers"`
+	PlatformMaxWorkers *float64 `pulumi:"platformMaxWorkers"`
+}
+
+// GetServerlessSpaceConfigurationSearcherSettingInput is an input type that accepts GetServerlessSpaceConfigurationSearcherSettingArgs and GetServerlessSpaceConfigurationSearcherSettingOutput values.
+// You can construct a concrete instance of `GetServerlessSpaceConfigurationSearcherSettingInput` via:
+//
+//	GetServerlessSpaceConfigurationSearcherSettingArgs{...}
+type GetServerlessSpaceConfigurationSearcherSettingInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpaceConfigurationSearcherSettingOutput() GetServerlessSpaceConfigurationSearcherSettingOutput
+	ToGetServerlessSpaceConfigurationSearcherSettingOutputWithContext(context.Context) GetServerlessSpaceConfigurationSearcherSettingOutput
+}
+
+type GetServerlessSpaceConfigurationSearcherSettingArgs struct {
+	IdleTimeout        pulumi.StringPtrInput  `pulumi:"idleTimeout"`
+	MaxWorkers         pulumi.Float64PtrInput `pulumi:"maxWorkers"`
+	PlatformMaxWorkers pulumi.Float64PtrInput `pulumi:"platformMaxWorkers"`
+}
+
+func (GetServerlessSpaceConfigurationSearcherSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpaceConfigurationSearcherSetting)(nil)).Elem()
+}
+
+func (i GetServerlessSpaceConfigurationSearcherSettingArgs) ToGetServerlessSpaceConfigurationSearcherSettingOutput() GetServerlessSpaceConfigurationSearcherSettingOutput {
+	return i.ToGetServerlessSpaceConfigurationSearcherSettingOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpaceConfigurationSearcherSettingArgs) ToGetServerlessSpaceConfigurationSearcherSettingOutputWithContext(ctx context.Context) GetServerlessSpaceConfigurationSearcherSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpaceConfigurationSearcherSettingOutput)
+}
+
+// GetServerlessSpaceConfigurationSearcherSettingArrayInput is an input type that accepts GetServerlessSpaceConfigurationSearcherSettingArray and GetServerlessSpaceConfigurationSearcherSettingArrayOutput values.
+// You can construct a concrete instance of `GetServerlessSpaceConfigurationSearcherSettingArrayInput` via:
+//
+//	GetServerlessSpaceConfigurationSearcherSettingArray{ GetServerlessSpaceConfigurationSearcherSettingArgs{...} }
+type GetServerlessSpaceConfigurationSearcherSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpaceConfigurationSearcherSettingArrayOutput() GetServerlessSpaceConfigurationSearcherSettingArrayOutput
+	ToGetServerlessSpaceConfigurationSearcherSettingArrayOutputWithContext(context.Context) GetServerlessSpaceConfigurationSearcherSettingArrayOutput
+}
+
+type GetServerlessSpaceConfigurationSearcherSettingArray []GetServerlessSpaceConfigurationSearcherSettingInput
+
+func (GetServerlessSpaceConfigurationSearcherSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpaceConfigurationSearcherSetting)(nil)).Elem()
+}
+
+func (i GetServerlessSpaceConfigurationSearcherSettingArray) ToGetServerlessSpaceConfigurationSearcherSettingArrayOutput() GetServerlessSpaceConfigurationSearcherSettingArrayOutput {
+	return i.ToGetServerlessSpaceConfigurationSearcherSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpaceConfigurationSearcherSettingArray) ToGetServerlessSpaceConfigurationSearcherSettingArrayOutputWithContext(ctx context.Context) GetServerlessSpaceConfigurationSearcherSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpaceConfigurationSearcherSettingArrayOutput)
+}
+
+type GetServerlessSpaceConfigurationSearcherSettingOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpaceConfigurationSearcherSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpaceConfigurationSearcherSetting)(nil)).Elem()
+}
+
+func (o GetServerlessSpaceConfigurationSearcherSettingOutput) ToGetServerlessSpaceConfigurationSearcherSettingOutput() GetServerlessSpaceConfigurationSearcherSettingOutput {
+	return o
+}
+
+func (o GetServerlessSpaceConfigurationSearcherSettingOutput) ToGetServerlessSpaceConfigurationSearcherSettingOutputWithContext(ctx context.Context) GetServerlessSpaceConfigurationSearcherSettingOutput {
+	return o
+}
+
+func (o GetServerlessSpaceConfigurationSearcherSettingOutput) IdleTimeout() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceConfigurationSearcherSetting) *string { return v.IdleTimeout }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpaceConfigurationSearcherSettingOutput) MaxWorkers() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceConfigurationSearcherSetting) *float64 { return v.MaxWorkers }).(pulumi.Float64PtrOutput)
+}
+
+func (o GetServerlessSpaceConfigurationSearcherSettingOutput) PlatformMaxWorkers() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceConfigurationSearcherSetting) *float64 { return v.PlatformMaxWorkers }).(pulumi.Float64PtrOutput)
+}
+
+type GetServerlessSpaceConfigurationSearcherSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpaceConfigurationSearcherSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpaceConfigurationSearcherSetting)(nil)).Elem()
+}
+
+func (o GetServerlessSpaceConfigurationSearcherSettingArrayOutput) ToGetServerlessSpaceConfigurationSearcherSettingArrayOutput() GetServerlessSpaceConfigurationSearcherSettingArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpaceConfigurationSearcherSettingArrayOutput) ToGetServerlessSpaceConfigurationSearcherSettingArrayOutputWithContext(ctx context.Context) GetServerlessSpaceConfigurationSearcherSettingArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpaceConfigurationSearcherSettingArrayOutput) Index(i pulumi.IntInput) GetServerlessSpaceConfigurationSearcherSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerlessSpaceConfigurationSearcherSetting {
+		return vs[0].([]GetServerlessSpaceConfigurationSearcherSetting)[vs[1].(int)]
+	}).(GetServerlessSpaceConfigurationSearcherSettingOutput)
+}
+
+type GetServerlessSpaceLabel struct {
+	Key   *string `pulumi:"key"`
+	Value *string `pulumi:"value"`
+}
+
+// GetServerlessSpaceLabelInput is an input type that accepts GetServerlessSpaceLabelArgs and GetServerlessSpaceLabelOutput values.
+// You can construct a concrete instance of `GetServerlessSpaceLabelInput` via:
+//
+//	GetServerlessSpaceLabelArgs{...}
+type GetServerlessSpaceLabelInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpaceLabelOutput() GetServerlessSpaceLabelOutput
+	ToGetServerlessSpaceLabelOutputWithContext(context.Context) GetServerlessSpaceLabelOutput
+}
+
+type GetServerlessSpaceLabelArgs struct {
+	Key   pulumi.StringPtrInput `pulumi:"key"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (GetServerlessSpaceLabelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpaceLabel)(nil)).Elem()
+}
+
+func (i GetServerlessSpaceLabelArgs) ToGetServerlessSpaceLabelOutput() GetServerlessSpaceLabelOutput {
+	return i.ToGetServerlessSpaceLabelOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpaceLabelArgs) ToGetServerlessSpaceLabelOutputWithContext(ctx context.Context) GetServerlessSpaceLabelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpaceLabelOutput)
+}
+
+// GetServerlessSpaceLabelArrayInput is an input type that accepts GetServerlessSpaceLabelArray and GetServerlessSpaceLabelArrayOutput values.
+// You can construct a concrete instance of `GetServerlessSpaceLabelArrayInput` via:
+//
+//	GetServerlessSpaceLabelArray{ GetServerlessSpaceLabelArgs{...} }
+type GetServerlessSpaceLabelArrayInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpaceLabelArrayOutput() GetServerlessSpaceLabelArrayOutput
+	ToGetServerlessSpaceLabelArrayOutputWithContext(context.Context) GetServerlessSpaceLabelArrayOutput
+}
+
+type GetServerlessSpaceLabelArray []GetServerlessSpaceLabelInput
+
+func (GetServerlessSpaceLabelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpaceLabel)(nil)).Elem()
+}
+
+func (i GetServerlessSpaceLabelArray) ToGetServerlessSpaceLabelArrayOutput() GetServerlessSpaceLabelArrayOutput {
+	return i.ToGetServerlessSpaceLabelArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpaceLabelArray) ToGetServerlessSpaceLabelArrayOutputWithContext(ctx context.Context) GetServerlessSpaceLabelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpaceLabelArrayOutput)
+}
+
+type GetServerlessSpaceLabelOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpaceLabelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpaceLabel)(nil)).Elem()
+}
+
+func (o GetServerlessSpaceLabelOutput) ToGetServerlessSpaceLabelOutput() GetServerlessSpaceLabelOutput {
+	return o
+}
+
+func (o GetServerlessSpaceLabelOutput) ToGetServerlessSpaceLabelOutputWithContext(ctx context.Context) GetServerlessSpaceLabelOutput {
+	return o
+}
+
+func (o GetServerlessSpaceLabelOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceLabel) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpaceLabelOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceLabel) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type GetServerlessSpaceLabelArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpaceLabelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpaceLabel)(nil)).Elem()
+}
+
+func (o GetServerlessSpaceLabelArrayOutput) ToGetServerlessSpaceLabelArrayOutput() GetServerlessSpaceLabelArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpaceLabelArrayOutput) ToGetServerlessSpaceLabelArrayOutputWithContext(ctx context.Context) GetServerlessSpaceLabelArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpaceLabelArrayOutput) Index(i pulumi.IntInput) GetServerlessSpaceLabelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerlessSpaceLabel {
+		return vs[0].([]GetServerlessSpaceLabel)[vs[1].(int)]
+	}).(GetServerlessSpaceLabelOutput)
+}
+
+type GetServerlessSpaceState struct {
+	Phase  *string `pulumi:"phase"`
+	Reason *string `pulumi:"reason"`
+}
+
+// GetServerlessSpaceStateInput is an input type that accepts GetServerlessSpaceStateArgs and GetServerlessSpaceStateOutput values.
+// You can construct a concrete instance of `GetServerlessSpaceStateInput` via:
+//
+//	GetServerlessSpaceStateArgs{...}
+type GetServerlessSpaceStateInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpaceStateOutput() GetServerlessSpaceStateOutput
+	ToGetServerlessSpaceStateOutputWithContext(context.Context) GetServerlessSpaceStateOutput
+}
+
+type GetServerlessSpaceStateArgs struct {
+	Phase  pulumi.StringPtrInput `pulumi:"phase"`
+	Reason pulumi.StringPtrInput `pulumi:"reason"`
+}
+
+func (GetServerlessSpaceStateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpaceState)(nil)).Elem()
+}
+
+func (i GetServerlessSpaceStateArgs) ToGetServerlessSpaceStateOutput() GetServerlessSpaceStateOutput {
+	return i.ToGetServerlessSpaceStateOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpaceStateArgs) ToGetServerlessSpaceStateOutputWithContext(ctx context.Context) GetServerlessSpaceStateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpaceStateOutput)
+}
+
+// GetServerlessSpaceStateArrayInput is an input type that accepts GetServerlessSpaceStateArray and GetServerlessSpaceStateArrayOutput values.
+// You can construct a concrete instance of `GetServerlessSpaceStateArrayInput` via:
+//
+//	GetServerlessSpaceStateArray{ GetServerlessSpaceStateArgs{...} }
+type GetServerlessSpaceStateArrayInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpaceStateArrayOutput() GetServerlessSpaceStateArrayOutput
+	ToGetServerlessSpaceStateArrayOutputWithContext(context.Context) GetServerlessSpaceStateArrayOutput
+}
+
+type GetServerlessSpaceStateArray []GetServerlessSpaceStateInput
+
+func (GetServerlessSpaceStateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpaceState)(nil)).Elem()
+}
+
+func (i GetServerlessSpaceStateArray) ToGetServerlessSpaceStateArrayOutput() GetServerlessSpaceStateArrayOutput {
+	return i.ToGetServerlessSpaceStateArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpaceStateArray) ToGetServerlessSpaceStateArrayOutputWithContext(ctx context.Context) GetServerlessSpaceStateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpaceStateArrayOutput)
+}
+
+type GetServerlessSpaceStateOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpaceStateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpaceState)(nil)).Elem()
+}
+
+func (o GetServerlessSpaceStateOutput) ToGetServerlessSpaceStateOutput() GetServerlessSpaceStateOutput {
+	return o
+}
+
+func (o GetServerlessSpaceStateOutput) ToGetServerlessSpaceStateOutputWithContext(ctx context.Context) GetServerlessSpaceStateOutput {
+	return o
+}
+
+func (o GetServerlessSpaceStateOutput) Phase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceState) *string { return v.Phase }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpaceStateOutput) Reason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpaceState) *string { return v.Reason }).(pulumi.StringPtrOutput)
+}
+
+type GetServerlessSpaceStateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpaceStateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpaceState)(nil)).Elem()
+}
+
+func (o GetServerlessSpaceStateArrayOutput) ToGetServerlessSpaceStateArrayOutput() GetServerlessSpaceStateArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpaceStateArrayOutput) ToGetServerlessSpaceStateArrayOutputWithContext(ctx context.Context) GetServerlessSpaceStateArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpaceStateArrayOutput) Index(i pulumi.IntInput) GetServerlessSpaceStateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerlessSpaceState {
+		return vs[0].([]GetServerlessSpaceState)[vs[1].(int)]
+	}).(GetServerlessSpaceStateOutput)
+}
+
+type GetServerlessSpacesSpace struct {
+	AccountId           *string                                 `pulumi:"accountId"`
+	CloudRegionId       *string                                 `pulumi:"cloudRegionId"`
+	Configurations      []GetServerlessSpacesSpaceConfiguration `pulumi:"configurations"`
+	CostAllocationLabel *string                                 `pulumi:"costAllocationLabel"`
+	CreatedAt           *string                                 `pulumi:"createdAt"`
+	GrpcPort            *float64                                `pulumi:"grpcPort"`
+	Id                  *string                                 `pulumi:"id"`
+	Labels              []GetServerlessSpacesSpaceLabel         `pulumi:"labels"`
+	Name                *string                                 `pulumi:"name"`
+	RestPort            *float64                                `pulumi:"restPort"`
+	States              []GetServerlessSpacesSpaceState         `pulumi:"states"`
+	Url                 *string                                 `pulumi:"url"`
+}
+
+// GetServerlessSpacesSpaceInput is an input type that accepts GetServerlessSpacesSpaceArgs and GetServerlessSpacesSpaceOutput values.
+// You can construct a concrete instance of `GetServerlessSpacesSpaceInput` via:
+//
+//	GetServerlessSpacesSpaceArgs{...}
+type GetServerlessSpacesSpaceInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpacesSpaceOutput() GetServerlessSpacesSpaceOutput
+	ToGetServerlessSpacesSpaceOutputWithContext(context.Context) GetServerlessSpacesSpaceOutput
+}
+
+type GetServerlessSpacesSpaceArgs struct {
+	AccountId           pulumi.StringPtrInput                           `pulumi:"accountId"`
+	CloudRegionId       pulumi.StringPtrInput                           `pulumi:"cloudRegionId"`
+	Configurations      GetServerlessSpacesSpaceConfigurationArrayInput `pulumi:"configurations"`
+	CostAllocationLabel pulumi.StringPtrInput                           `pulumi:"costAllocationLabel"`
+	CreatedAt           pulumi.StringPtrInput                           `pulumi:"createdAt"`
+	GrpcPort            pulumi.Float64PtrInput                          `pulumi:"grpcPort"`
+	Id                  pulumi.StringPtrInput                           `pulumi:"id"`
+	Labels              GetServerlessSpacesSpaceLabelArrayInput         `pulumi:"labels"`
+	Name                pulumi.StringPtrInput                           `pulumi:"name"`
+	RestPort            pulumi.Float64PtrInput                          `pulumi:"restPort"`
+	States              GetServerlessSpacesSpaceStateArrayInput         `pulumi:"states"`
+	Url                 pulumi.StringPtrInput                           `pulumi:"url"`
+}
+
+func (GetServerlessSpacesSpaceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpacesSpace)(nil)).Elem()
+}
+
+func (i GetServerlessSpacesSpaceArgs) ToGetServerlessSpacesSpaceOutput() GetServerlessSpacesSpaceOutput {
+	return i.ToGetServerlessSpacesSpaceOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpacesSpaceArgs) ToGetServerlessSpacesSpaceOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpacesSpaceOutput)
+}
+
+// GetServerlessSpacesSpaceArrayInput is an input type that accepts GetServerlessSpacesSpaceArray and GetServerlessSpacesSpaceArrayOutput values.
+// You can construct a concrete instance of `GetServerlessSpacesSpaceArrayInput` via:
+//
+//	GetServerlessSpacesSpaceArray{ GetServerlessSpacesSpaceArgs{...} }
+type GetServerlessSpacesSpaceArrayInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpacesSpaceArrayOutput() GetServerlessSpacesSpaceArrayOutput
+	ToGetServerlessSpacesSpaceArrayOutputWithContext(context.Context) GetServerlessSpacesSpaceArrayOutput
+}
+
+type GetServerlessSpacesSpaceArray []GetServerlessSpacesSpaceInput
+
+func (GetServerlessSpacesSpaceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpacesSpace)(nil)).Elem()
+}
+
+func (i GetServerlessSpacesSpaceArray) ToGetServerlessSpacesSpaceArrayOutput() GetServerlessSpacesSpaceArrayOutput {
+	return i.ToGetServerlessSpacesSpaceArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpacesSpaceArray) ToGetServerlessSpacesSpaceArrayOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpacesSpaceArrayOutput)
+}
+
+type GetServerlessSpacesSpaceOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpacesSpaceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpacesSpace)(nil)).Elem()
+}
+
+func (o GetServerlessSpacesSpaceOutput) ToGetServerlessSpacesSpaceOutput() GetServerlessSpacesSpaceOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceOutput) ToGetServerlessSpacesSpaceOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceOutput) AccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpace) *string { return v.AccountId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpacesSpaceOutput) CloudRegionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpace) *string { return v.CloudRegionId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpacesSpaceOutput) Configurations() GetServerlessSpacesSpaceConfigurationArrayOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpace) []GetServerlessSpacesSpaceConfiguration { return v.Configurations }).(GetServerlessSpacesSpaceConfigurationArrayOutput)
+}
+
+func (o GetServerlessSpacesSpaceOutput) CostAllocationLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpace) *string { return v.CostAllocationLabel }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpacesSpaceOutput) CreatedAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpace) *string { return v.CreatedAt }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpacesSpaceOutput) GrpcPort() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpace) *float64 { return v.GrpcPort }).(pulumi.Float64PtrOutput)
+}
+
+func (o GetServerlessSpacesSpaceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpace) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpacesSpaceOutput) Labels() GetServerlessSpacesSpaceLabelArrayOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpace) []GetServerlessSpacesSpaceLabel { return v.Labels }).(GetServerlessSpacesSpaceLabelArrayOutput)
+}
+
+func (o GetServerlessSpacesSpaceOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpace) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpacesSpaceOutput) RestPort() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpace) *float64 { return v.RestPort }).(pulumi.Float64PtrOutput)
+}
+
+func (o GetServerlessSpacesSpaceOutput) States() GetServerlessSpacesSpaceStateArrayOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpace) []GetServerlessSpacesSpaceState { return v.States }).(GetServerlessSpacesSpaceStateArrayOutput)
+}
+
+func (o GetServerlessSpacesSpaceOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpace) *string { return v.Url }).(pulumi.StringPtrOutput)
+}
+
+type GetServerlessSpacesSpaceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpacesSpaceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpacesSpace)(nil)).Elem()
+}
+
+func (o GetServerlessSpacesSpaceArrayOutput) ToGetServerlessSpacesSpaceArrayOutput() GetServerlessSpacesSpaceArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceArrayOutput) ToGetServerlessSpacesSpaceArrayOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceArrayOutput) Index(i pulumi.IntInput) GetServerlessSpacesSpaceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerlessSpacesSpace {
+		return vs[0].([]GetServerlessSpacesSpace)[vs[1].(int)]
+	}).(GetServerlessSpacesSpaceOutput)
+}
+
+type GetServerlessSpacesSpaceConfiguration struct {
+	AllowedIpSourceRanges  []string                                                 `pulumi:"allowedIpSourceRanges"`
+	AllowedOrigins         []string                                                 `pulumi:"allowedOrigins"`
+	CollectionSettings     []GetServerlessSpacesSpaceConfigurationCollectionSetting `pulumi:"collectionSettings"`
+	LastModifiedAt         *string                                                  `pulumi:"lastModifiedAt"`
+	MaxCollectionsPerSpace *float64                                                 `pulumi:"maxCollectionsPerSpace"`
+	SearcherSettings       []GetServerlessSpacesSpaceConfigurationSearcherSetting   `pulumi:"searcherSettings"`
+}
+
+// GetServerlessSpacesSpaceConfigurationInput is an input type that accepts GetServerlessSpacesSpaceConfigurationArgs and GetServerlessSpacesSpaceConfigurationOutput values.
+// You can construct a concrete instance of `GetServerlessSpacesSpaceConfigurationInput` via:
+//
+//	GetServerlessSpacesSpaceConfigurationArgs{...}
+type GetServerlessSpacesSpaceConfigurationInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpacesSpaceConfigurationOutput() GetServerlessSpacesSpaceConfigurationOutput
+	ToGetServerlessSpacesSpaceConfigurationOutputWithContext(context.Context) GetServerlessSpacesSpaceConfigurationOutput
+}
+
+type GetServerlessSpacesSpaceConfigurationArgs struct {
+	AllowedIpSourceRanges  pulumi.StringArrayInput                                          `pulumi:"allowedIpSourceRanges"`
+	AllowedOrigins         pulumi.StringArrayInput                                          `pulumi:"allowedOrigins"`
+	CollectionSettings     GetServerlessSpacesSpaceConfigurationCollectionSettingArrayInput `pulumi:"collectionSettings"`
+	LastModifiedAt         pulumi.StringPtrInput                                            `pulumi:"lastModifiedAt"`
+	MaxCollectionsPerSpace pulumi.Float64PtrInput                                           `pulumi:"maxCollectionsPerSpace"`
+	SearcherSettings       GetServerlessSpacesSpaceConfigurationSearcherSettingArrayInput   `pulumi:"searcherSettings"`
+}
+
+func (GetServerlessSpacesSpaceConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpacesSpaceConfiguration)(nil)).Elem()
+}
+
+func (i GetServerlessSpacesSpaceConfigurationArgs) ToGetServerlessSpacesSpaceConfigurationOutput() GetServerlessSpacesSpaceConfigurationOutput {
+	return i.ToGetServerlessSpacesSpaceConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpacesSpaceConfigurationArgs) ToGetServerlessSpacesSpaceConfigurationOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpacesSpaceConfigurationOutput)
+}
+
+// GetServerlessSpacesSpaceConfigurationArrayInput is an input type that accepts GetServerlessSpacesSpaceConfigurationArray and GetServerlessSpacesSpaceConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetServerlessSpacesSpaceConfigurationArrayInput` via:
+//
+//	GetServerlessSpacesSpaceConfigurationArray{ GetServerlessSpacesSpaceConfigurationArgs{...} }
+type GetServerlessSpacesSpaceConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpacesSpaceConfigurationArrayOutput() GetServerlessSpacesSpaceConfigurationArrayOutput
+	ToGetServerlessSpacesSpaceConfigurationArrayOutputWithContext(context.Context) GetServerlessSpacesSpaceConfigurationArrayOutput
+}
+
+type GetServerlessSpacesSpaceConfigurationArray []GetServerlessSpacesSpaceConfigurationInput
+
+func (GetServerlessSpacesSpaceConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpacesSpaceConfiguration)(nil)).Elem()
+}
+
+func (i GetServerlessSpacesSpaceConfigurationArray) ToGetServerlessSpacesSpaceConfigurationArrayOutput() GetServerlessSpacesSpaceConfigurationArrayOutput {
+	return i.ToGetServerlessSpacesSpaceConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpacesSpaceConfigurationArray) ToGetServerlessSpacesSpaceConfigurationArrayOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpacesSpaceConfigurationArrayOutput)
+}
+
+type GetServerlessSpacesSpaceConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpacesSpaceConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpacesSpaceConfiguration)(nil)).Elem()
+}
+
+func (o GetServerlessSpacesSpaceConfigurationOutput) ToGetServerlessSpacesSpaceConfigurationOutput() GetServerlessSpacesSpaceConfigurationOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceConfigurationOutput) ToGetServerlessSpacesSpaceConfigurationOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceConfigurationOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceConfigurationOutput) AllowedIpSourceRanges() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpaceConfiguration) []string { return v.AllowedIpSourceRanges }).(pulumi.StringArrayOutput)
+}
+
+func (o GetServerlessSpacesSpaceConfigurationOutput) AllowedOrigins() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpaceConfiguration) []string { return v.AllowedOrigins }).(pulumi.StringArrayOutput)
+}
+
+func (o GetServerlessSpacesSpaceConfigurationOutput) CollectionSettings() GetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpaceConfiguration) []GetServerlessSpacesSpaceConfigurationCollectionSetting {
+		return v.CollectionSettings
+	}).(GetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutput)
+}
+
+func (o GetServerlessSpacesSpaceConfigurationOutput) LastModifiedAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpaceConfiguration) *string { return v.LastModifiedAt }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpacesSpaceConfigurationOutput) MaxCollectionsPerSpace() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpaceConfiguration) *float64 { return v.MaxCollectionsPerSpace }).(pulumi.Float64PtrOutput)
+}
+
+func (o GetServerlessSpacesSpaceConfigurationOutput) SearcherSettings() GetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpaceConfiguration) []GetServerlessSpacesSpaceConfigurationSearcherSetting {
+		return v.SearcherSettings
+	}).(GetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutput)
+}
+
+type GetServerlessSpacesSpaceConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpacesSpaceConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpacesSpaceConfiguration)(nil)).Elem()
+}
+
+func (o GetServerlessSpacesSpaceConfigurationArrayOutput) ToGetServerlessSpacesSpaceConfigurationArrayOutput() GetServerlessSpacesSpaceConfigurationArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceConfigurationArrayOutput) ToGetServerlessSpacesSpaceConfigurationArrayOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceConfigurationArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceConfigurationArrayOutput) Index(i pulumi.IntInput) GetServerlessSpacesSpaceConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerlessSpacesSpaceConfiguration {
+		return vs[0].([]GetServerlessSpacesSpaceConfiguration)[vs[1].(int)]
+	}).(GetServerlessSpacesSpaceConfigurationOutput)
+}
+
+type GetServerlessSpacesSpaceConfigurationCollectionSetting struct {
+	MaxSize         *float64 `pulumi:"maxSize"`
+	PlatformMaxSize *float64 `pulumi:"platformMaxSize"`
+}
+
+// GetServerlessSpacesSpaceConfigurationCollectionSettingInput is an input type that accepts GetServerlessSpacesSpaceConfigurationCollectionSettingArgs and GetServerlessSpacesSpaceConfigurationCollectionSettingOutput values.
+// You can construct a concrete instance of `GetServerlessSpacesSpaceConfigurationCollectionSettingInput` via:
+//
+//	GetServerlessSpacesSpaceConfigurationCollectionSettingArgs{...}
+type GetServerlessSpacesSpaceConfigurationCollectionSettingInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpacesSpaceConfigurationCollectionSettingOutput() GetServerlessSpacesSpaceConfigurationCollectionSettingOutput
+	ToGetServerlessSpacesSpaceConfigurationCollectionSettingOutputWithContext(context.Context) GetServerlessSpacesSpaceConfigurationCollectionSettingOutput
+}
+
+type GetServerlessSpacesSpaceConfigurationCollectionSettingArgs struct {
+	MaxSize         pulumi.Float64PtrInput `pulumi:"maxSize"`
+	PlatformMaxSize pulumi.Float64PtrInput `pulumi:"platformMaxSize"`
+}
+
+func (GetServerlessSpacesSpaceConfigurationCollectionSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpacesSpaceConfigurationCollectionSetting)(nil)).Elem()
+}
+
+func (i GetServerlessSpacesSpaceConfigurationCollectionSettingArgs) ToGetServerlessSpacesSpaceConfigurationCollectionSettingOutput() GetServerlessSpacesSpaceConfigurationCollectionSettingOutput {
+	return i.ToGetServerlessSpacesSpaceConfigurationCollectionSettingOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpacesSpaceConfigurationCollectionSettingArgs) ToGetServerlessSpacesSpaceConfigurationCollectionSettingOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceConfigurationCollectionSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpacesSpaceConfigurationCollectionSettingOutput)
+}
+
+// GetServerlessSpacesSpaceConfigurationCollectionSettingArrayInput is an input type that accepts GetServerlessSpacesSpaceConfigurationCollectionSettingArray and GetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutput values.
+// You can construct a concrete instance of `GetServerlessSpacesSpaceConfigurationCollectionSettingArrayInput` via:
+//
+//	GetServerlessSpacesSpaceConfigurationCollectionSettingArray{ GetServerlessSpacesSpaceConfigurationCollectionSettingArgs{...} }
+type GetServerlessSpacesSpaceConfigurationCollectionSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutput() GetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutput
+	ToGetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutputWithContext(context.Context) GetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutput
+}
+
+type GetServerlessSpacesSpaceConfigurationCollectionSettingArray []GetServerlessSpacesSpaceConfigurationCollectionSettingInput
+
+func (GetServerlessSpacesSpaceConfigurationCollectionSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpacesSpaceConfigurationCollectionSetting)(nil)).Elem()
+}
+
+func (i GetServerlessSpacesSpaceConfigurationCollectionSettingArray) ToGetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutput() GetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutput {
+	return i.ToGetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpacesSpaceConfigurationCollectionSettingArray) ToGetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutput)
+}
+
+type GetServerlessSpacesSpaceConfigurationCollectionSettingOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpacesSpaceConfigurationCollectionSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpacesSpaceConfigurationCollectionSetting)(nil)).Elem()
+}
+
+func (o GetServerlessSpacesSpaceConfigurationCollectionSettingOutput) ToGetServerlessSpacesSpaceConfigurationCollectionSettingOutput() GetServerlessSpacesSpaceConfigurationCollectionSettingOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceConfigurationCollectionSettingOutput) ToGetServerlessSpacesSpaceConfigurationCollectionSettingOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceConfigurationCollectionSettingOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceConfigurationCollectionSettingOutput) MaxSize() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpaceConfigurationCollectionSetting) *float64 { return v.MaxSize }).(pulumi.Float64PtrOutput)
+}
+
+func (o GetServerlessSpacesSpaceConfigurationCollectionSettingOutput) PlatformMaxSize() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpaceConfigurationCollectionSetting) *float64 { return v.PlatformMaxSize }).(pulumi.Float64PtrOutput)
+}
+
+type GetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpacesSpaceConfigurationCollectionSetting)(nil)).Elem()
+}
+
+func (o GetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutput) ToGetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutput() GetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutput) ToGetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutput) Index(i pulumi.IntInput) GetServerlessSpacesSpaceConfigurationCollectionSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerlessSpacesSpaceConfigurationCollectionSetting {
+		return vs[0].([]GetServerlessSpacesSpaceConfigurationCollectionSetting)[vs[1].(int)]
+	}).(GetServerlessSpacesSpaceConfigurationCollectionSettingOutput)
+}
+
+type GetServerlessSpacesSpaceConfigurationSearcherSetting struct {
+	IdleTimeout        *string  `pulumi:"idleTimeout"`
+	MaxWorkers         *float64 `pulumi:"maxWorkers"`
+	PlatformMaxWorkers *float64 `pulumi:"platformMaxWorkers"`
+}
+
+// GetServerlessSpacesSpaceConfigurationSearcherSettingInput is an input type that accepts GetServerlessSpacesSpaceConfigurationSearcherSettingArgs and GetServerlessSpacesSpaceConfigurationSearcherSettingOutput values.
+// You can construct a concrete instance of `GetServerlessSpacesSpaceConfigurationSearcherSettingInput` via:
+//
+//	GetServerlessSpacesSpaceConfigurationSearcherSettingArgs{...}
+type GetServerlessSpacesSpaceConfigurationSearcherSettingInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpacesSpaceConfigurationSearcherSettingOutput() GetServerlessSpacesSpaceConfigurationSearcherSettingOutput
+	ToGetServerlessSpacesSpaceConfigurationSearcherSettingOutputWithContext(context.Context) GetServerlessSpacesSpaceConfigurationSearcherSettingOutput
+}
+
+type GetServerlessSpacesSpaceConfigurationSearcherSettingArgs struct {
+	IdleTimeout        pulumi.StringPtrInput  `pulumi:"idleTimeout"`
+	MaxWorkers         pulumi.Float64PtrInput `pulumi:"maxWorkers"`
+	PlatformMaxWorkers pulumi.Float64PtrInput `pulumi:"platformMaxWorkers"`
+}
+
+func (GetServerlessSpacesSpaceConfigurationSearcherSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpacesSpaceConfigurationSearcherSetting)(nil)).Elem()
+}
+
+func (i GetServerlessSpacesSpaceConfigurationSearcherSettingArgs) ToGetServerlessSpacesSpaceConfigurationSearcherSettingOutput() GetServerlessSpacesSpaceConfigurationSearcherSettingOutput {
+	return i.ToGetServerlessSpacesSpaceConfigurationSearcherSettingOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpacesSpaceConfigurationSearcherSettingArgs) ToGetServerlessSpacesSpaceConfigurationSearcherSettingOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceConfigurationSearcherSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpacesSpaceConfigurationSearcherSettingOutput)
+}
+
+// GetServerlessSpacesSpaceConfigurationSearcherSettingArrayInput is an input type that accepts GetServerlessSpacesSpaceConfigurationSearcherSettingArray and GetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutput values.
+// You can construct a concrete instance of `GetServerlessSpacesSpaceConfigurationSearcherSettingArrayInput` via:
+//
+//	GetServerlessSpacesSpaceConfigurationSearcherSettingArray{ GetServerlessSpacesSpaceConfigurationSearcherSettingArgs{...} }
+type GetServerlessSpacesSpaceConfigurationSearcherSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutput() GetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutput
+	ToGetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutputWithContext(context.Context) GetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutput
+}
+
+type GetServerlessSpacesSpaceConfigurationSearcherSettingArray []GetServerlessSpacesSpaceConfigurationSearcherSettingInput
+
+func (GetServerlessSpacesSpaceConfigurationSearcherSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpacesSpaceConfigurationSearcherSetting)(nil)).Elem()
+}
+
+func (i GetServerlessSpacesSpaceConfigurationSearcherSettingArray) ToGetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutput() GetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutput {
+	return i.ToGetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpacesSpaceConfigurationSearcherSettingArray) ToGetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutput)
+}
+
+type GetServerlessSpacesSpaceConfigurationSearcherSettingOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpacesSpaceConfigurationSearcherSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpacesSpaceConfigurationSearcherSetting)(nil)).Elem()
+}
+
+func (o GetServerlessSpacesSpaceConfigurationSearcherSettingOutput) ToGetServerlessSpacesSpaceConfigurationSearcherSettingOutput() GetServerlessSpacesSpaceConfigurationSearcherSettingOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceConfigurationSearcherSettingOutput) ToGetServerlessSpacesSpaceConfigurationSearcherSettingOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceConfigurationSearcherSettingOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceConfigurationSearcherSettingOutput) IdleTimeout() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpaceConfigurationSearcherSetting) *string { return v.IdleTimeout }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpacesSpaceConfigurationSearcherSettingOutput) MaxWorkers() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpaceConfigurationSearcherSetting) *float64 { return v.MaxWorkers }).(pulumi.Float64PtrOutput)
+}
+
+func (o GetServerlessSpacesSpaceConfigurationSearcherSettingOutput) PlatformMaxWorkers() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpaceConfigurationSearcherSetting) *float64 { return v.PlatformMaxWorkers }).(pulumi.Float64PtrOutput)
+}
+
+type GetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpacesSpaceConfigurationSearcherSetting)(nil)).Elem()
+}
+
+func (o GetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutput) ToGetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutput() GetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutput) ToGetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutput) Index(i pulumi.IntInput) GetServerlessSpacesSpaceConfigurationSearcherSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerlessSpacesSpaceConfigurationSearcherSetting {
+		return vs[0].([]GetServerlessSpacesSpaceConfigurationSearcherSetting)[vs[1].(int)]
+	}).(GetServerlessSpacesSpaceConfigurationSearcherSettingOutput)
+}
+
+type GetServerlessSpacesSpaceLabel struct {
+	Key   *string `pulumi:"key"`
+	Value *string `pulumi:"value"`
+}
+
+// GetServerlessSpacesSpaceLabelInput is an input type that accepts GetServerlessSpacesSpaceLabelArgs and GetServerlessSpacesSpaceLabelOutput values.
+// You can construct a concrete instance of `GetServerlessSpacesSpaceLabelInput` via:
+//
+//	GetServerlessSpacesSpaceLabelArgs{...}
+type GetServerlessSpacesSpaceLabelInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpacesSpaceLabelOutput() GetServerlessSpacesSpaceLabelOutput
+	ToGetServerlessSpacesSpaceLabelOutputWithContext(context.Context) GetServerlessSpacesSpaceLabelOutput
+}
+
+type GetServerlessSpacesSpaceLabelArgs struct {
+	Key   pulumi.StringPtrInput `pulumi:"key"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (GetServerlessSpacesSpaceLabelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpacesSpaceLabel)(nil)).Elem()
+}
+
+func (i GetServerlessSpacesSpaceLabelArgs) ToGetServerlessSpacesSpaceLabelOutput() GetServerlessSpacesSpaceLabelOutput {
+	return i.ToGetServerlessSpacesSpaceLabelOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpacesSpaceLabelArgs) ToGetServerlessSpacesSpaceLabelOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceLabelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpacesSpaceLabelOutput)
+}
+
+// GetServerlessSpacesSpaceLabelArrayInput is an input type that accepts GetServerlessSpacesSpaceLabelArray and GetServerlessSpacesSpaceLabelArrayOutput values.
+// You can construct a concrete instance of `GetServerlessSpacesSpaceLabelArrayInput` via:
+//
+//	GetServerlessSpacesSpaceLabelArray{ GetServerlessSpacesSpaceLabelArgs{...} }
+type GetServerlessSpacesSpaceLabelArrayInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpacesSpaceLabelArrayOutput() GetServerlessSpacesSpaceLabelArrayOutput
+	ToGetServerlessSpacesSpaceLabelArrayOutputWithContext(context.Context) GetServerlessSpacesSpaceLabelArrayOutput
+}
+
+type GetServerlessSpacesSpaceLabelArray []GetServerlessSpacesSpaceLabelInput
+
+func (GetServerlessSpacesSpaceLabelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpacesSpaceLabel)(nil)).Elem()
+}
+
+func (i GetServerlessSpacesSpaceLabelArray) ToGetServerlessSpacesSpaceLabelArrayOutput() GetServerlessSpacesSpaceLabelArrayOutput {
+	return i.ToGetServerlessSpacesSpaceLabelArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpacesSpaceLabelArray) ToGetServerlessSpacesSpaceLabelArrayOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceLabelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpacesSpaceLabelArrayOutput)
+}
+
+type GetServerlessSpacesSpaceLabelOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpacesSpaceLabelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpacesSpaceLabel)(nil)).Elem()
+}
+
+func (o GetServerlessSpacesSpaceLabelOutput) ToGetServerlessSpacesSpaceLabelOutput() GetServerlessSpacesSpaceLabelOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceLabelOutput) ToGetServerlessSpacesSpaceLabelOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceLabelOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceLabelOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpaceLabel) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpacesSpaceLabelOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpaceLabel) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type GetServerlessSpacesSpaceLabelArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpacesSpaceLabelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpacesSpaceLabel)(nil)).Elem()
+}
+
+func (o GetServerlessSpacesSpaceLabelArrayOutput) ToGetServerlessSpacesSpaceLabelArrayOutput() GetServerlessSpacesSpaceLabelArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceLabelArrayOutput) ToGetServerlessSpacesSpaceLabelArrayOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceLabelArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceLabelArrayOutput) Index(i pulumi.IntInput) GetServerlessSpacesSpaceLabelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerlessSpacesSpaceLabel {
+		return vs[0].([]GetServerlessSpacesSpaceLabel)[vs[1].(int)]
+	}).(GetServerlessSpacesSpaceLabelOutput)
+}
+
+type GetServerlessSpacesSpaceState struct {
+	Phase  *string `pulumi:"phase"`
+	Reason *string `pulumi:"reason"`
+}
+
+// GetServerlessSpacesSpaceStateInput is an input type that accepts GetServerlessSpacesSpaceStateArgs and GetServerlessSpacesSpaceStateOutput values.
+// You can construct a concrete instance of `GetServerlessSpacesSpaceStateInput` via:
+//
+//	GetServerlessSpacesSpaceStateArgs{...}
+type GetServerlessSpacesSpaceStateInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpacesSpaceStateOutput() GetServerlessSpacesSpaceStateOutput
+	ToGetServerlessSpacesSpaceStateOutputWithContext(context.Context) GetServerlessSpacesSpaceStateOutput
+}
+
+type GetServerlessSpacesSpaceStateArgs struct {
+	Phase  pulumi.StringPtrInput `pulumi:"phase"`
+	Reason pulumi.StringPtrInput `pulumi:"reason"`
+}
+
+func (GetServerlessSpacesSpaceStateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpacesSpaceState)(nil)).Elem()
+}
+
+func (i GetServerlessSpacesSpaceStateArgs) ToGetServerlessSpacesSpaceStateOutput() GetServerlessSpacesSpaceStateOutput {
+	return i.ToGetServerlessSpacesSpaceStateOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpacesSpaceStateArgs) ToGetServerlessSpacesSpaceStateOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceStateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpacesSpaceStateOutput)
+}
+
+// GetServerlessSpacesSpaceStateArrayInput is an input type that accepts GetServerlessSpacesSpaceStateArray and GetServerlessSpacesSpaceStateArrayOutput values.
+// You can construct a concrete instance of `GetServerlessSpacesSpaceStateArrayInput` via:
+//
+//	GetServerlessSpacesSpaceStateArray{ GetServerlessSpacesSpaceStateArgs{...} }
+type GetServerlessSpacesSpaceStateArrayInput interface {
+	pulumi.Input
+
+	ToGetServerlessSpacesSpaceStateArrayOutput() GetServerlessSpacesSpaceStateArrayOutput
+	ToGetServerlessSpacesSpaceStateArrayOutputWithContext(context.Context) GetServerlessSpacesSpaceStateArrayOutput
+}
+
+type GetServerlessSpacesSpaceStateArray []GetServerlessSpacesSpaceStateInput
+
+func (GetServerlessSpacesSpaceStateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpacesSpaceState)(nil)).Elem()
+}
+
+func (i GetServerlessSpacesSpaceStateArray) ToGetServerlessSpacesSpaceStateArrayOutput() GetServerlessSpacesSpaceStateArrayOutput {
+	return i.ToGetServerlessSpacesSpaceStateArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerlessSpacesSpaceStateArray) ToGetServerlessSpacesSpaceStateArrayOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceStateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerlessSpacesSpaceStateArrayOutput)
+}
+
+type GetServerlessSpacesSpaceStateOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpacesSpaceStateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerlessSpacesSpaceState)(nil)).Elem()
+}
+
+func (o GetServerlessSpacesSpaceStateOutput) ToGetServerlessSpacesSpaceStateOutput() GetServerlessSpacesSpaceStateOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceStateOutput) ToGetServerlessSpacesSpaceStateOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceStateOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceStateOutput) Phase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpaceState) *string { return v.Phase }).(pulumi.StringPtrOutput)
+}
+
+func (o GetServerlessSpacesSpaceStateOutput) Reason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServerlessSpacesSpaceState) *string { return v.Reason }).(pulumi.StringPtrOutput)
+}
+
+type GetServerlessSpacesSpaceStateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerlessSpacesSpaceStateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerlessSpacesSpaceState)(nil)).Elem()
+}
+
+func (o GetServerlessSpacesSpaceStateArrayOutput) ToGetServerlessSpacesSpaceStateArrayOutput() GetServerlessSpacesSpaceStateArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceStateArrayOutput) ToGetServerlessSpacesSpaceStateArrayOutputWithContext(ctx context.Context) GetServerlessSpacesSpaceStateArrayOutput {
+	return o
+}
+
+func (o GetServerlessSpacesSpaceStateArrayOutput) Index(i pulumi.IntInput) GetServerlessSpacesSpaceStateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerlessSpacesSpaceState {
+		return vs[0].([]GetServerlessSpacesSpaceState)[vs[1].(int)]
+	}).(GetServerlessSpacesSpaceStateOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AccountsClusterConfigurationInput)(nil)).Elem(), AccountsClusterConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AccountsClusterConfigurationPtrInput)(nil)).Elem(), AccountsClusterConfigurationArgs{})
@@ -19205,6 +23068,30 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AccountsManualBackupClusterInfoResourcesSummaryRamArrayInput)(nil)).Elem(), AccountsManualBackupClusterInfoResourcesSummaryRamArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AccountsRolePermissionInput)(nil)).Elem(), AccountsRolePermissionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AccountsRolePermissionArrayInput)(nil)).Elem(), AccountsRolePermissionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessBackupStatInput)(nil)).Elem(), ServerlessBackupStatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessBackupStatArrayInput)(nil)).Elem(), ServerlessBackupStatArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessBackupTimeoutsInput)(nil)).Elem(), ServerlessBackupTimeoutsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessBackupTimeoutsPtrInput)(nil)).Elem(), ServerlessBackupTimeoutsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessSpaceApiKeyCollectionAccessRuleInput)(nil)).Elem(), ServerlessSpaceApiKeyCollectionAccessRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessSpaceApiKeyCollectionAccessRuleArrayInput)(nil)).Elem(), ServerlessSpaceApiKeyCollectionAccessRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessSpaceApiKeyGlobalAccessRuleInput)(nil)).Elem(), ServerlessSpaceApiKeyGlobalAccessRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessSpaceApiKeyGlobalAccessRulePtrInput)(nil)).Elem(), ServerlessSpaceApiKeyGlobalAccessRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessSpaceApiKeyStateTypeInput)(nil)).Elem(), ServerlessSpaceApiKeyStateTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessSpaceApiKeyStateTypeArrayInput)(nil)).Elem(), ServerlessSpaceApiKeyStateTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessSpaceApiKeyTimeoutsInput)(nil)).Elem(), ServerlessSpaceApiKeyTimeoutsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessSpaceApiKeyTimeoutsPtrInput)(nil)).Elem(), ServerlessSpaceApiKeyTimeoutsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessSpaceConfigurationInput)(nil)).Elem(), ServerlessSpaceConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessSpaceConfigurationPtrInput)(nil)).Elem(), ServerlessSpaceConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessSpaceConfigurationCollectionSettingsInput)(nil)).Elem(), ServerlessSpaceConfigurationCollectionSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessSpaceConfigurationCollectionSettingsPtrInput)(nil)).Elem(), ServerlessSpaceConfigurationCollectionSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessSpaceConfigurationSearcherSettingsInput)(nil)).Elem(), ServerlessSpaceConfigurationSearcherSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessSpaceConfigurationSearcherSettingsPtrInput)(nil)).Elem(), ServerlessSpaceConfigurationSearcherSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessSpaceLabelInput)(nil)).Elem(), ServerlessSpaceLabelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessSpaceLabelArrayInput)(nil)).Elem(), ServerlessSpaceLabelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessSpaceStateTypeInput)(nil)).Elem(), ServerlessSpaceStateTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessSpaceStateTypeArrayInput)(nil)).Elem(), ServerlessSpaceStateTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessSpaceTimeoutsInput)(nil)).Elem(), ServerlessSpaceTimeoutsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerlessSpaceTimeoutsPtrInput)(nil)).Elem(), ServerlessSpaceTimeoutsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAccountsAuthKeysKeyInput)(nil)).Elem(), GetAccountsAuthKeysKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAccountsAuthKeysKeyArrayInput)(nil)).Elem(), GetAccountsAuthKeysKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAccountsBackupSchedulesScheduleInput)(nil)).Elem(), GetAccountsBackupSchedulesScheduleArgs{})
@@ -19365,6 +23252,44 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBookingPackagesPackageAvailableStorageTierConfigurationArrayInput)(nil)).Elem(), GetBookingPackagesPackageAvailableStorageTierConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBookingPackagesPackageResourceConfigurationInput)(nil)).Elem(), GetBookingPackagesPackageResourceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBookingPackagesPackageResourceConfigurationArrayInput)(nil)).Elem(), GetBookingPackagesPackageResourceConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessBackupSchedulesScheduleInput)(nil)).Elem(), GetServerlessBackupSchedulesScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessBackupSchedulesScheduleArrayInput)(nil)).Elem(), GetServerlessBackupSchedulesScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessBackupsBackupInput)(nil)).Elem(), GetServerlessBackupsBackupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessBackupsBackupArrayInput)(nil)).Elem(), GetServerlessBackupsBackupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessBackupsBackupStatInput)(nil)).Elem(), GetServerlessBackupsBackupStatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessBackupsBackupStatArrayInput)(nil)).Elem(), GetServerlessBackupsBackupStatArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessCloudRegionsRegionInput)(nil)).Elem(), GetServerlessCloudRegionsRegionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessCloudRegionsRegionArrayInput)(nil)).Elem(), GetServerlessCloudRegionsRegionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpaceApiKeysKeyInput)(nil)).Elem(), GetServerlessSpaceApiKeysKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpaceApiKeysKeyArrayInput)(nil)).Elem(), GetServerlessSpaceApiKeysKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpaceApiKeysKeyCollectionAccessRuleInput)(nil)).Elem(), GetServerlessSpaceApiKeysKeyCollectionAccessRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayInput)(nil)).Elem(), GetServerlessSpaceApiKeysKeyCollectionAccessRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpaceApiKeysKeyGlobalAccessRuleInput)(nil)).Elem(), GetServerlessSpaceApiKeysKeyGlobalAccessRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayInput)(nil)).Elem(), GetServerlessSpaceApiKeysKeyGlobalAccessRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpaceApiKeysKeyStateInput)(nil)).Elem(), GetServerlessSpaceApiKeysKeyStateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpaceApiKeysKeyStateArrayInput)(nil)).Elem(), GetServerlessSpaceApiKeysKeyStateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpaceConfigurationInput)(nil)).Elem(), GetServerlessSpaceConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpaceConfigurationArrayInput)(nil)).Elem(), GetServerlessSpaceConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpaceConfigurationCollectionSettingInput)(nil)).Elem(), GetServerlessSpaceConfigurationCollectionSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpaceConfigurationCollectionSettingArrayInput)(nil)).Elem(), GetServerlessSpaceConfigurationCollectionSettingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpaceConfigurationSearcherSettingInput)(nil)).Elem(), GetServerlessSpaceConfigurationSearcherSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpaceConfigurationSearcherSettingArrayInput)(nil)).Elem(), GetServerlessSpaceConfigurationSearcherSettingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpaceLabelInput)(nil)).Elem(), GetServerlessSpaceLabelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpaceLabelArrayInput)(nil)).Elem(), GetServerlessSpaceLabelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpaceStateInput)(nil)).Elem(), GetServerlessSpaceStateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpaceStateArrayInput)(nil)).Elem(), GetServerlessSpaceStateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpacesSpaceInput)(nil)).Elem(), GetServerlessSpacesSpaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpacesSpaceArrayInput)(nil)).Elem(), GetServerlessSpacesSpaceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpacesSpaceConfigurationInput)(nil)).Elem(), GetServerlessSpacesSpaceConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpacesSpaceConfigurationArrayInput)(nil)).Elem(), GetServerlessSpacesSpaceConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpacesSpaceConfigurationCollectionSettingInput)(nil)).Elem(), GetServerlessSpacesSpaceConfigurationCollectionSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpacesSpaceConfigurationCollectionSettingArrayInput)(nil)).Elem(), GetServerlessSpacesSpaceConfigurationCollectionSettingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpacesSpaceConfigurationSearcherSettingInput)(nil)).Elem(), GetServerlessSpacesSpaceConfigurationSearcherSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpacesSpaceConfigurationSearcherSettingArrayInput)(nil)).Elem(), GetServerlessSpacesSpaceConfigurationSearcherSettingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpacesSpaceLabelInput)(nil)).Elem(), GetServerlessSpacesSpaceLabelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpacesSpaceLabelArrayInput)(nil)).Elem(), GetServerlessSpacesSpaceLabelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpacesSpaceStateInput)(nil)).Elem(), GetServerlessSpacesSpaceStateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerlessSpacesSpaceStateArrayInput)(nil)).Elem(), GetServerlessSpacesSpaceStateArray{})
 	pulumi.RegisterOutputType(AccountsClusterConfigurationOutput{})
 	pulumi.RegisterOutputType(AccountsClusterConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(AccountsClusterConfigurationAnnotationOutput{})
@@ -19515,6 +23440,30 @@ func init() {
 	pulumi.RegisterOutputType(AccountsManualBackupClusterInfoResourcesSummaryRamArrayOutput{})
 	pulumi.RegisterOutputType(AccountsRolePermissionOutput{})
 	pulumi.RegisterOutputType(AccountsRolePermissionArrayOutput{})
+	pulumi.RegisterOutputType(ServerlessBackupStatOutput{})
+	pulumi.RegisterOutputType(ServerlessBackupStatArrayOutput{})
+	pulumi.RegisterOutputType(ServerlessBackupTimeoutsOutput{})
+	pulumi.RegisterOutputType(ServerlessBackupTimeoutsPtrOutput{})
+	pulumi.RegisterOutputType(ServerlessSpaceApiKeyCollectionAccessRuleOutput{})
+	pulumi.RegisterOutputType(ServerlessSpaceApiKeyCollectionAccessRuleArrayOutput{})
+	pulumi.RegisterOutputType(ServerlessSpaceApiKeyGlobalAccessRuleOutput{})
+	pulumi.RegisterOutputType(ServerlessSpaceApiKeyGlobalAccessRulePtrOutput{})
+	pulumi.RegisterOutputType(ServerlessSpaceApiKeyStateTypeOutput{})
+	pulumi.RegisterOutputType(ServerlessSpaceApiKeyStateTypeArrayOutput{})
+	pulumi.RegisterOutputType(ServerlessSpaceApiKeyTimeoutsOutput{})
+	pulumi.RegisterOutputType(ServerlessSpaceApiKeyTimeoutsPtrOutput{})
+	pulumi.RegisterOutputType(ServerlessSpaceConfigurationOutput{})
+	pulumi.RegisterOutputType(ServerlessSpaceConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(ServerlessSpaceConfigurationCollectionSettingsOutput{})
+	pulumi.RegisterOutputType(ServerlessSpaceConfigurationCollectionSettingsPtrOutput{})
+	pulumi.RegisterOutputType(ServerlessSpaceConfigurationSearcherSettingsOutput{})
+	pulumi.RegisterOutputType(ServerlessSpaceConfigurationSearcherSettingsPtrOutput{})
+	pulumi.RegisterOutputType(ServerlessSpaceLabelOutput{})
+	pulumi.RegisterOutputType(ServerlessSpaceLabelArrayOutput{})
+	pulumi.RegisterOutputType(ServerlessSpaceStateTypeOutput{})
+	pulumi.RegisterOutputType(ServerlessSpaceStateTypeArrayOutput{})
+	pulumi.RegisterOutputType(ServerlessSpaceTimeoutsOutput{})
+	pulumi.RegisterOutputType(ServerlessSpaceTimeoutsPtrOutput{})
 	pulumi.RegisterOutputType(GetAccountsAuthKeysKeyOutput{})
 	pulumi.RegisterOutputType(GetAccountsAuthKeysKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetAccountsBackupSchedulesScheduleOutput{})
@@ -19675,4 +23624,42 @@ func init() {
 	pulumi.RegisterOutputType(GetBookingPackagesPackageAvailableStorageTierConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetBookingPackagesPackageResourceConfigurationOutput{})
 	pulumi.RegisterOutputType(GetBookingPackagesPackageResourceConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetServerlessBackupSchedulesScheduleOutput{})
+	pulumi.RegisterOutputType(GetServerlessBackupSchedulesScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetServerlessBackupsBackupOutput{})
+	pulumi.RegisterOutputType(GetServerlessBackupsBackupArrayOutput{})
+	pulumi.RegisterOutputType(GetServerlessBackupsBackupStatOutput{})
+	pulumi.RegisterOutputType(GetServerlessBackupsBackupStatArrayOutput{})
+	pulumi.RegisterOutputType(GetServerlessCloudRegionsRegionOutput{})
+	pulumi.RegisterOutputType(GetServerlessCloudRegionsRegionArrayOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpaceApiKeysKeyOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpaceApiKeysKeyArrayOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpaceApiKeysKeyCollectionAccessRuleOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpaceApiKeysKeyCollectionAccessRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpaceApiKeysKeyGlobalAccessRuleOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpaceApiKeysKeyGlobalAccessRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpaceApiKeysKeyStateOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpaceApiKeysKeyStateArrayOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpaceConfigurationOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpaceConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpaceConfigurationCollectionSettingOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpaceConfigurationCollectionSettingArrayOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpaceConfigurationSearcherSettingOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpaceConfigurationSearcherSettingArrayOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpaceLabelOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpaceLabelArrayOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpaceStateOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpaceStateArrayOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpacesSpaceOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpacesSpaceArrayOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpacesSpaceConfigurationOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpacesSpaceConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpacesSpaceConfigurationCollectionSettingOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpacesSpaceConfigurationCollectionSettingArrayOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpacesSpaceConfigurationSearcherSettingOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpacesSpaceConfigurationSearcherSettingArrayOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpacesSpaceLabelOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpacesSpaceLabelArrayOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpacesSpaceStateOutput{})
+	pulumi.RegisterOutputType(GetServerlessSpacesSpaceStateArrayOutput{})
 }

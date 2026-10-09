@@ -1281,3 +1281,255 @@ export interface GetBookingPackagesPackageResourceConfiguration {
     ram?: string;
 }
 
+export interface GetServerlessBackupSchedulesSchedule {
+    accountId?: string;
+    collectionName?: string;
+    createdAt?: string;
+    id?: string;
+    lastFiredAt?: string;
+    name?: string;
+    paused?: boolean;
+    pausedAt?: string;
+    retentionPeriod?: string;
+    schedule?: string;
+    spaceId?: string;
+    status?: string;
+}
+
+export interface GetServerlessBackupsBackup {
+    accountId?: string;
+    backupScheduleId?: string;
+    collectionName?: string;
+    createdAt?: string;
+    id?: string;
+    name?: string;
+    retentionPeriod?: string;
+    spaceId?: string;
+    stats?: outputs.GetServerlessBackupsBackupStat[];
+    status?: string;
+}
+
+export interface GetServerlessBackupsBackupStat {
+    collectionCount?: number;
+    duration?: string;
+    sizeBytes?: number;
+    totalPoints?: number;
+}
+
+export interface GetServerlessCloudRegionsRegion {
+    available?: boolean;
+    countryIsoCode?: string;
+    geographicalSubRegion?: string;
+    id?: string;
+    name?: string;
+}
+
+export interface GetServerlessSpaceApiKeysKey {
+    accountId?: string;
+    collectionAccessRules?: outputs.GetServerlessSpaceApiKeysKeyCollectionAccessRule[];
+    createdAt?: string;
+    expiresAt?: string;
+    globalAccessRules?: outputs.GetServerlessSpaceApiKeysKeyGlobalAccessRule[];
+    id?: string;
+    name?: string;
+    postfix?: string;
+    spaceId?: string;
+    states?: outputs.GetServerlessSpaceApiKeysKeyState[];
+}
+
+export interface GetServerlessSpaceApiKeysKeyCollectionAccessRule {
+    accessType?: string;
+    collectionName?: string;
+}
+
+export interface GetServerlessSpaceApiKeysKeyGlobalAccessRule {
+    accessType?: string;
+}
+
+export interface GetServerlessSpaceApiKeysKeyState {
+    phase?: string;
+    reason?: string;
+}
+
+export interface GetServerlessSpaceConfiguration {
+    allowedIpSourceRanges?: string[];
+    allowedOrigins?: string[];
+    collectionSettings?: outputs.GetServerlessSpaceConfigurationCollectionSetting[];
+    lastModifiedAt?: string;
+    maxCollectionsPerSpace?: number;
+    searcherSettings?: outputs.GetServerlessSpaceConfigurationSearcherSetting[];
+}
+
+export interface GetServerlessSpaceConfigurationCollectionSetting {
+    maxSize?: number;
+    platformMaxSize?: number;
+}
+
+export interface GetServerlessSpaceConfigurationSearcherSetting {
+    idleTimeout?: string;
+    maxWorkers?: number;
+    platformMaxWorkers?: number;
+}
+
+export interface GetServerlessSpaceLabel {
+    key?: string;
+    value?: string;
+}
+
+export interface GetServerlessSpaceState {
+    phase?: string;
+    reason?: string;
+}
+
+export interface GetServerlessSpacesSpace {
+    accountId?: string;
+    cloudRegionId?: string;
+    configurations?: outputs.GetServerlessSpacesSpaceConfiguration[];
+    costAllocationLabel?: string;
+    createdAt?: string;
+    grpcPort?: number;
+    id?: string;
+    labels?: outputs.GetServerlessSpacesSpaceLabel[];
+    name?: string;
+    restPort?: number;
+    states?: outputs.GetServerlessSpacesSpaceState[];
+    url?: string;
+}
+
+export interface GetServerlessSpacesSpaceConfiguration {
+    allowedIpSourceRanges?: string[];
+    allowedOrigins?: string[];
+    collectionSettings?: outputs.GetServerlessSpacesSpaceConfigurationCollectionSetting[];
+    lastModifiedAt?: string;
+    maxCollectionsPerSpace?: number;
+    searcherSettings?: outputs.GetServerlessSpacesSpaceConfigurationSearcherSetting[];
+}
+
+export interface GetServerlessSpacesSpaceConfigurationCollectionSetting {
+    maxSize?: number;
+    platformMaxSize?: number;
+}
+
+export interface GetServerlessSpacesSpaceConfigurationSearcherSetting {
+    idleTimeout?: string;
+    maxWorkers?: number;
+    platformMaxWorkers?: number;
+}
+
+export interface GetServerlessSpacesSpaceLabel {
+    key?: string;
+    value?: string;
+}
+
+export interface GetServerlessSpacesSpaceState {
+    phase?: string;
+    reason?: string;
+}
+
+export interface ServerlessBackupStat {
+    collectionCount?: number;
+    duration?: string;
+    sizeBytes?: number;
+    totalPoints?: number;
+}
+
+export interface ServerlessBackupTimeouts {
+    create?: string;
+}
+
+export interface ServerlessSpaceApiKeyCollectionAccessRule {
+    /**
+     * Access type for the collection. Must be one of: COLLECTION_ACCESS_RULE_ACCESS_TYPE_READ_ONLY, COLLECTION_ACCESS_RULE_ACCESS_TYPE_READ_WRITE.
+     */
+    accessType: string;
+    /**
+     * Name of the collection.
+     */
+    collectionName: string;
+}
+
+export interface ServerlessSpaceApiKeyGlobalAccessRule {
+    /**
+     * Access type for the entire space. Must be one of: GLOBAL_ACCESS_RULE_ACCESS_TYPE_MANAGE, GLOBAL_ACCESS_RULE_ACCESS_TYPE_METRICS_READ_ONLY, GLOBAL_ACCESS_RULE_ACCESS_TYPE_READ_ONLY.
+     */
+    accessType: string;
+}
+
+export interface ServerlessSpaceApiKeyState {
+    phase?: string;
+    reason?: string;
+}
+
+export interface ServerlessSpaceApiKeyTimeouts {
+    create?: string;
+}
+
+export interface ServerlessSpaceConfiguration {
+    /**
+     * List of allowed IPv4 source ranges (CIDR) for this space (max 40).
+     */
+    allowedIpSourceRanges?: string[];
+    /**
+     * List of origins (scheme + host + optional port, e.g. `https://app.example.com`) from which browser-based clients are allowed to call the space via CORS (max 10).
+     */
+    allowedOrigins?: string[];
+    /**
+     * Per-collection size limits for this space.
+     */
+    collectionSettings?: outputs.ServerlessSpaceConfigurationCollectionSettings;
+    /**
+     * Time when the configuration was last updated.
+     */
+    lastModifiedAt: string;
+    /**
+     * Platform-enforced limit on the number of collections for this space (0 means unlimited).
+     */
+    maxCollectionsPerSpace: number;
+    /**
+     * Search-worker settings for this space.
+     */
+    searcherSettings?: outputs.ServerlessSpaceConfigurationSearcherSettings;
+}
+
+export interface ServerlessSpaceConfigurationCollectionSettings {
+    /**
+     * Customer-defined maximum size in bytes per collection, used for cost control. Must not exceed <span pulumi-lang-nodejs="`platformMaxSize`" pulumi-lang-dotnet="`PlatformMaxSize`" pulumi-lang-go="`platformMaxSize`" pulumi-lang-python="`platform_max_size`" pulumi-lang-yaml="`platformMaxSize`" pulumi-lang-java="`platformMaxSize`" pulumi-lang-hcl="`platform_max_size`">`platformMaxSize`</span>.
+     */
+    maxSize: number;
+    /**
+     * Platform-enforced maximum size in bytes per collection (0 means unlimited).
+     */
+    platformMaxSize: number;
+}
+
+export interface ServerlessSpaceConfigurationSearcherSettings {
+    /**
+     * Idle timeout after which idle search workers may be scaled down, as a Go duration string (between "1m" and "15m", defaults to "5m").
+     */
+    idleTimeout: string;
+    /**
+     * Maximum number of search workers per collection in this space (defaults to 2).
+     */
+    maxWorkers: number;
+    /**
+     * Platform-enforced maximum number of search workers per collection (0 means unlimited).
+     */
+    platformMaxWorkers: number;
+}
+
+export interface ServerlessSpaceLabel {
+    key: string;
+    value: string;
+}
+
+export interface ServerlessSpaceState {
+    phase?: string;
+    reason?: string;
+}
+
+export interface ServerlessSpaceTimeouts {
+    create?: string;
+    delete?: string;
+    update?: string;
+}
+
